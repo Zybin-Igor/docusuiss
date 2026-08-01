@@ -1,0 +1,18 @@
+{
+  "name": "docusuiss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass-watch": "sass --watch ."
+  },
+  "author": "Ihor Zybin",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.101.0"
+  },
+  "dependencies": {
+    "@a1rth/css-normalize": "^1.2.4"
+  }
+}
