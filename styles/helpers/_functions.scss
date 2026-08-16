@@ -1,5 +1,4 @@
 @use 'sass:math';
-
 @function rem($pixel) {
   @if math.is-unitless($pixel) {
     @return math.div($pixel, 16) + rem;
@@ -8,7 +7,7 @@
   }
 }
 
-@use 'sass:math';
+
 
 @function  fluid($max: 100, $min: 10) {
   $maxViewportWidth: 1920;
