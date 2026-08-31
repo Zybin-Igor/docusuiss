@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DocuSwiss — Swiss Administrative Assistance</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+/* ── TOKENS ─────────────────────────────────────────── */
+:root {
+  --ink:      #0f0f0f;
+  --ink-2:    #3a3a3a;
+  --ink-3:    #6b6b6b;
+  --rule:     #e0e0e0;
+  --bg:       #fafafa;
+  --bg-card:  #ffffff;
+  --accent:   #c8102e;   /* Swiss red */
+  --accent-2: #f5e6e9;
+  --mono:     #f0f0f0;
+  --radius:   4px;
+}
+
+/* ── RESET ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ── LAYOUT ─────────────────────────────────────────── */
+.container { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+
+/* ── NAV ─────────────────────────────────────────────── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(250,250,250,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Instrument Serif', serif;
+  font-size: 20px; letter-spacing: -0.3px;
+}
+.logo-cross {
+  width: 28px; height: 28px;
+  background: var(--accent);
+  border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.logo-cross svg { width: 16px; height: 16px; }
+.logo span { color: var(--accent); }
+.nav-links {
+  display: flex; align-items: center; gap: 4px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 14px; font-weight: 500; color: var(--ink-2);
+  padding: 6px 14px; border-radius: var(--radius);
+  transition: background .15s, color .15s;
+}
+.nav-links a:hover { background: var(--mono); color: var(--ink); }
+.nav-lang {
+  display: flex; align-items: center; gap: 2px;
+}
+.lang-btn {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; font-weight: 500;
+  padding: 4px 8px; border-radius: var(--radius);
+  border: 1px solid var(--rule);
+  cursor: pointer; background: transparent; color: var(--ink-3);
+  transition: all .15s; letter-spacing: 0.5px;
+}
+.lang-btn:hover { border-color: var(--ink); color: var(--ink); }
+.lang-btn.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+.nav-cta {
+  background: var(--accent); color: #fff !important;
+  padding: 8px 18px !important; border-radius: var(--radius) !important;
+  font-size: 14px !important; font-weight: 600 !important;
+  transition: opacity .15s !important;
+}
+.nav-cta:hover { opacity: 0.88 !important; background: var(--accent) !important; }
+
+/* ── HERO ─────────────────────────────────────────────── */
+.hero {
+  padding: 96px 0 80px;
+  border-bottom: 1px solid var(--rule);
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; font-weight: 500; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 28px;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: block; width: 20px; height: 1px;
+  background: var(--accent);
+}
+.hero h1 {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 400; line-height: 1.08;
+  letter-spacing: -1.5px;
+  color: var(--ink);
+  max-width: 800px;
+  margin-bottom: 28px;
+}
+.hero h1 em {
+  font-style: italic; color: var(--accent);
+}
+.hero-sub {
+  font-size: 18px; font-weight: 300;
+  color: var(--ink-2); max-width: 560px;
+  line-height: 1.65; margin-bottom: 48px;
+}
+.hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent); color: #fff;
+  font-size: 15px; font-weight: 600;
+  padding: 14px 28px; border-radius: var(--radius);
+  transition: opacity .15s, transform .15s;
+  border: none; cursor: pointer;
+}
+.btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: var(--ink);
+  font-size: 15px; font-weight: 500;
+  padding: 14px 24px; border-radius: var(--radius);
+  border: 1px solid var(--rule);
+  transition: border-color .15s, background .15s;
+  cursor: pointer;
+}
+.btn-secondary:hover { border-color: var(--ink); background: var(--mono); }
+.hero-stats {
+  display: flex; gap: 48px; margin-top: 64px;
+  padding-top: 40px; border-top: 1px solid var(--rule);
+  flex-wrap: wrap;
+}
+.stat-num {
+  font-family: 'Instrument Serif', serif;
+  font-size: 36px; line-height: 1;
+  color: var(--ink); margin-bottom: 4px;
+}
+.stat-num span { color: var(--accent); }
+.stat-label {
+  font-size: 13px; color: var(--ink-3); font-weight: 400;
+}
+
+/* ── MARQUEE / TRUST BAR ─────────────────────────────── */
+.trust-bar {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--rule);
+  overflow: hidden;
+}
+.trust-inner {
+  display: flex; gap: 48px; align-items: center;
+  white-space: nowrap;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--ink-3);
+}
+.trust-dot { color: var(--accent); font-size: 16px; }
+
+/* ── SERVICES ─────────────────────────────────────────── */
+.section { padding: 88px 0; }
+.section-header {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: 56px; gap: 24px; flex-wrap: wrap;
+}
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--ink-3);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 400; line-height: 1.12;
+  letter-spacing: -0.8px;
+}
+.section-link {
+  font-size: 14px; font-weight: 500; color: var(--ink-2);
+  display: flex; align-items: center; gap: 6px;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 2px;
+  transition: color .15s, border-color .15s;
+}
+.section-link:hover { color: var(--accent); border-color: var(--accent); }
+
+/* SERVICE CARDS */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  border: 1px solid var(--rule);
+  background: var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.service-card {
+  background: var(--bg-card);
+  padding: 36px 32px;
+  transition: background .2s;
+  cursor: default;
+  position: relative;
+}
+.service-card:hover { background: #fafafa; }
+.service-card.featured { background: var(--ink); }
+.service-card.featured:hover { background: #1a1a1a; }
+.service-icon {
+  width: 40px; height: 40px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 24px;
+  font-size: 18px;
+}
+.service-card.featured .service-icon {
+  border-color: rgba(255,255,255,0.15);
+}
+.service-tag {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 1px;
+  text-transform: uppercase;
+  background: var(--accent-2); color: var(--accent);
+  padding: 3px 8px; border-radius: 2px;
+  margin-bottom: 14px;
+}
+.service-card.featured .service-tag {
+  background: rgba(200,16,46,0.2); color: #ff6b7a;
+}
+.service-card h3 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 22px; font-weight: 400;
+  line-height: 1.25; margin-bottom: 12px;
+}
+.service-card.featured h3 { color: #fff; }
+.service-card p {
+  font-size: 14px; color: var(--ink-3); line-height: 1.65;
+}
+.service-card.featured p { color: rgba(255,255,255,0.55); }
+.service-arrow {
+  position: absolute; top: 36px; right: 32px;
+  font-size: 18px; color: var(--rule);
+  transition: color .2s, transform .2s;
+}
+.service-card:hover .service-arrow { color: var(--accent); transform: translate(2px,-2px); }
+.service-card.featured .service-arrow { color: rgba(255,255,255,0.2); }
+.service-card.featured:hover .service-arrow { color: #ff6b7a; }
+
+/* ── HOW IT WORKS ─────────────────────────────────────── */
+.how-section {
+  padding: 88px 0;
+  background: var(--ink);
+  border-top: 1px solid #1e1e1e;
+  border-bottom: 1px solid #1e1e1e;
+}
+.how-section .section-label { color: rgba(255,255,255,0.35); }
+.how-section .section-title { color: #fff; }
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 56px;
+}
+.step {
+  background: var(--ink);
+  padding: 36px 28px;
+  transition: background .2s;
+}
+.step:hover { background: #161616; }
+.step-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 1px; color: var(--accent);
+  margin-bottom: 20px;
+}
+.step h3 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 20px; font-weight: 400;
+  color: #fff; margin-bottom: 10px; line-height: 1.3;
+}
+.step p { font-size: 13.5px; color: rgba(255,255,255,0.45); line-height: 1.65; }
+
+/* ── DOCUMENTS ─────────────────────────────────────────── */
+.docs-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+}
+.doc-card {
+  display: flex; align-items: flex-start; gap: 20px;
+  padding: 24px 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  transition: border-color .2s, box-shadow .2s;
+  cursor: pointer;
+}
+.doc-card:hover {
+  border-color: var(--ink);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+.doc-file {
+  flex-shrink: 0;
+  width: 44px; height: 52px;
+  background: var(--mono);
+  border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; font-size: 20px;
+}
+.doc-file::after {
+  content: '';
+  position: absolute; top: 0; right: 0;
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 0;
+  border-color: transparent var(--bg) transparent transparent;
+}
+.doc-badge {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: var(--accent-2); color: var(--accent);
+  padding: 2px 7px; border-radius: 2px;
+  margin-bottom: 6px;
+}
+.doc-card h4 {
+  font-size: 15px; font-weight: 500; color: var(--ink);
+  margin-bottom: 4px; line-height: 1.3;
+}
+.doc-card p { font-size: 13px; color: var(--ink-3); }
+.doc-dl {
+  margin-left: auto; flex-shrink: 0;
+  width: 32px; height: 32px;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-3); font-size: 14px;
+  transition: all .15s;
+}
+.doc-card:hover .doc-dl { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+/* ── INFO BAND ────────────────────────────────────────── */
+.info-band {
+  background: var(--accent-2);
+  border-top: 1px solid #f0d0d5; border-bottom: 1px solid #f0d0d5;
+  padding: 28px 0;
+}
+.info-band-inner {
+  display: flex; align-items: center; gap: 16px;
+}
+.info-band-icon { font-size: 22px; }
+.info-band p { font-size: 14px; color: #6b1020; line-height: 1.55; }
+.info-band a { font-weight: 600; text-decoration: underline; }
+
+/* ── FAQ ──────────────────────────────────────────────── */
+.faq-list { max-width: 720px; }
+.faq-item {
+  border-bottom: 1px solid var(--rule);
+}
+.faq-q {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 0; cursor: pointer;
+  font-size: 16px; font-weight: 500; color: var(--ink);
+  gap: 16px;
+}
+.faq-q:hover { color: var(--accent); }
+.faq-toggle {
+  flex-shrink: 0; width: 28px; height: 28px;
+  border: 1px solid var(--rule); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; color: var(--ink-3);
+  transition: all .2s;
+}
+.faq-item.open .faq-toggle {
+  background: var(--ink); color: #fff; border-color: var(--ink); transform: rotate(45deg);
+}
+.faq-a {
+  display: none; padding-bottom: 20px;
+  font-size: 14px; color: var(--ink-2); line-height: 1.7;
+}
+.faq-item.open .faq-a { display: block; }
+
+/* ── CTA SECTION ──────────────────────────────────────── */
+.cta-section {
+  padding: 88px 0;
+  text-align: center;
+}
+.cta-inner {
+  max-width: 640px; margin: 0 auto;
+}
+.cta-section .section-label { text-align: center; margin-bottom: 20px; }
+.cta-section h2 {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 400; letter-spacing: -1px;
+  line-height: 1.1; margin-bottom: 20px;
+}
+.cta-section p {
+  font-size: 16px; color: var(--ink-3);
+  margin-bottom: 36px; line-height: 1.65;
+}
+.cta-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+
+/* ── FOOTER ───────────────────────────────────────────── */
+footer {
+  background: var(--ink);
+  border-top: 1px solid #1e1e1e;
+  padding: 64px 0 32px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px; margin-bottom: 56px;
+}
+.footer-logo {
+  font-family: 'Instrument Serif', serif;
+  font-size: 20px; color: #fff; margin-bottom: 12px;
+  display: flex; align-items: center; gap: 10px;
+}
+.footer-logo-cross {
+  width: 24px; height: 24px; background: var(--accent);
+  border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+}
+.footer-logo-cross svg { width: 13px; height: 13px; }
+.footer-desc { font-size: 13.5px; color: rgba(255,255,255,0.4); line-height: 1.65; }
+.footer-col h4 {
+  font-size: 11px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; color: rgba(255,255,255,0.25);
+  margin-bottom: 16px; font-family: 'DM Mono', monospace;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 10px; }
+.footer-col a {
+  font-size: 14px; color: rgba(255,255,255,0.55);
+  transition: color .15s;
+}
+.footer-col a:hover { color: #fff; }
+.footer-bottom {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.08);
+  flex-wrap: wrap; gap: 12px;
+}
+.footer-bottom p { font-size: 12.5px; color: rgba(255,255,255,0.25); }
+.footer-legal {
+  display: flex; gap: 20px;
+}
+.footer-legal a { font-size: 12.5px; color: rgba(255,255,255,0.25); transition: color .15s; }
+.footer-legal a:hover { color: rgba(255,255,255,0.6); }
+
+/* ── DISCLAIMER ──────────────────────────────────────── */
+.disclaimer {
+  background: #fff8e1;
+  border-top: 2px solid #f0c040;
+  padding: 14px 0;
+}
+.disclaimer p {
+  font-size: 12.5px; color: #5a4000;
+  text-align: center; line-height: 1.5;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────── */
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: repeat(2, 1fr); }
+  .docs-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+}
+@media (max-width: 600px) {
+  .container { padding: 0 20px; }
+  .hero { padding: 56px 0 48px; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 28px; }
+  .section-header { flex-direction: column; align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <div class="container">
+    <p>⚠️ This website provides general information for reference purposes only. It does not constitute legal advice. For complex situations, please consult a qualified professional.</p>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index-en.html" class="logo">
+        <div class="logo-cross">
+          <svg viewBox="0 0 16 16" fill="none">
+            <rect x="6" y="1" width="4" height="14" fill="white"/>
+            <rect x="1" y="6" width="14" height="4" fill="white"/>
+          </svg>
+        </div>
+        Docu<span>Swiss</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#documents">Documents</a></li>
+        <li><a href="#comment">How it works</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact" class="nav-cta">Get Started →</a></li>
+      </ul>
+      <div class="nav-lang">
+        <button class="lang-btn" onclick="changeLang('fr')">FR</button>
+        <button class="lang-btn" onclick="changeLang('de')">DE</button>
+        <button class="lang-btn active" onclick="changeLang('en')">EN</button>
+        <button class="lang-btn" onclick="changeLang('ru')">RU</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">Switzerland · Administrative Help</div>
+    <h1>Your administrative<br>procedures,<br><em>simplified.</em></h1>
+    <p class="hero-sub">Tax returns, appeals, criminal complaints, powers of attorney — we guide you step by step to complete and submit your documents in Switzerland.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+        File my tax return →
+      </button>
+      <button class="btn-secondary" onclick="document.getElementById('documents').scrollIntoView({behavior:'smooth'})">
+        Download a template
+      </button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">26<span>+</span></div>
+        <div class="stat-label">Cantons covered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">40<span>+</span></div>
+        <div class="stat-label">Document types</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4<span> languages</span></div>
+        <div class="stat-label">FR · DE · EN · RU</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100<span>%</span></div>
+        <div class="stat-label">Free & no registration</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-inner">
+      <span>Compliant with Swiss Law</span>
+      <span class="trust-dot">·</span>
+      <span>Tax declarations VD · GE · ZH · BE</span>
+      <span class="trust-dot">·</span>
+      <span>Appeals & Complaints</span>
+      <span class="trust-dot">·</span>
+      <span>Updated 2026 Documents</span>
+      <span class="trust-dot">·</span>
+      <span>Information in 4 Languages</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-label">What we offer</div>
+        <h2 class="section-title">All your documents<br>in one place</h2>
+      </div>
+      <a href="#documents" class="section-link">View all documents →</a>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card featured">
+        <div class="service-icon">🧾</div>
+        <div class="service-tag">Popular</div>
+        <div class="service-arrow">↗</div>
+        <h3>Tax Declaration</h3>
+        <p>Complete your cantonal and federal tax return step by step. Automatic calculation, integrated verification.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">✉️</div>
+        <div class="service-tag">Legal</div>
+        <div class="service-arrow">↗</div>
+        <h3>Appeals & Claims</h3>
+        <p>Challenge an administrative decision, a fine, or a judgment. Templates fully compliant with legal deadlines.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📋</div>
+        <div class="service-tag">Criminal</div>
+        <div class="service-arrow">↗</div>
+        <h3>Criminal Complaint</h3>
+        <p>File a criminal complaint with the Public Prosecutor's Office. Pre-filled forms with clear instructions.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🤝</div>
+        <div class="service-tag">Civil</div>
+        <div class="service-arrow">↗</div>
+        <h3>Power of Attorney</h3>
+        <p>Draft a power of attorney to represent someone in their administrative or business affairs.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <div class="service-tag">Association</div>
+        <div class="service-arrow">↗</div>
+        <h3>Association Setup</h3>
+        <p>Articles of association, founding minutes, registration application — everything to form your Verein in Switzerland.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📚</div>
+        <div class="service-tag">Information</div>
+        <div class="service-arrow">↗</div>
+        <h3>Legal Knowledge Base</h3>
+        <p>Statutory provisions, case law, statutory limits — an accessible, up-to-date legal library.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="comment">
+  <div class="container">
+    <div class="section-label">Process</div>
+    <h2 class="section-title">Simple. Fast. Reliable.</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">STEP 01</div>
+        <h3>Select your document</h3>
+        <p>Choose the procedure type from our catalog: tax, legal, or administrative.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">STEP 02</div>
+        <h3>Fill in the form</h3>
+        <p>Our assistant asks the necessary questions. Fields are populated automatically.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">STEP 03</div>
+        <h3>Review and download</h3>
+        <p>Review your generated document, make edits if needed, then download in PDF or DOCX.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">STEP 04</div>
+        <h3>Submit with confidence</h3>
+        <p>Send directly to the relevant authority. We provide the address and statutory deadlines.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO BAND -->
+<div class="info-band">
+  <div class="container">
+    <div class="info-band-inner">
+      <div class="info-band-icon">⏱️</div>
+      <p><strong>Appeal deadline: 30 days.</strong> Under Swiss law, the time limit for appealing an administrative decision is generally <strong>30 days</strong> from notification. Beyond this period, the decision becomes final. <a href="#">Learn more →</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- DOCUMENTS -->
+<section class="section" id="documents">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Templates & Forms</div>
+        <h2 class="section-title">Ready-to-use<br>documents</h2>
+      </div>
+      <a href="#" class="section-link">View full library →</a>
+    </div>
+    <div class="docs-grid">
+
+      <div class="doc-card">
+        <div class="doc-file">📄</div>
+        <div>
+          <span class="doc-badge">Tax · VD</span>
+          <h4>Tax Return — Canton of Vaud</h4>
+          <p>Form 2025 — individuals, income, and wealth</p>
+        </div>
+        <div class="doc-dl">↓</div>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-file">📄</div>
+        <div>
+          <span class="doc-badge">Legal</span>
+          <h4>Appeal Letter against a Decision</h4>
+          <p>Universal template — valid for any Swiss canton</p>
+        </div>
+        <div class="doc-dl">↓</div>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-file">📄</div>
+        <div>
+          <span class="doc-badge">Civil</span>
+          <h4>General Power of Attorney — Vehicle</h4>
+          <p>For sale, transfer, and registration of a vehicle</p>
+        </div>
+        <div class="doc-dl">↓</div>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-file">📄</div>
+        <div>
+          <span class="doc-badge">Association</span>
+          <h4>Association Articles (Verein)</h4>
+          <p>Compliant with Art. 60–79 CC — bilingual FR/DE</p>
+        </div>
+        <div class="doc-dl">↓</div>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-file">📄</div>
+        <div>
+          <span class="doc-badge">Criminal</span>
+          <h4>Criminal Complaint — Public Prosecutor</h4>
+          <p>Template for filing a complaint under the Swiss CPC</p>
+        </div>
+        <div class="doc-dl">↓</div>
+      </div>
+
+      <div class="doc-card">
+        <div class="doc-file">📄</div>
+        <div>
+          <span class="doc-badge">Tax · GE</span>
+          <h4>Tax Return — Canton of Geneva</h4>
+          <p>Form 2025 — residents and cross-border workers</p>
+        </div>
+        <div class="doc-dl">↓</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="padding-top:0;">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Frequently Asked Questions</div>
+        <h2 class="section-title">Do you have<br>questions?</h2>
+      </div>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item open">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Does this website replace a tax advisor or lawyer?
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">No. DocuSwiss provides general information and document templates for guidance only. This site does not constitute personalized legal or tax advice. For complex or contentious situations, we recommend consulting a qualified professional (fiduciary, lawyer, notary).</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Are the generated documents legally valid?
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">Our templates are based on statutory laws in force in Switzerland. However, their validity depends on the accuracy of the information provided and your specific case. Always review the contents before submitting any document to an authority.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Can I submit my tax return directly through this website?
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">Currently, the site helps you prepare and complete your return. Submission is done via your canton's official portal (e.g., VaudTax, GeTax, ZHprivateTax). We guide you to the right platform and provide instructions.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Is the service free?
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">Yes, access to information, legal articles, and basic templates is completely free. Advanced automated completion tools may be offered in a premium version in the future.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          In which cantons is the website available?
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">DocuSwiss currently covers the cantons of Vaud, Geneva, Zurich, and Bern for tax returns. Legal document templates (appeals, complaints, powers of attorney) are valid throughout Switzerland. More cantons will be added gradually.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact" style="background: var(--mono);">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="section-label">Get Started</div>
+      <h2>Ready to simplify your paperwork?</h2>
+      <p>Select your document, answer a few questions — your completed form will be ready in minutes.</p>
+      <div class="cta-actions">
+        <button class="btn-primary">File my tax return →</button>
+        <button class="btn-secondary">Browse documents</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <div class="footer-logo-cross">
+            <svg viewBox="0 0 13 13" fill="none">
+              <rect x="4.5" y="0" width="4" height="13" fill="white"/>
+              <rect x="0" y="4.5" width="13" height="4" fill="white"/>
+            </svg>
+          </div>
+          DocuSwiss
+        </div>
+        <p class="footer-desc">Administrative assistance in Switzerland. Legal information, document templates, and automated filling tools.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Tax Declaration</a></li>
+          <li><a href="#">Appeals</a></li>
+          <li><a href="#">Criminal Complaint</a></li>
+          <li><a href="#">Power of Attorney</a></li>
+          <li><a href="#">Association</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Cantons</h4>
+        <ul>
+          <li><a href="#">Vaud (VD)</a></li>
+          <li><a href="#">Geneva (GE)</a></li>
+          <li><a href="#">Zurich (ZH)</a></li>
+          <li><a href="#">Bern (BE)</a></li>
+          <li><a href="#">All Cantons →</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Information</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Legal Notice</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 DocuSwiss. This website is not affiliated with any Swiss public authority.</p>
+      <div class="footer-legal">
+        <a href="#">Legal Notice</a>
+        <a href="#">Cookies</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+function changeLang(lang) {
+  const pages = {
+    'fr': 'index.html',
+    'de': 'index-de.html',
+    'en': 'index-en.html',
+    'ru': 'index-ru.html'
+  };
+  if (pages[lang]) {
+    window.location.href = pages[lang];
+  }
+}
+
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  nav.style.boxShadow = window.scrollY > 10
+    ? '0 1px 24px rgba(0,0,0,0.08)' : 'none';
+});
+</script>
+</body>
+</html>
