@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>DocuSwiss — Swiss Administrative Assistance</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<style>
+<!-- <style>
 /* ── TOKENS ─────────────────────────────────────────── */
 :root {
   --ink:      #0f0f0f;
@@ -501,7 +501,9 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
-</style>
+</style> -->
+<link rel="stylesheet" href="./styles/main.css">
+<script src="./scripts/main.js" type="module" defer></script>
 </head>
 <body>
 
@@ -516,7 +518,7 @@ footer {
 <nav>
   <div class="container">
     <div class="nav-inner">
-      <a href="index-en.html" class="logo">
+      <a href="./en.html" class="logo">
         <div class="logo-cross">
           <svg viewBox="0 0 16 16" fill="none">
             <rect x="6" y="1" width="4" height="14" fill="white"/>
@@ -536,7 +538,7 @@ footer {
         <button class="lang-btn" onclick="changeLang('fr')">FR</button>
         <button class="lang-btn" onclick="changeLang('de')">DE</button>
         <button class="lang-btn active" onclick="changeLang('en')">EN</button>
-        <button class="lang-btn" onclick="changeLang('ru')">RU</button>
+        <button class="lang-btn" onclick="changeLang('ru')">UА</button>
       </div>
     </div>
   </div>
@@ -567,7 +569,7 @@ footer {
       </div>
       <div class="stat-item">
         <div class="stat-num">4<span> languages</span></div>
-        <div class="stat-label">FR · DE · EN · RU</div>
+        <div class="stat-label">FR · DE · EN · UА</div>
       </div>
       <div class="stat-item">
         <div class="stat-num">100<span>%</span></div>
@@ -902,31 +904,6 @@ footer {
   </div>
 </footer>
 
-<script>
-function toggleFaq(el) {
-  const item = el.parentElement;
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-  if (!isOpen) item.classList.add('open');
-}
 
-function changeLang(lang) {
-  const pages = {
-    'fr': 'index.html',
-    'de': 'index-de.html',
-    'en': 'index-en.html',
-    'ru': 'index-ru.html'
-  };
-  if (pages[lang]) {
-    window.location.href = pages[lang];
-  }
-}
-
-window.addEventListener('scroll', () => {
-  const nav = document.querySelector('nav');
-  nav.style.boxShadow = window.scrollY > 10
-    ? '0 1px 24px rgba(0,0,0,0.08)' : 'none';
-});
-</script>
 </body>
 </html>
