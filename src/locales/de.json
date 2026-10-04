@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "title": "DocuSwiss — Hilfe bei Behördengängen in der Schweiz",
+    "description": "Verstehen Sie Ihre Rechte und bereiten Sie Ihre Dokumente in der Schweiz vor: Betreibung, Bussen, Miete, Krankenkasse, Arbeit, Steuern. Auf Deutsch, Französisch, Englisch und Ukrainisch."
+  },
+  "disclaimer": "⚠️ DocuSwiss bietet allgemeine Informationen und Hilfe beim Erstellen von Dokumenten. Wir sind keine Anwaltskanzlei. In komplexen Fällen wenden Sie sich bitte an eine zugelassene Anwältin oder einen zugelassenen Anwalt.",
+  "nav": {
+    "services": "Themen",
+    "documents": "Dokumente",
+    "how": "So funktioniert's",
+    "faq": "FAQ",
+    "menuButton": "Menü öffnen"
+  },
+  "hero": {
+    "eyebrow": "Schweiz · Hilfe im Behördenalltag",
+    "title": "Ihre Behördengänge,<br /><em>einfach gemacht.</em>",
+    "subtitle": "Betreibung, Busse, Miete, Krankenkasse, Arbeitgeber, Steuern — wir erklären Ihnen Ihre Rechte und Fristen und helfen Ihnen, den richtigen Brief zu schreiben.",
+    "ctaPrimary": "Dokumente ansehen →",
+    "ctaSecondary": "So funktioniert's",
+    "stat1": "Sprachen: FR · DE · EN · UA",
+    "stat2": "kostenlose Grundvorlagen",
+    "stat3": "für den Rechtsvorschlag gegen eine Betreibung",
+    "stat3unit": " Tage"
+  },
+  "trust": {
+    "item1": "Auf Basis des Schweizer Bundesrechts",
+    "item2": "Fristen verständlich erklärt",
+    "item3": "Von einem Juristen erstellt",
+    "item4": "Informationen in 4 Sprachen"
+  },
+  "services": {
+    "label": "Unsere Themen",
+    "title": "Die häufigsten<br />Situationen",
+    "link": "Dokumente ansehen →",
+    "tagFirst": "Erstes Dokument",
+    "tagSoon": "Demnächst",
+    "debt": {
+      "title": "Betreibung und Schulden",
+      "text": "Sie haben einen Zahlungsbefehl erhalten? Verstehen Sie Ihre Möglichkeiten und erheben Sie innert 10 Tagen Rechtsvorschlag."
+    },
+    "fine": {
+      "title": "Bussen und Strafbefehle",
+      "text": "Einen Strafbefehl oder eine Busse anfechten: Fristen, Form der Einsprache und Folgen."
+    },
+    "rent": {
+      "title": "Wohnen und Miete",
+      "text": "Mietzinssenkung, Mängel in der Wohnung, Rückgabe der Mietkaution, Kündigung."
+    },
+    "health": {
+      "title": "Krankenkasse",
+      "text": "Krankenkasse wechseln, Zusatzversicherung kündigen, Prämienverbilligung beantragen."
+    },
+    "work": {
+      "title": "Arbeit",
+      "text": "Arbeitszeugnis, ausstehender Lohn, Kündigung: Ihre Rechte kennen und an den Arbeitgeber schreiben."
+    },
+    "tax": {
+      "title": "Steuern",
+      "text": "Fristerstreckung, Einsprache gegen die Veranlagung, Korrektur der Quellensteuer."
+    }
+  },
+  "how": {
+    "label": "Ablauf",
+    "title": "Einfach. Klar. Fristgerecht.",
+    "step1": {
+      "num": "SCHRITT 01",
+      "title": "Situation beschreiben",
+      "text": "Wählen Sie das Thema und beantworten Sie einige einfache Fragen."
+    },
+    "step2": {
+      "num": "SCHRITT 02",
+      "title": "Rechte verstehen",
+      "text": "Wir erklären Ihre Möglichkeiten und berechnen die Frist, die Sie einhalten müssen."
+    },
+    "step3": {
+      "num": "SCHRITT 03",
+      "title": "Brief vorbereiten",
+      "text": "Das Dokument wird aus Ihren Antworten erstellt. Prüfen Sie es und laden Sie es als PDF herunter."
+    },
+    "step4": {
+      "num": "SCHRITT 04",
+      "title": "An die richtige Stelle senden",
+      "text": "Wir sagen Ihnen, an welche Behörde Sie es senden und wie Sie den Versand nachweisen."
+    }
+  },
+  "infoBand": "<strong>Zahlungsbefehl erhalten?</strong> Sie haben <strong>10 Tage</strong> ab Zustellung Zeit, Rechtsvorschlag zu erheben (Art. 74 SchKG). Danach kann der Gläubiger die Betreibung fortsetzen.",
+  "docs": {
+    "label": "Dokumente in Vorbereitung",
+    "title": "Unsere ersten<br />Dokumente",
+    "status": "In Vorbereitung",
+    "d1": {
+      "tag": "Betreibung · SchKG",
+      "title": "Rechtsvorschlag gegen einen Zahlungsbefehl",
+      "text": "Eine Betreibung ganz oder teilweise bestreiten.",
+      "deadline": "Frist: 10 Tage · Art. 74 SchKG"
+    },
+    "d2": {
+      "tag": "Strafrecht · StPO",
+      "title": "Einsprache gegen einen Strafbefehl",
+      "text": "Eine Busse oder Verurteilung per Strafbefehl anfechten.",
+      "deadline": "Frist: 10 Tage · Art. 354 StPO"
+    },
+    "d3": {
+      "tag": "Miete · OR",
+      "title": "Herabsetzungsbegehren (Mietzinssenkung)",
+      "text": "Wenn der hypothekarische Referenzzinssatz sinkt.",
+      "deadline": "Grundlage: Art. 270a OR"
+    },
+    "d4": {
+      "tag": "Miete · OR",
+      "title": "Mängelrüge an den Vermieter",
+      "text": "Einen Mangel schriftlich melden und die Behebung verlangen.",
+      "deadline": "Grundlage: Art. 259a OR"
+    },
+    "d5": {
+      "tag": "Versicherung · KVG",
+      "title": "Wechsel der Krankenkasse",
+      "text": "Die Grundversicherung auf Ende Jahr kündigen.",
+      "deadline": "Frist: in der Regel 30. November · Art. 7 KVG"
+    },
+    "d6": {
+      "tag": "Arbeit · OR",
+      "title": "Anfrage für ein Arbeitszeugnis",
+      "text": "Ein Vollzeugnis oder eine Arbeitsbestätigung verlangen.",
+      "deadline": "Grundlage: Art. 330a OR"
+    }
+  },
+  "faq": {
+    "label": "Häufige Fragen",
+    "title": "Haben Sie<br />Fragen?",
+    "q1": "Ersetzt DocuSwiss eine Anwältin oder einen Anwalt?",
+    "a1": "Nein. DocuSwiss bietet allgemeine Informationen und hilft Ihnen, einfache Dokumente vorzubereiten. Wir sind keine Anwaltskanzlei und bieten keine individuelle Rechtsberatung. Wenn Ihre Situation komplex ist, viel Geld auf dem Spiel steht oder bereits ein Gerichtsverfahren läuft, wenden Sie sich an eine zugelassene Anwältin oder einen zugelassenen Anwalt.",
+    "q2": "Ist der Service kostenlos?",
+    "a2": "Informationen und Grundvorlagen sind kostenlos. Später bieten wir optional eine Prüfung Ihres Dokuments durch einen Juristen zu einem im Voraus bekannten Festpreis an.",
+    "q3": "In welchen Kantonen kann ich die Dokumente verwenden?",
+    "a3": "Unsere ersten Dokumente beruhen auf Bundesrecht (SchKG, StPO, OR, KVG) und gelten daher in der ganzen Schweiz. Nur die Adressen der Behörden unterscheiden sich je nach Kanton — wir nennen Ihnen die richtige.",
+    "q4": "Was passiert mit meinen Daten?",
+    "a4": "Wir erheben nur, was für die Vorbereitung Ihres Dokuments nötig ist. Die genauen Regeln veröffentlichen wir in unserer Datenschutzerklärung gemäss dem Schweizer Datenschutzgesetz (DSG).",
+    "q5": "Wann sind die Dokumente verfügbar?",
+    "a5": "Die Website befindet sich im Aufbau. Als Erstes erscheint der Rechtsvorschlag gegen einen Zahlungsbefehl, danach folgen die weiteren Dokumente nacheinander."
+  },
+  "cta": {
+    "label": "Loslegen",
+    "title": "Ein Behördenbrief beunruhigt Sie?",
+    "text": "Finden Sie zuerst heraus, um welches Dokument es geht und welche Frist gilt. Beim Rest helfen wir Ihnen Schritt für Schritt.",
+    "primary": "Dokumente ansehen →",
+    "secondary": "FAQ lesen"
+  },
+  "footer": {
+    "desc": "Verständliche Rechtsinformationen und Hilfe bei Dokumenten für Behörden in der Schweiz.",
+    "topics": "Themen",
+    "info": "Informationen",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "notice": "Diese Website ist mit keiner Behörde verbunden und ist keine Anwaltskanzlei."
+  }
+}

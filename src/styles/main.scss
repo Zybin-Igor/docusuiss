@@ -1,0 +1,26 @@
+// ── ГЛАВНЫЙ ФАЙЛ СТИЛЕЙ ─────────────────────────────────
+// Здесь только подключения. Сами стили — в отдельных файлах.
+// Порядок важен: сначала база, потом компоненты, потом блоки страницы.
+
+// База
+@use 'base/normalize';
+@use 'base/variables';
+@use 'base/globals';
+@use 'base/utils';
+
+// Переиспользуемые компоненты
+@use 'components/button';
+@use 'components/section';
+
+// Блоки страницы (сверху вниз, как на сайте)
+@use 'blocks/disclaimer';
+@use 'blocks/header';
+@use 'blocks/hero';
+@use 'blocks/trust-bar';
+@use 'blocks/services';
+@use 'blocks/steps';
+@use 'blocks/info-band';
+@use 'blocks/documents';
+@use 'blocks/faq';
+@use 'blocks/cta';
+@use 'blocks/footer';

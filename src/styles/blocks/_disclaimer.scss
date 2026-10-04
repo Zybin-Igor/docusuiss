@@ -1,0 +1,17 @@
+@use '../helpers' as *;
+
+// ── ПРЕДУПРЕЖДЕНИЕ ВВЕРХУ СТРАНИЦЫ ──────────────────────
+
+.disclaimer {
+  padding-block: rem(12);
+  background-color: #fff8e1;
+  border-top: 2px solid #f0c040;
+
+  &__text {
+    margin: 0;
+    font-size: rem(12.5);
+    line-height: 1.5;
+    text-align: center;
+    color: #5a4000;
+  }
+}

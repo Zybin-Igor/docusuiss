@@ -1,0 +1,228 @@
+@use '../helpers' as *;
+
+// ── ШАПКА САЙТА ─────────────────────────────────────────
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(250, 250, 250, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+  transition: box-shadow var(--transition-duration);
+
+  // Класс добавляет JS, когда страницу прокрутили вниз
+  &.is-scrolled {
+    box-shadow: 0 1px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(16);
+    height: var(--header-height);
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: rem(16);
+
+    // На планшете и телефоне меню превращается в выезжающую панель
+    // position: absolute (а не fixed): у шапки есть backdrop-filter,
+    // а он «ломает» fixed у дочерних элементов. Шапка липкая (sticky),
+    // поэтому панель всегда появляется ровно под ней.
+    @include tablet {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      height: calc(100dvh - var(--header-height));
+      overflow-y: auto;
+      flex-direction: column;
+      align-items: stretch;
+      gap: rem(32);
+      padding: rem(32) var(--container-padding-x);
+      background-color: var(--bg);
+      @include hide;
+      translate: 0 rem(-12);
+      transition:
+        opacity var(--transition-duration),
+        visibility var(--transition-duration),
+        translate var(--transition-duration);
+
+      &.is-open {
+        @include show;
+        translate: 0 0;
+      }
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    align-items: center;
+    gap: rem(4);
+    margin: 0;
+    list-style: none;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__nav-link {
+    display: block;
+    padding: rem(6) rem(14);
+    font-size: rem(14);
+    font-weight: 500;
+    color: var(--ink-2);
+    border-radius: var(--radius);
+    transition:
+      background-color var(--transition-duration),
+      color var(--transition-duration);
+
+    @include hover {
+      color: var(--ink);
+      background-color: var(--mono);
+    }
+
+    @include tablet {
+      padding: rem(12) 0;
+      font-size: rem(20);
+      border-bottom: 1px solid var(--rule);
+      border-radius: 0;
+    }
+  }
+}
+
+// ── ЛОГОТИП ──
+.logo {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: rem(10);
+  font-family: var(--font-serif);
+  font-size: rem(21);
+  letter-spacing: -0.3px;
+
+  &__mark {
+    @include flex-center;
+    @include square(rem(28));
+    flex-shrink: 0;
+    background-color: var(--accent);
+    border-radius: 3px;
+
+    svg {
+      @include square(rem(16));
+    }
+  }
+
+  &__accent {
+    color: var(--accent);
+  }
+
+  // Вариант для тёмного подвала
+  &--light {
+    color: #fff;
+  }
+}
+
+// ── ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ ──
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: rem(2);
+
+  &__btn {
+    padding: rem(4) rem(8);
+    font-family: var(--font-mono);
+    font-size: rem(11);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--ink-3);
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all var(--transition-duration);
+
+    @include hover {
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    &.is-active {
+      color: #fff;
+      background-color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    @include tablet {
+      padding: rem(8) rem(14);
+      font-size: rem(13);
+    }
+  }
+}
+
+// ── КНОПКА «БУРГЕР» (только на планшете и телефоне) ──
+.burger {
+  display: none;
+  position: relative;
+  @include square(rem(40));
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  cursor: pointer;
+
+  @include tablet {
+    display: block;
+  }
+
+  // Три полоски рисуем псевдоэлементами и одним span
+  &__line,
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: rem(11);
+    width: rem(16);
+    height: 2px;
+    background-color: var(--ink);
+    transition:
+      translate var(--transition-duration),
+      rotate var(--transition-duration),
+      opacity var(--transition-duration);
+  }
+
+  &::before {
+    top: rem(13);
+  }
+
+  &__line {
+    top: rem(18);
+  }
+
+  &::after {
+    top: rem(23);
+  }
+
+  // Открытое состояние — превращаемся в крестик
+  &.is-active {
+    &::before {
+      translate: 0 rem(5);
+      rotate: 45deg;
+    }
+
+    &::after {
+      translate: 0 rem(-5);
+      rotate: -45deg;
+    }
+
+    .burger__line {
+      opacity: 0;
+    }
+  }
+}

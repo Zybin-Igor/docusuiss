@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "title": "DocuSwiss — Aide aux démarches administratives en Suisse",
+    "description": "Comprenez vos droits et préparez vos documents administratifs en Suisse : poursuites, amendes, bail, caisse maladie, travail, impôts. En français, allemand, anglais et ukrainien."
+  },
+  "disclaimer": "⚠️ DocuSwiss fournit des informations générales et une aide à la préparation de documents. Ce n'est pas une étude d'avocats. Pour une situation complexe, consultez un avocat autorisé.",
+  "nav": {
+    "services": "Thèmes",
+    "documents": "Documents",
+    "how": "Comment ça marche",
+    "faq": "FAQ",
+    "menuButton": "Ouvrir le menu"
+  },
+  "hero": {
+    "eyebrow": "Suisse · Aide administrative",
+    "title": "Vos démarches<br />administratives,<br /><em>simplifiées.</em>",
+    "subtitle": "Poursuite, amende, loyer, caisse maladie, employeur, impôts — nous vous expliquons vos droits et les délais, et vous aidons à préparer la bonne lettre.",
+    "ctaPrimary": "Voir les documents →",
+    "ctaSecondary": "Comment ça marche",
+    "stat1": "langues : FR · DE · EN · UA",
+    "stat2": "modèles de base gratuits",
+    "stat3": "pour faire opposition à une poursuite",
+    "stat3unit": " j."
+  },
+  "trust": {
+    "item1": "Basé sur le droit fédéral suisse",
+    "item2": "Délais expliqués clairement",
+    "item3": "Préparé par un juriste",
+    "item4": "Informations en 4 langues"
+  },
+  "services": {
+    "label": "Ce que nous couvrons",
+    "title": "Les situations<br />les plus fréquentes",
+    "link": "Voir les documents →",
+    "tagFirst": "Premier document",
+    "tagSoon": "Bientôt",
+    "debt": {
+      "title": "Poursuites et dettes",
+      "text": "Vous avez reçu un commandement de payer ? Comprenez vos options et faites opposition dans le délai de 10 jours."
+    },
+    "fine": {
+      "title": "Amendes et ordonnances pénales",
+      "text": "Contester une ordonnance pénale ou une amende : délais, forme de l'opposition et conséquences."
+    },
+    "rent": {
+      "title": "Logement et bail",
+      "text": "Baisse de loyer, défauts dans l'appartement, restitution de la garantie, résiliation."
+    },
+    "health": {
+      "title": "Caisse maladie",
+      "text": "Changer de caisse, résilier une assurance complémentaire, demander un subside pour les primes."
+    },
+    "work": {
+      "title": "Travail",
+      "text": "Certificat de travail, salaire impayé, licenciement : connaître vos droits et écrire à l'employeur."
+    },
+    "tax": {
+      "title": "Impôts",
+      "text": "Demande de prolongation, réclamation contre une taxation, correction de l'impôt à la source."
+    }
+  },
+  "how": {
+    "label": "Processus",
+    "title": "Simple. Clair. Dans les délais.",
+    "step1": {
+      "num": "ÉTAPE 01",
+      "title": "Décrivez votre situation",
+      "text": "Choisissez le thème et répondez à quelques questions simples."
+    },
+    "step2": {
+      "num": "ÉTAPE 02",
+      "title": "Comprenez vos droits",
+      "text": "Nous vous expliquons les options possibles et calculons le délai à respecter."
+    },
+    "step3": {
+      "num": "ÉTAPE 03",
+      "title": "Préparez votre lettre",
+      "text": "Le document est rempli à partir de vos réponses. Relisez-le et téléchargez-le en PDF."
+    },
+    "step4": {
+      "num": "ÉTAPE 04",
+      "title": "Envoyez au bon endroit",
+      "text": "Nous vous indiquons à quelle autorité l'envoyer et comment prouver l'envoi."
+    }
+  },
+  "infoBand": "<strong>Commandement de payer reçu ?</strong> Vous avez <strong>10 jours</strong> dès sa notification pour faire opposition (art. 74 LP). Passé ce délai, le créancier peut continuer la poursuite.",
+  "docs": {
+    "label": "Documents en préparation",
+    "title": "Nos premiers<br />documents",
+    "status": "En préparation",
+    "d1": {
+      "tag": "Poursuites · LP",
+      "title": "Opposition au commandement de payer",
+      "text": "Contester une poursuite, totalement ou en partie.",
+      "deadline": "Délai : 10 jours · art. 74 LP"
+    },
+    "d2": {
+      "tag": "Pénal · CPP",
+      "title": "Opposition à une ordonnance pénale",
+      "text": "Contester une amende ou une condamnation par ordonnance pénale.",
+      "deadline": "Délai : 10 jours · art. 354 CPP"
+    },
+    "d3": {
+      "tag": "Bail · CO",
+      "title": "Demande de baisse de loyer",
+      "text": "Quand le taux hypothécaire de référence baisse.",
+      "deadline": "Base : art. 270a CO"
+    },
+    "d4": {
+      "tag": "Bail · CO",
+      "title": "Avis de défauts au bailleur",
+      "text": "Signaler par écrit un défaut et demander sa réparation.",
+      "deadline": "Base : art. 259a CO"
+    },
+    "d5": {
+      "tag": "Assurance · LAMal",
+      "title": "Changement de caisse maladie",
+      "text": "Résilier l'assurance de base pour la fin de l'année.",
+      "deadline": "Délai : le 30 novembre en général · art. 7 LAMal"
+    },
+    "d6": {
+      "tag": "Travail · CO",
+      "title": "Demande de certificat de travail",
+      "text": "Obtenir un certificat complet ou une attestation de travail.",
+      "deadline": "Base : art. 330a CO"
+    }
+  },
+  "faq": {
+    "label": "Questions fréquentes",
+    "title": "Vous avez des<br />questions ?",
+    "q1": "DocuSwiss remplace-t-il un avocat ?",
+    "a1": "Non. DocuSwiss fournit des informations générales et vous aide à préparer des documents simples. Ce n'est pas une étude d'avocats et ce n'est pas un conseil juridique personnalisé. Si votre situation est complexe, si beaucoup d'argent est en jeu ou si une procédure judiciaire est en cours, consultez un avocat autorisé.",
+    "q2": "Le service est-il gratuit ?",
+    "a2": "Les informations et les modèles de base sont gratuits. Plus tard, nous proposerons en option une vérification de votre document par un juriste, contre un prix fixe annoncé à l'avance.",
+    "q3": "Dans quels cantons puis-je utiliser les documents ?",
+    "a3": "Nos premiers documents reposent sur le droit fédéral (LP, CPP, CO, LAMal) et s'utilisent donc dans toute la Suisse. Seules les adresses des autorités changent selon le canton — nous vous indiquerons la bonne.",
+    "q4": "Que faites-vous de mes données ?",
+    "a4": "Nous ne collectons que ce qui est nécessaire pour préparer votre document. Les règles exactes seront publiées dans notre politique de confidentialité, conformément à la loi suisse sur la protection des données (LPD).",
+    "q5": "Quand les documents seront-ils disponibles ?",
+    "a5": "Le site est en cours de construction. Le premier document — l'opposition au commandement de payer — sera publié en premier, puis les autres, un par un."
+  },
+  "cta": {
+    "label": "Commencer",
+    "title": "Un courrier officiel vous inquiète ?",
+    "text": "Commencez par identifier le type de document et le délai. Nous vous aidons à faire le reste, étape par étape.",
+    "primary": "Voir les documents →",
+    "secondary": "Lire la FAQ"
+  },
+  "footer": {
+    "desc": "Informations juridiques claires et aide à la préparation de documents administratifs en Suisse.",
+    "topics": "Thèmes",
+    "info": "Informations",
+    "about": "À propos",
+    "contact": "Contact",
+    "imprint": "Mentions légales",
+    "privacy": "Confidentialité",
+    "notice": "Ce site n'est affilié à aucune autorité publique et n'est pas une étude d'avocats."
+  }
+}

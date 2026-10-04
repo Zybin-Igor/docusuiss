@@ -1,0 +1,36 @@
+@use '../helpers' as *;
+
+// ── ПОЛОСА ДОВЕРИЯ ──────────────────────────────────────
+
+.trust-bar {
+  padding-block: rem(20);
+  border-bottom: 1px solid var(--rule);
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: rem(12) rem(40);
+    margin: 0;
+    list-style: none;
+    font-family: var(--font-mono);
+    font-size: rem(11);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: rem(10);
+
+    // Красная точка перед каждым пунктом
+    &::before {
+      content: '';
+      @include square(rem(5));
+      background-color: var(--accent);
+      border-radius: 50%;
+    }
+  }
+}

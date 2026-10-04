@@ -1,0 +1,76 @@
+@use '../helpers' as *;
+
+// ── ЧАСТЫЕ ВОПРОСЫ (АККОРДЕОН) ──────────────────────────
+
+.faq {
+  max-width: rem(720);
+
+  &__item {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  // Вопрос — это кнопка: так аккордеон работает и с клавиатуры
+  &__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(16);
+    width: 100%;
+    padding: rem(22) 0;
+    font-size: rem(16);
+    font-weight: 500;
+    text-align: left;
+    color: var(--ink);
+    background: none;
+    border: 0;
+    cursor: pointer;
+    transition: color var(--transition-duration);
+
+    @include hover {
+      color: var(--accent);
+    }
+  }
+
+  &__toggle {
+    @include flex-center;
+    @include square(rem(28));
+    flex-shrink: 0;
+    font-size: rem(18);
+    color: var(--ink-3);
+    border: 1px solid var(--rule);
+    border-radius: 50%;
+    transition: all var(--transition-duration);
+  }
+
+  // Ответ плавно раскрывается: анимируем grid-template-rows от 0fr к 1fr
+  &__answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--transition-duration);
+  }
+
+  &__answer-inner {
+    overflow: hidden;
+    font-size: rem(14);
+    line-height: 1.7;
+    color: var(--ink-2);
+
+    p {
+      margin: 0 0 rem(20);
+    }
+  }
+
+  // Открытое состояние (класс .is-open ставит JS)
+  &__item.is-open {
+    .faq__toggle {
+      color: #fff;
+      background-color: var(--ink);
+      border-color: var(--ink);
+      rotate: 45deg;
+    }
+
+    .faq__answer {
+      grid-template-rows: 1fr;
+    }
+  }
+}

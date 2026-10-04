@@ -1,0 +1,27 @@
+@use '../helpers' as *;
+
+// ── ИНФО-ПОЛОСА С ВАЖНЫМ СРОКОМ ─────────────────────────
+
+.info-band {
+  padding-block: rem(28);
+  background-color: var(--accent-2);
+  border-block: 1px solid #f0d0d5;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: rem(16);
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    font-size: rem(22);
+  }
+
+  &__text {
+    margin: 0;
+    font-size: rem(14);
+    line-height: 1.55;
+    color: #6b1020;
+  }
+}

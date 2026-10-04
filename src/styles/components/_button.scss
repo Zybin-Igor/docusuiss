@@ -1,0 +1,48 @@
+@use '../helpers' as *;
+
+// ── КНОПКИ ──────────────────────────────────────────────
+// Общая основа + модификаторы: .btn--primary, .btn--secondary
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(8);
+  padding: rem(14) rem(28);
+  font-size: rem(15);
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition:
+    opacity var(--transition-duration),
+    transform var(--transition-duration),
+    background-color var(--transition-duration),
+    border-color var(--transition-duration);
+
+  &--primary {
+    color: #fff;
+    background-color: var(--accent);
+
+    @include hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+  }
+
+  &--secondary {
+    color: var(--ink);
+    font-weight: 500;
+    background-color: transparent;
+    border-color: var(--rule);
+
+    @include hover {
+      border-color: var(--ink);
+      background-color: var(--mono);
+    }
+  }
+
+  &--small {
+    padding: rem(8) rem(18);
+    font-size: rem(14);
+  }
+}

@@ -1,0 +1,84 @@
+@use '../helpers' as *;
+
+// ── ПОДВАЛ ──────────────────────────────────────────────
+
+.footer {
+  padding-block: rem(64) rem(32);
+  color: #fff;
+  background-color: var(--ink);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: rem(48);
+    margin-bottom: rem(56);
+
+    @include tablet {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: rem(32);
+    }
+  }
+
+  &__about {
+    @include tablet {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__desc {
+    max-width: rem(360);
+    margin: rem(14) 0 0;
+    font-size: rem(13.5);
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  &__col-title {
+    margin-block: 0 rem(16);
+    font-family: var(--font-mono);
+    font-size: rem(11);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  &__list {
+    margin: 0;
+    list-style: none;
+
+    li + li {
+      margin-top: rem(10);
+    }
+  }
+
+  &__link {
+    font-size: rem(14);
+    color: rgba(255, 255, 255, 0.6);
+    transition: color var(--transition-duration);
+
+    @include hover {
+      color: #fff;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(12);
+    padding-top: rem(32);
+    font-size: rem(12.5);
+    color: rgba(255, 255, 255, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    p {
+      margin: 0;
+    }
+  }
+}

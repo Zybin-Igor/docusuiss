@@ -1,0 +1,35 @@
+@use '../helpers' as *;
+
+// ── ПРИЗЫВ К ДЕЙСТВИЮ ───────────────────────────────────
+
+.cta {
+  text-align: center;
+
+  &__inner {
+    max-width: rem(640);
+    margin-inline: auto;
+  }
+
+  &__title {
+    margin-block: rem(8) rem(20);
+    font-family: var(--font-serif);
+    font-size: fluid(52, 30);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -1px;
+  }
+
+  &__text {
+    margin-block: 0 rem(36);
+    font-size: rem(16);
+    line-height: 1.65;
+    color: var(--ink-3);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: rem(12);
+  }
+}

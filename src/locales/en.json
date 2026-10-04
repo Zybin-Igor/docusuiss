@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "title": "DocuSwiss — Help with paperwork in Switzerland",
+    "description": "Understand your rights and prepare your administrative documents in Switzerland: debt collection, fines, rent, health insurance, work, taxes. In English, French, German and Ukrainian."
+  },
+  "disclaimer": "⚠️ DocuSwiss provides general information and help preparing documents. We are not a law firm. For complex situations, please consult a licensed lawyer.",
+  "nav": {
+    "services": "Topics",
+    "documents": "Documents",
+    "how": "How it works",
+    "faq": "FAQ",
+    "menuButton": "Open menu"
+  },
+  "hero": {
+    "eyebrow": "Switzerland · Paperwork help",
+    "title": "Swiss paperwork,<br /><em>made simple.</em>",
+    "subtitle": "Debt collection, fines, rent, health insurance, your employer, taxes — we explain your rights and deadlines and help you prepare the right letter.",
+    "ctaPrimary": "See the documents →",
+    "ctaSecondary": "How it works",
+    "stat1": "languages: FR · DE · EN · UA",
+    "stat2": "free basic templates",
+    "stat3": "to object to a debt collection",
+    "stat3unit": " days"
+  },
+  "trust": {
+    "item1": "Based on Swiss federal law",
+    "item2": "Deadlines clearly explained",
+    "item3": "Prepared by a legal professional",
+    "item4": "Information in 4 languages"
+  },
+  "services": {
+    "label": "What we cover",
+    "title": "The most common<br />situations",
+    "link": "See the documents →",
+    "tagFirst": "First document",
+    "tagSoon": "Coming soon",
+    "debt": {
+      "title": "Debt collection",
+      "text": "Received a payment order (Zahlungsbefehl)? Understand your options and file an objection within 10 days."
+    },
+    "fine": {
+      "title": "Fines and penalty orders",
+      "text": "Challenge a penalty order or a fine: deadlines, how to object, and what happens next."
+    },
+    "rent": {
+      "title": "Housing and rent",
+      "text": "Rent reduction, defects in the flat, getting your deposit back, terminating the lease."
+    },
+    "health": {
+      "title": "Health insurance",
+      "text": "Switch insurer, cancel supplementary insurance, apply for a premium subsidy."
+    },
+    "work": {
+      "title": "Work",
+      "text": "Employment reference, unpaid wages, dismissal: know your rights and write to your employer."
+    },
+    "tax": {
+      "title": "Taxes",
+      "text": "Deadline extension, objection to a tax assessment, correcting withholding tax."
+    }
+  },
+  "how": {
+    "label": "Process",
+    "title": "Simple. Clear. On time.",
+    "step1": {
+      "num": "STEP 01",
+      "title": "Describe your situation",
+      "text": "Choose the topic and answer a few simple questions."
+    },
+    "step2": {
+      "num": "STEP 02",
+      "title": "Understand your rights",
+      "text": "We explain your options and calculate the deadline you must meet."
+    },
+    "step3": {
+      "num": "STEP 03",
+      "title": "Prepare your letter",
+      "text": "The document is filled in from your answers. Review it and download it as a PDF."
+    },
+    "step4": {
+      "num": "STEP 04",
+      "title": "Send it to the right place",
+      "text": "We tell you which authority to send it to and how to prove you sent it."
+    }
+  },
+  "infoBand": "<strong>Received a payment order?</strong> You have <strong>10 days</strong> from delivery to file an objection (Art. 74 DEBA). After that, the creditor can continue the debt collection.",
+  "docs": {
+    "label": "Documents in preparation",
+    "title": "Our first<br />documents",
+    "status": "In preparation",
+    "d1": {
+      "tag": "Debt · DEBA",
+      "title": "Objection to a payment order",
+      "text": "Dispute a debt collection in full or in part.",
+      "deadline": "Deadline: 10 days · Art. 74 DEBA"
+    },
+    "d2": {
+      "tag": "Criminal · CrimPC",
+      "title": "Objection to a penalty order",
+      "text": "Challenge a fine or conviction issued by penalty order.",
+      "deadline": "Deadline: 10 days · Art. 354 CrimPC"
+    },
+    "d3": {
+      "tag": "Rent · CO",
+      "title": "Request for a rent reduction",
+      "text": "When the reference mortgage interest rate goes down.",
+      "deadline": "Legal basis: Art. 270a CO"
+    },
+    "d4": {
+      "tag": "Rent · CO",
+      "title": "Notice of defects to the landlord",
+      "text": "Report a defect in writing and ask for it to be fixed.",
+      "deadline": "Legal basis: Art. 259a CO"
+    },
+    "d5": {
+      "tag": "Insurance · HIA",
+      "title": "Switching health insurer",
+      "text": "Cancel your basic insurance for the end of the year.",
+      "deadline": "Deadline: usually 30 November · Art. 7 HIA"
+    },
+    "d6": {
+      "tag": "Work · CO",
+      "title": "Request for an employment reference",
+      "text": "Ask for a full reference or a confirmation of employment.",
+      "deadline": "Legal basis: Art. 330a CO"
+    }
+  },
+  "faq": {
+    "label": "Frequently asked questions",
+    "title": "Do you have<br />questions?",
+    "q1": "Does DocuSwiss replace a lawyer?",
+    "a1": "No. DocuSwiss provides general information and helps you prepare simple documents. We are not a law firm and do not give personalised legal advice. If your situation is complex, a lot of money is at stake, or court proceedings are already under way, please consult a licensed lawyer.",
+    "q2": "Is the service free?",
+    "a2": "Information and basic templates are free. Later, we will offer an optional review of your document by a legal professional for a fixed price announced in advance.",
+    "q3": "In which cantons can I use the documents?",
+    "a3": "Our first documents are based on federal law (DEBA, CrimPC, CO, HIA), so they can be used throughout Switzerland. Only the addresses of the authorities differ by canton — we will tell you the right one.",
+    "q4": "What do you do with my data?",
+    "a4": "We only collect what is needed to prepare your document. The exact rules will be published in our privacy policy, in line with the Swiss Federal Act on Data Protection (FADP).",
+    "q5": "When will the documents be available?",
+    "a5": "The website is under construction. The first document — the objection to a payment order — will be published first, followed by the others one by one."
+  },
+  "cta": {
+    "label": "Get started",
+    "title": "Worried about an official letter?",
+    "text": "Start by identifying the type of document and the deadline. We'll help you with the rest, step by step.",
+    "primary": "See the documents →",
+    "secondary": "Read the FAQ"
+  },
+  "footer": {
+    "desc": "Clear legal information and help preparing administrative documents in Switzerland.",
+    "topics": "Topics",
+    "info": "Information",
+    "about": "About",
+    "contact": "Contact",
+    "imprint": "Legal notice",
+    "privacy": "Privacy",
+    "notice": "This website is not affiliated with any public authority and is not a law firm."
+  }
+}

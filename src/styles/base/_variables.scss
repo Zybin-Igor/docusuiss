@@ -1,0 +1,37 @@
+@use '../helpers' as *;
+
+// ── ДИЗАЙН-ТОКЕНЫ ───────────────────────────────────────
+// Все цвета, шрифты и размеры — в одном месте.
+// Поменяли здесь — изменилось на всём сайте.
+
+:root {
+  // Цвета
+  --ink: #0f0f0f;          // основной текст
+  --ink-2: #3a3a3a;        // второстепенный текст
+  --ink-3: #6b6b6b;        // подписи
+  --rule: #e0e0e0;         // линии и рамки
+  --bg: #fafafa;           // фон страницы
+  --bg-card: #ffffff;      // фон карточек
+  --mono: #f0f0f0;         // светло-серые подложки
+  --accent: #c8102e;       // швейцарский красный
+  --accent-2: #f5e6e9;     // бледно-красная подложка
+  --accent-light: #ff6b7a; // красный на тёмном фоне
+
+  // Шрифты (все три поддерживают кириллицу — важно для украинской версии)
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Source Serif 4', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  // Прочее
+  --radius: #{rem(4)};
+  --transition-duration: 0.2s;
+  --header-height: #{rem(64)};
+
+  // Контейнер
+  --container-width: #{rem(1120)};
+  --container-padding-x: #{rem(32)};
+
+  @include mobile {
+    --container-padding-x: #{rem(20)};
+  }
+}

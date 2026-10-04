@@ -1,0 +1,113 @@
+@use '../helpers' as *;
+
+// ── КАРТОЧКИ УСЛУГ (ТЕМЫ) ───────────────────────────────
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  overflow: hidden;
+  background-color: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-card {
+  position: relative;
+  padding: rem(36) rem(32);
+  background-color: var(--bg-card);
+  transition: background-color var(--transition-duration);
+
+  @include hover {
+    background-color: var(--bg);
+
+    .service-card__arrow {
+      color: var(--accent);
+      translate: 2px -2px;
+    }
+  }
+
+  &__icon {
+    @include flex-center;
+    @include square(rem(40));
+    margin-bottom: rem(24);
+    font-size: rem(18);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(6);
+    margin-bottom: rem(14);
+  }
+
+  &__title {
+    margin-block: 0 rem(12);
+    font-family: var(--font-serif);
+    font-size: rem(22);
+    font-weight: 400;
+    line-height: 1.25;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: rem(14);
+    line-height: 1.65;
+    color: var(--ink-3);
+  }
+
+  &__arrow {
+    position: absolute;
+    top: rem(36);
+    right: rem(32);
+    font-size: rem(18);
+    color: var(--rule);
+    transition:
+      color var(--transition-duration),
+      translate var(--transition-duration);
+  }
+
+  // Выделенная (тёмная) карточка — наш первый документ
+  &--featured {
+    background-color: var(--ink);
+
+    @include hover {
+      background-color: #1a1a1a;
+
+      .service-card__arrow {
+        color: var(--accent-light);
+      }
+    }
+
+    .service-card__icon {
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .service-card__title {
+      color: #fff;
+    }
+
+    .service-card__text {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .service-card__arrow {
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    .tag {
+      color: var(--accent-light);
+      background-color: rgba(200, 16, 46, 0.2);
+    }
+  }
+}
