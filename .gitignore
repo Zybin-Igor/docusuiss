@@ -1,0 +1,15 @@
+# Зависимости — устанавливаются командой npm install, в git их не храним
+node_modules/
+
+# Результат сборки — создаётся командой npm run build
+dist/
+
+# Служебные файлы систем и редакторов
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+
+# Файлы с секретами (ключи API и т. п.) — НИКОГДА не отправляем в git
+.env
+.env.*

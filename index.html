@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="meta.title">DocuSwiss — Aide aux démarches administratives en Suisse</title>
+  <meta name="description" data-i18n-attr="content:meta.description"
+        content="Comprenez vos droits et préparez vos documents administratifs en Suisse : poursuites, amendes, bail, caisse maladie, travail, impôts. En français, allemand, anglais et ukrainien." />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+
+  <!-- Шрифты с поддержкой кириллицы (для украинской версии) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap" rel="stylesheet" />
+
+  <!-- Vite сам скомпилирует SCSS и подключит его к странице -->
+  <script type="module" crossorigin src="./assets/index-8V3fS-rR.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-D0SqZMnc.css">
+</head>
+<body>
+
+  <!-- ═══ ПРЕДУПРЕЖДЕНИЕ ═══ -->
+  <div class="disclaimer" role="note">
+    <div class="container">
+      <p class="disclaimer__text" data-i18n="disclaimer">
+        ⚠️ DocuSwiss fournit des informations générales et une aide à la préparation de documents. Ce n'est pas une étude d'avocats. Pour une situation complexe, consultez un avocat autorisé.
+      </p>
+    </div>
+  </div>
+
+  <!-- ═══ ШАПКА ═══ -->
+  <header class="header" data-js-header>
+    <div class="container header__inner">
+      <a href="#top" class="logo" aria-label="DocuSwiss">
+        <span class="logo__mark" aria-hidden="true">
+          <svg viewBox="0 0 16 16" fill="none">
+            <rect x="6" y="1" width="4" height="14" fill="white" />
+            <rect x="1" y="6" width="14" height="4" fill="white" />
+          </svg>
+        </span>
+        <span>Docu<span class="logo__accent">Swiss</span></span>
+      </a>
+
+      <div class="header__menu" id="main-menu" data-js-menu>
+        <nav aria-label="Menu">
+          <ul class="header__nav-list">
+            <li><a class="header__nav-link" href="#services" data-i18n="nav.services">Thèmes</a></li>
+            <li><a class="header__nav-link" href="#documents" data-i18n="nav.documents">Documents</a></li>
+            <li><a class="header__nav-link" href="#how" data-i18n="nav.how">Comment ça marche</a></li>
+            <li><a class="header__nav-link" href="#faq" data-i18n="nav.faq">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <!-- Кнопки языков. Код языка — в data-lang, JS читает его при клике -->
+        <div class="lang-switch" role="group" aria-label="Langue / Sprache / Language / Мова">
+          <button class="lang-switch__btn is-active" type="button" data-lang="fr">FR</button>
+          <button class="lang-switch__btn" type="button" data-lang="de">DE</button>
+          <button class="lang-switch__btn" type="button" data-lang="en">EN</button>
+          <button class="lang-switch__btn" type="button" data-lang="uk">UA</button>
+        </div>
+      </div>
+
+      <button class="burger" type="button" aria-controls="main-menu" aria-expanded="false"
+              data-js-burger data-i18n-attr="aria-label:nav.menuButton" aria-label="Ouvrir le menu">
+        <span class="burger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ═══ ГЛАВНЫЙ ЭКРАН ═══ -->
+    <section class="hero">
+      <div class="container">
+        <p class="hero__eyebrow" data-i18n="hero.eyebrow">Suisse · Aide administrative</p>
+        <h1 class="hero__title" data-i18n-html="hero.title">Vos démarches<br />administratives,<br /><em>simplifiées.</em></h1>
+        <p class="hero__subtitle" data-i18n="hero.subtitle">
+          Poursuite, amende, loyer, caisse maladie, employeur, impôts — nous vous expliquons vos droits et les délais, et vous aidons à préparer la bonne lettre.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#documents" data-i18n="hero.ctaPrimary">Voir les documents →</a>
+          <a class="btn btn--secondary" href="#how" data-i18n="hero.ctaSecondary">Comment ça marche</a>
+        </div>
+
+        <div class="hero__stats">
+          <div class="stat">
+            <div class="stat__num">4</div>
+            <div class="stat__label" data-i18n="hero.stat1">langues&nbsp;: FR · DE · EN · UA</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">0<span> CHF</span></div>
+            <div class="stat__label" data-i18n="hero.stat2">modèles de base gratuits</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">10<span data-i18n="hero.stat3unit"> j.</span></div>
+            <div class="stat__label" data-i18n="hero.stat3">pour faire opposition à une poursuite</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ПОЛОСА ДОВЕРИЯ ═══ -->
+    <div class="trust-bar">
+      <div class="container">
+        <ul class="trust-bar__list">
+          <li class="trust-bar__item" data-i18n="trust.item1">Basé sur le droit fédéral suisse</li>
+          <li class="trust-bar__item" data-i18n="trust.item2">Délais expliqués clairement</li>
+          <li class="trust-bar__item" data-i18n="trust.item3">Préparé par un juriste</li>
+          <li class="trust-bar__item" data-i18n="trust.item4">Informations en 4 langues</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ═══ ТЕМЫ ═══ -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-label" data-i18n="services.label">Ce que nous couvrons</p>
+            <h2 class="section-title" data-i18n-html="services.title">Les situations<br />les plus fréquentes</h2>
+          </div>
+          <a href="#documents" class="section-link" data-i18n="services.link">Voir les documents →</a>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card service-card--featured">
+            <div class="service-card__icon" aria-hidden="true">📮</div>
+            <div class="service-card__tags">
+              <span class="tag" data-i18n="services.tagFirst">Premier document</span>
+            </div>
+            <span class="service-card__arrow" aria-hidden="true">↗</span>
+            <h3 class="service-card__title" data-i18n="services.debt.title">Poursuites et dettes</h3>
+            <p class="service-card__text" data-i18n="services.debt.text">Vous avez reçu un commandement de payer&nbsp;? Comprenez vos options et faites opposition dans le délai de 10 jours.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">📋</div>
+            <div class="service-card__tags"><span class="tag tag--soon" data-i18n="services.tagSoon">Bientôt</span></div>
+            <span class="service-card__arrow" aria-hidden="true">↗</span>
+            <h3 class="service-card__title" data-i18n="services.fine.title">Amendes et ordonnances pénales</h3>
+            <p class="service-card__text" data-i18n="services.fine.text">Contester une ordonnance pénale ou une amende&nbsp;: délais, forme de l'opposition et conséquences.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">🏠</div>
+            <div class="service-card__tags"><span class="tag tag--soon" data-i18n="services.tagSoon">Bientôt</span></div>
+            <span class="service-card__arrow" aria-hidden="true">↗</span>
+            <h3 class="service-card__title" data-i18n="services.rent.title">Logement et bail</h3>
+            <p class="service-card__text" data-i18n="services.rent.text">Baisse de loyer, défauts dans l'appartement, restitution de la garantie, résiliation.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">🩺</div>
+            <div class="service-card__tags"><span class="tag tag--soon" data-i18n="services.tagSoon">Bientôt</span></div>
+            <span class="service-card__arrow" aria-hidden="true">↗</span>
+            <h3 class="service-card__title" data-i18n="services.health.title">Caisse maladie</h3>
+            <p class="service-card__text" data-i18n="services.health.text">Changer de caisse, résilier une assurance complémentaire, demander un subside pour les primes.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">💼</div>
+            <div class="service-card__tags"><span class="tag tag--soon" data-i18n="services.tagSoon">Bientôt</span></div>
+            <span class="service-card__arrow" aria-hidden="true">↗</span>
+            <h3 class="service-card__title" data-i18n="services.work.title">Travail</h3>
+            <p class="service-card__text" data-i18n="services.work.text">Certificat de travail, salaire impayé, licenciement&nbsp;: connaître vos droits et écrire à l'employeur.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">🧾</div>
+            <div class="service-card__tags"><span class="tag tag--soon" data-i18n="services.tagSoon">Bientôt</span></div>
+            <span class="service-card__arrow" aria-hidden="true">↗</span>
+            <h3 class="service-card__title" data-i18n="services.tax.title">Impôts</h3>
+            <p class="service-card__text" data-i18n="services.tax.text">Demande de prolongation, réclamation contre une taxation, correction de l'impôt à la source.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ КАК ЭТО РАБОТАЕТ ═══ -->
+    <section class="section section--dark" id="how">
+      <div class="container">
+        <p class="section-label" data-i18n="how.label">Processus</p>
+        <h2 class="section-title" data-i18n="how.title">Simple. Clair. Dans les délais.</h2>
+        <ol class="steps-grid">
+          <li class="step">
+            <div class="step__num" data-i18n="how.step1.num">ÉTAPE 01</div>
+            <h3 class="step__title" data-i18n="how.step1.title">Décrivez votre situation</h3>
+            <p class="step__text" data-i18n="how.step1.text">Choisissez le thème et répondez à quelques questions simples.</p>
+          </li>
+          <li class="step">
+            <div class="step__num" data-i18n="how.step2.num">ÉTAPE 02</div>
+            <h3 class="step__title" data-i18n="how.step2.title">Comprenez vos droits</h3>
+            <p class="step__text" data-i18n="how.step2.text">Nous vous expliquons les options possibles et calculons le délai à respecter.</p>
+          </li>
+          <li class="step">
+            <div class="step__num" data-i18n="how.step3.num">ÉTAPE 03</div>
+            <h3 class="step__title" data-i18n="how.step3.title">Préparez votre lettre</h3>
+            <p class="step__text" data-i18n="how.step3.text">Le document est rempli à partir de vos réponses. Relisez-le et téléchargez-le en PDF.</p>
+          </li>
+          <li class="step">
+            <div class="step__num" data-i18n="how.step4.num">ÉTAPE 04</div>
+            <h3 class="step__title" data-i18n="how.step4.title">Envoyez au bon endroit</h3>
+            <p class="step__text" data-i18n="how.step4.text">Nous vous indiquons à quelle autorité l'envoyer et comment prouver l'envoi.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═══ ИНФО-ПОЛОСА ═══ -->
+    <div class="info-band">
+      <div class="container info-band__inner">
+        <div class="info-band__icon" aria-hidden="true">⏱️</div>
+        <p class="info-band__text" data-i18n-html="infoBand">
+          <strong>Commandement de payer reçu&nbsp;?</strong> Vous avez <strong>10 jours</strong> dès sa notification pour faire opposition (art. 74 LP). Passé ce délai, le créancier peut continuer la poursuite.
+        </p>
+      </div>
+    </div>
+
+    <!-- ═══ ДОКУМЕНТЫ ═══ -->
+    <section class="section" id="documents">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-label" data-i18n="docs.label">Documents en préparation</p>
+            <h2 class="section-title" data-i18n-html="docs.title">Nos premiers<br />documents</h2>
+          </div>
+        </div>
+
+        <ul class="docs-grid">
+          <li>
+            <article class="doc-card">
+              <div class="doc-card__file" aria-hidden="true">📄</div>
+              <div>
+                <div class="doc-card__meta"><span class="tag" data-i18n="docs.d1.tag">Poursuites · LP</span><span class="tag tag--soon" data-i18n="docs.status">En préparation</span></div>
+                <h3 class="doc-card__title" data-i18n="docs.d1.title">Opposition au commandement de payer</h3>
+                <p class="doc-card__text" data-i18n="docs.d1.text">Contester une poursuite, totalement ou en partie.</p>
+                <p class="doc-card__deadline" data-i18n="docs.d1.deadline">Délai&nbsp;: 10 jours · art. 74 LP</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="doc-card">
+              <div class="doc-card__file" aria-hidden="true">📄</div>
+              <div>
+                <div class="doc-card__meta"><span class="tag" data-i18n="docs.d2.tag">Pénal · CPP</span><span class="tag tag--soon" data-i18n="docs.status">En préparation</span></div>
+                <h3 class="doc-card__title" data-i18n="docs.d2.title">Opposition à une ordonnance pénale</h3>
+                <p class="doc-card__text" data-i18n="docs.d2.text">Contester une amende ou une condamnation par ordonnance pénale.</p>
+                <p class="doc-card__deadline" data-i18n="docs.d2.deadline">Délai&nbsp;: 10 jours · art. 354 CPP</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="doc-card">
+              <div class="doc-card__file" aria-hidden="true">📄</div>
+              <div>
+                <div class="doc-card__meta"><span class="tag" data-i18n="docs.d3.tag">Bail · CO</span><span class="tag tag--soon" data-i18n="docs.status">En préparation</span></div>
+                <h3 class="doc-card__title" data-i18n="docs.d3.title">Demande de baisse de loyer</h3>
+                <p class="doc-card__text" data-i18n="docs.d3.text">Quand le taux hypothécaire de référence baisse.</p>
+                <p class="doc-card__deadline" data-i18n="docs.d3.deadline">Base&nbsp;: art. 270a CO</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="doc-card">
+              <div class="doc-card__file" aria-hidden="true">📄</div>
+              <div>
+                <div class="doc-card__meta"><span class="tag" data-i18n="docs.d4.tag">Bail · CO</span><span class="tag tag--soon" data-i18n="docs.status">En préparation</span></div>
+                <h3 class="doc-card__title" data-i18n="docs.d4.title">Avis de défauts au bailleur</h3>
+                <p class="doc-card__text" data-i18n="docs.d4.text">Signaler par écrit un défaut et demander sa réparation.</p>
+                <p class="doc-card__deadline" data-i18n="docs.d4.deadline">Base&nbsp;: art. 259a CO</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="doc-card">
+              <div class="doc-card__file" aria-hidden="true">📄</div>
+              <div>
+                <div class="doc-card__meta"><span class="tag" data-i18n="docs.d5.tag">Assurance · LAMal</span><span class="tag tag--soon" data-i18n="docs.status">En préparation</span></div>
+                <h3 class="doc-card__title" data-i18n="docs.d5.title">Changement de caisse maladie</h3>
+                <p class="doc-card__text" data-i18n="docs.d5.text">Résilier l'assurance de base pour la fin de l'année.</p>
+                <p class="doc-card__deadline" data-i18n="docs.d5.deadline">Délai&nbsp;: le 30 novembre en général · art. 7 LAMal</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="doc-card">
+              <div class="doc-card__file" aria-hidden="true">📄</div>
+              <div>
+                <div class="doc-card__meta"><span class="tag" data-i18n="docs.d6.tag">Travail · CO</span><span class="tag tag--soon" data-i18n="docs.status">En préparation</span></div>
+                <h3 class="doc-card__title" data-i18n="docs.d6.title">Demande de certificat de travail</h3>
+                <p class="doc-card__text" data-i18n="docs.d6.text">Obtenir un certificat complet ou une attestation de travail.</p>
+                <p class="doc-card__deadline" data-i18n="docs.d6.deadline">Base&nbsp;: art. 330a CO</p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═══ ЧАСТЫЕ ВОПРОСЫ ═══ -->
+    <section class="section section--muted" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-label" data-i18n="faq.label">Questions fréquentes</p>
+            <h2 class="section-title" data-i18n-html="faq.title">Vous avez des<br />questions&nbsp;?</h2>
+          </div>
+        </div>
+
+        <!-- Аккордеон: data-js-faq — «крючок» для JavaScript -->
+        <div class="faq" data-js-faq>
+          <div class="faq__item is-open">
+            <button class="faq__question" type="button" aria-expanded="true">
+              <span data-i18n="faq.q1">DocuSwiss remplace-t-il un avocat&nbsp;?</span>
+              <span class="faq__toggle" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__answer"><div class="faq__answer-inner"><p data-i18n="faq.a1">Non. DocuSwiss fournit des informations générales et vous aide à préparer des documents simples. Ce n'est pas une étude d'avocats et ce n'est pas un conseil juridique personnalisé. Si votre situation est complexe, si beaucoup d'argent est en jeu ou si une procédure judiciaire est en cours, consultez un avocat autorisé.</p></div></div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" type="button" aria-expanded="false">
+              <span data-i18n="faq.q2">Le service est-il gratuit&nbsp;?</span>
+              <span class="faq__toggle" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__answer"><div class="faq__answer-inner"><p data-i18n="faq.a2">Les informations et les modèles de base sont gratuits. Plus tard, nous proposerons en option une vérification de votre document par un juriste, contre un prix fixe annoncé à l'avance.</p></div></div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" type="button" aria-expanded="false">
+              <span data-i18n="faq.q3">Dans quels cantons puis-je utiliser les documents&nbsp;?</span>
+              <span class="faq__toggle" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__answer"><div class="faq__answer-inner"><p data-i18n="faq.a3">Nos premiers documents reposent sur le droit fédéral (LP, CPP, CO, LAMal) et s'utilisent donc dans toute la Suisse. Seules les adresses des autorités changent selon le canton — nous vous indiquerons la bonne.</p></div></div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" type="button" aria-expanded="false">
+              <span data-i18n="faq.q4">Que faites-vous de mes données&nbsp;?</span>
+              <span class="faq__toggle" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__answer"><div class="faq__answer-inner"><p data-i18n="faq.a4">Nous ne collectons que ce qui est nécessaire pour préparer votre document. Les règles exactes seront publiées dans notre politique de confidentialité, conformément à la loi suisse sur la protection des données (LPD).</p></div></div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" type="button" aria-expanded="false">
+              <span data-i18n="faq.q5">Quand les documents seront-ils disponibles&nbsp;?</span>
+              <span class="faq__toggle" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__answer"><div class="faq__answer-inner"><p data-i18n="faq.a5">Le site est en cours de construction. Le premier document — l'opposition au commandement de payer — sera publié en premier, puis les autres, un par un.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ПРИЗЫВ К ДЕЙСТВИЮ ═══ -->
+    <section class="section cta">
+      <div class="container cta__inner">
+        <p class="section-label" data-i18n="cta.label">Commencer</p>
+        <h2 class="cta__title" data-i18n="cta.title">Un courrier officiel vous inquiète&nbsp;?</h2>
+        <p class="cta__text" data-i18n="cta.text">Commencez par identifier le type de document et le délai. Nous vous aidons à faire le reste, étape par étape.</p>
+        <div class="cta__actions">
+          <a class="btn btn--primary" href="#documents" data-i18n="cta.primary">Voir les documents →</a>
+          <a class="btn btn--secondary" href="#faq" data-i18n="cta.secondary">Lire la FAQ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══ ПОДВАЛ ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a href="#top" class="logo logo--light">
+            <span class="logo__mark" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none">
+                <rect x="6" y="1" width="4" height="14" fill="white" />
+                <rect x="1" y="6" width="14" height="4" fill="white" />
+              </svg>
+            </span>
+            <span>Docu<span class="logo__accent">Swiss</span></span>
+          </a>
+          <p class="footer__desc" data-i18n="footer.desc">Informations juridiques claires et aide à la préparation de documents administratifs en Suisse.</p>
+        </div>
+
+        <div>
+          <h3 class="footer__col-title" data-i18n="footer.topics">Thèmes</h3>
+          <ul class="footer__list">
+            <li><a class="footer__link" href="#services" data-i18n="services.debt.title">Poursuites et dettes</a></li>
+            <li><a class="footer__link" href="#services" data-i18n="services.fine.title">Amendes et ordonnances pénales</a></li>
+            <li><a class="footer__link" href="#services" data-i18n="services.rent.title">Logement et bail</a></li>
+            <li><a class="footer__link" href="#services" data-i18n="services.health.title">Caisse maladie</a></li>
+            <li><a class="footer__link" href="#services" data-i18n="services.work.title">Travail</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer__col-title" data-i18n="footer.info">Informations</h3>
+          <!-- Эти страницы создадим на следующих этапах -->
+          <ul class="footer__list">
+            <li><a class="footer__link" href="#" data-i18n="footer.about">À propos</a></li>
+            <li><a class="footer__link" href="#" data-i18n="footer.contact">Contact</a></li>
+            <li><a class="footer__link" href="#" data-i18n="footer.imprint">Mentions légales</a></li>
+            <li><a class="footer__link" href="#" data-i18n="footer.privacy">Confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© <span data-js-year>2026</span> DocuSwiss.</p>
+        <p data-i18n="footer.notice">Ce site n'est affilié à aucune autorité publique et n'est pas une étude d'avocats.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
