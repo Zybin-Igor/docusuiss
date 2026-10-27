@@ -155,5 +155,57 @@
     "imprint": "Mentions légales",
     "privacy": "Confidentialité",
     "notice": "Ce site n'est affilié à aucune autorité publique et n'est pas une étude d'avocats."
+  },
+  "rv": {
+    "meta": {
+      "title": "Opposition au commandement de payer — DocuSwiss",
+      "description": "Préparez gratuitement votre opposition au commandement de payer (art. 74 LP) : calcul du délai de 10 jours et lettre prête à envoyer."
+    },
+    "breadcrumbHome": "Accueil",
+    "breadcrumbCurrent": "Opposition au commandement de payer",
+    "eyebrow": "Poursuites · art. 74 LP",
+    "title": "Opposition au commandement de payer",
+    "intro": "Répondez à quelques questions. Nous calculons votre délai et préparons une lettre prête à envoyer à l'office des poursuites.",
+    "s1": {
+      "title": "Le commandement de payer",
+      "hint": "Toutes ces informations figurent sur le commandement de payer que vous avez reçu."
+    },
+    "s2": {
+      "title": "Votre opposition"
+    },
+    "s3": {
+      "title": "Vos coordonnées"
+    },
+    "f": {
+      "canton": "Canton de l'office des poursuites",
+      "cantonPlaceholder": "— Choisir —",
+      "office": "Office des poursuites (nom et adresse)",
+      "officeHint": "Recopiez l'adresse imprimée en haut du commandement de payer.",
+      "caseNumber": "N° de poursuite",
+      "receivedDate": "Date de réception",
+      "receivedDateHint": "Le jour où le commandement de payer vous a été remis.",
+      "creditor": "Créancier",
+      "claimAmount": "Montant réclamé (CHF)",
+      "scopeFull": "Je conteste toute la dette",
+      "scopeFullText": "Opposition totale : le montant entier est contesté.",
+      "scopePartial": "Je conteste seulement une partie",
+      "scopePartialText": "Opposition partielle : indiquez le montant contesté (art. 74 al. 2 LP).",
+      "contestedAmount": "Montant contesté (CHF)",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "street": "Rue et numéro",
+      "zip": "NPA",
+      "city": "Localité"
+    },
+    "submit": "Préparer ma lettre →",
+    "privacy": "🔒 Vos données restent dans votre navigateur. Elles ne sont envoyées nulle part.",
+    "aside": {
+      "deadlineTitle": "Délai : 10 jours",
+      "deadlineText": "L'opposition doit être faite dans les 10 jours dès la notification du commandement de payer (art. 74 al. 1 LP).",
+      "reasonTitle": "Pas besoin de justifier",
+      "reasonText": "La loi n'exige pas de motiver l'opposition (art. 75 al. 1 LP). Une phrase claire suffit.",
+      "nextTitle": "Et ensuite ?",
+      "nextText": "L'opposition arrête la poursuite. Le créancier doit alors s'adresser au juge pour la faire lever. L'opposition n'efface pas la dette si elle est due."
+    }
   }
 }

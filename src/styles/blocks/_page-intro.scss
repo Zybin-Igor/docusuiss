@@ -1,0 +1,45 @@
+@use '../helpers' as *;
+
+// ── ЗАГОЛОВОК ВНУТРЕННЕЙ СТРАНИЦЫ ───────────────────────
+
+.page-intro {
+  padding-block: rem(48) rem(40);
+  border-bottom: 1px solid var(--rule);
+
+  &__title {
+    max-width: rem(760);
+    margin-block: 0 rem(16);
+    font-family: var(--font-serif);
+    font-size: fluid(52, 32);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -1px;
+  }
+
+  &__text {
+    max-width: rem(620);
+    margin: 0;
+    font-size: fluid(18, 16);
+    font-weight: 300;
+    color: var(--ink-2);
+  }
+}
+
+// ── «Хлебные крошки»: Главная / Текущая страница ──
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(8);
+  margin-bottom: rem(28);
+  font-size: rem(13);
+  color: var(--ink-3);
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    @include hover {
+      color: var(--accent);
+    }
+  }
+}

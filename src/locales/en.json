@@ -155,5 +155,57 @@
     "imprint": "Legal notice",
     "privacy": "Privacy",
     "notice": "This website is not affiliated with any public authority and is not a law firm."
+  },
+  "rv": {
+    "meta": {
+      "title": "Objection to a payment order — DocuSwiss",
+      "description": "Prepare your objection to a Swiss payment order for free (Art. 74 DEBA): 10-day deadline calculation and a letter ready to send."
+    },
+    "breadcrumbHome": "Home",
+    "breadcrumbCurrent": "Objection to a payment order",
+    "eyebrow": "Debt collection · Art. 74 DEBA",
+    "title": "Objection to a payment order",
+    "intro": "Answer a few questions. We calculate your deadline and prepare a letter ready to send to the debt collection office.",
+    "s1": {
+      "title": "The payment order",
+      "hint": "You will find all this information on the payment order (Zahlungsbefehl / commandement de payer) you received."
+    },
+    "s2": {
+      "title": "Your objection"
+    },
+    "s3": {
+      "title": "Your details"
+    },
+    "f": {
+      "canton": "Canton of the debt collection office",
+      "cantonPlaceholder": "— Select —",
+      "office": "Debt collection office (name and address)",
+      "officeHint": "Copy the address printed at the top of the payment order.",
+      "caseNumber": "Case number",
+      "receivedDate": "Date received",
+      "receivedDateHint": "The day the payment order was handed to you.",
+      "creditor": "Creditor",
+      "claimAmount": "Amount claimed (CHF)",
+      "scopeFull": "I dispute the whole debt",
+      "scopeFullText": "Full objection: the entire amount is disputed.",
+      "scopePartial": "I dispute only part of it",
+      "scopePartialText": "Partial objection: state the disputed amount (Art. 74 para. 2 DEBA).",
+      "contestedAmount": "Disputed amount (CHF)",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "street": "Street and number",
+      "zip": "Postcode",
+      "city": "Town"
+    },
+    "submit": "Prepare my letter →",
+    "privacy": "🔒 Your data stays in your browser. It is not sent anywhere.",
+    "aside": {
+      "deadlineTitle": "Deadline: 10 days",
+      "deadlineText": "The objection must be filed within 10 days of the payment order being served (Art. 74 para. 1 DEBA).",
+      "reasonTitle": "No reason needed",
+      "reasonText": "The law does not require you to give reasons (Art. 75 para. 1 DEBA). One clear sentence is enough.",
+      "nextTitle": "What happens next?",
+      "nextText": "The objection stops the debt collection. The creditor must then go to court to have it set aside. The objection does not cancel a debt that is actually owed."
+    }
   }
 }

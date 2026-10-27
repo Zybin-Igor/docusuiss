@@ -11,6 +11,7 @@
 // Переиспользуемые компоненты
 @use 'components/button';
 @use 'components/section';
+@use 'components/form';
 
 // Блоки страницы (сверху вниз, как на сайте)
 @use 'blocks/disclaimer';
@@ -24,3 +25,7 @@
 @use 'blocks/faq';
 @use 'blocks/cta';
 @use 'blocks/footer';
+
+// Блоки внутренних страниц
+@use 'blocks/page-intro';
+@use 'blocks/wizard';

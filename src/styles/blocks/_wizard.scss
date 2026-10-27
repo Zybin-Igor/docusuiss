@@ -1,0 +1,60 @@
+@use '../helpers' as *;
+
+// ── СТРАНИЦА ДОКУМЕНТА: ФОРМА + БОКОВАЯ КОЛОНКА ─────────
+
+.wizard {
+  &__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) rem(320);
+    align-items: start;
+    gap: rem(40);
+
+    // На планшете колонка с подсказками уходит НАД формой
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__aside {
+    position: sticky;
+    top: calc(var(--header-height) + rem(24));
+    display: grid;
+    gap: rem(16);
+
+    @include tablet {
+      position: static;
+      order: -1;
+    }
+  }
+}
+
+// ── Заметка-подсказка ──
+.note {
+  padding: rem(20) rem(22);
+  background-color: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+
+  &--accent {
+    background-color: var(--accent-2);
+    border-color: #f0d0d5;
+
+    .note__title {
+      color: var(--accent);
+    }
+  }
+
+  &__title {
+    margin-block: 0 rem(6);
+    font-family: var(--font-serif);
+    font-size: rem(19);
+    font-weight: 400;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: rem(14);
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+}

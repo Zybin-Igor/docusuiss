@@ -16,6 +16,7 @@
 }
 
 .doc-card {
+  position: relative;
   display: flex;
   align-items: flex-start;
   gap: rem(20);
@@ -24,6 +25,13 @@
   background-color: var(--bg-card);
   border: 1px solid var(--rule);
   border-radius: var(--radius);
+
+  // Карточка со ссылкой подсвечивается при наведении
+  &:has(.doc-card__link) {
+    @include hover {
+      border-color: var(--ink);
+    }
+  }
 
   @include mobile {
     padding: rem(20);
@@ -69,6 +77,13 @@
     margin: 0;
     font-size: rem(13);
     color: var(--ink-3);
+  }
+
+  // Ссылка-«растяжка» на всю карточку (как в _services.scss)
+  &__link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
   }
 
   &__deadline {

@@ -155,5 +155,57 @@
     "imprint": "Impressum",
     "privacy": "Datenschutz",
     "notice": "Diese Website ist mit keiner Behörde verbunden und ist keine Anwaltskanzlei."
+  },
+  "rv": {
+    "meta": {
+      "title": "Rechtsvorschlag gegen einen Zahlungsbefehl — DocuSwiss",
+      "description": "Erstellen Sie kostenlos Ihren Rechtsvorschlag (Art. 74 SchKG): Berechnung der 10-tägigen Frist und versandfertiger Brief."
+    },
+    "breadcrumbHome": "Startseite",
+    "breadcrumbCurrent": "Rechtsvorschlag",
+    "eyebrow": "Betreibung · Art. 74 SchKG",
+    "title": "Rechtsvorschlag gegen einen Zahlungsbefehl",
+    "intro": "Beantworten Sie einige Fragen. Wir berechnen Ihre Frist und erstellen einen versandfertigen Brief an das Betreibungsamt.",
+    "s1": {
+      "title": "Der Zahlungsbefehl",
+      "hint": "Alle diese Angaben finden Sie auf dem Zahlungsbefehl, den Sie erhalten haben."
+    },
+    "s2": {
+      "title": "Ihr Rechtsvorschlag"
+    },
+    "s3": {
+      "title": "Ihre Angaben"
+    },
+    "f": {
+      "canton": "Kanton des Betreibungsamts",
+      "cantonPlaceholder": "— Bitte wählen —",
+      "office": "Betreibungsamt (Name und Adresse)",
+      "officeHint": "Übernehmen Sie die Adresse, die oben auf dem Zahlungsbefehl steht.",
+      "caseNumber": "Betreibungs-Nr.",
+      "receivedDate": "Datum der Zustellung",
+      "receivedDateHint": "Der Tag, an dem Ihnen der Zahlungsbefehl übergeben wurde.",
+      "creditor": "Gläubiger",
+      "claimAmount": "Geforderter Betrag (CHF)",
+      "scopeFull": "Ich bestreite die ganze Forderung",
+      "scopeFullText": "Vollständiger Rechtsvorschlag: der ganze Betrag wird bestritten.",
+      "scopePartial": "Ich bestreite nur einen Teil",
+      "scopePartialText": "Teilweiser Rechtsvorschlag: geben Sie den bestrittenen Betrag an (Art. 74 Abs. 2 SchKG).",
+      "contestedAmount": "Bestrittener Betrag (CHF)",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "street": "Strasse und Nr.",
+      "zip": "PLZ",
+      "city": "Ort"
+    },
+    "submit": "Brief vorbereiten →",
+    "privacy": "🔒 Ihre Daten bleiben in Ihrem Browser. Sie werden nirgendwohin gesendet.",
+    "aside": {
+      "deadlineTitle": "Frist: 10 Tage",
+      "deadlineText": "Der Rechtsvorschlag muss innert 10 Tagen nach Zustellung des Zahlungsbefehls erhoben werden (Art. 74 Abs. 1 SchKG).",
+      "reasonTitle": "Keine Begründung nötig",
+      "reasonText": "Das Gesetz verlangt keine Begründung (Art. 75 Abs. 1 SchKG). Ein klarer Satz genügt.",
+      "nextTitle": "Und dann?",
+      "nextText": "Der Rechtsvorschlag stoppt die Betreibung. Der Gläubiger muss sich dann an das Gericht wenden, um ihn beseitigen zu lassen. Eine geschuldete Forderung erlischt dadurch nicht."
+    }
   }
 }
