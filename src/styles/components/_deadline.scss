@@ -1,0 +1,70 @@
+@use '../helpers' as *;
+
+// ── БЛОК С РАССЧИТАННЫМ СРОКОМ ──────────────────────────
+// Цвет зависит от состояния, которое ставит JS в атрибут data-state:
+// ok (зелёный) · urgent (оранжевый) · expired (красный)
+
+.deadline {
+  --deadline-color: #1f7a3d;
+  --deadline-bg: #ecf7ef;
+
+  display: grid;
+  gap: rem(4);
+  padding: rem(18) rem(20);
+  background-color: var(--deadline-bg);
+  border-left: 4px solid var(--deadline-color);
+  border-radius: var(--radius);
+
+  &[hidden] {
+    display: none;
+  }
+
+  &[data-state='urgent'] {
+    --deadline-color: #b45309;
+    --deadline-bg: #fff4e5;
+  }
+
+  &[data-state='expired'] {
+    --deadline-color: var(--accent);
+    --deadline-bg: var(--accent-2);
+  }
+
+  &__label {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: rem(11);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--deadline-color);
+  }
+
+  &__date {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: rem(24);
+    line-height: 1.25;
+
+    // Первая буква дня недели — заглавная («Vendredi», а не «vendredi»)
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__status {
+    margin: 0 0 rem(6);
+    font-weight: 600;
+    color: var(--deadline-color);
+  }
+
+  &__note {
+    margin: 0;
+    font-size: rem(13.5);
+    line-height: 1.55;
+    color: var(--ink-2);
+
+    &--muted {
+      font-size: rem(12.5);
+      color: var(--ink-3);
+    }
+  }
+}

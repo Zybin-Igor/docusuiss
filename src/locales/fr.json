@@ -206,6 +206,28 @@
       "reasonText": "La loi n'exige pas de motiver l'opposition (art. 75 al. 1 LP). Une phrase claire suffit.",
       "nextTitle": "Et ensuite ?",
       "nextText": "L'opposition arrête la poursuite. Le créancier doit alors s'adresser au juge pour la faire lever. L'opposition n'efface pas la dette si elle est due."
+    },
+    "deadline": {
+      "lastDay": "Dernier jour pour faire opposition",
+      "daysLeft": "Il vous reste {days} jour(s).",
+      "today": "C'est aujourd'hui le dernier jour !",
+      "expired": "Le délai de 10 jours est probablement dépassé.",
+      "expiredHelp": "Contactez rapidement l'office des poursuites ou un avocat. Une restitution du délai n'est possible que si vous avez été empêché d'agir sans faute de votre part (art. 33 al. 4 LP).",
+      "postHint": "Il suffit de remettre la lettre à La Poste suisse au plus tard ce jour-là (art. 32 al. 1 LP). Envoyez-la de préférence en recommandé et gardez le récépissé.",
+      "ferien": "Cette date tombe pendant les féries de poursuite. Le délai pourrait alors être prolongé (art. 63 LP), mais par prudence, envoyez votre opposition au plus tard à la date indiquée.",
+      "holidayNote": "Seuls les jours fériés valables dans toute la Suisse sont pris en compte. La date indiquée n'est donc jamais plus tardive que le vrai délai."
+    },
+    "errors": {
+      "dateFuture": "La date de réception ne peut pas être dans le futur.",
+      "contestedTooBig": "Le montant contesté ne peut pas dépasser le montant réclamé."
+    }
+  },
+  "form": {
+    "errors": {
+      "required": "Ce champ est obligatoire.",
+      "number": "Indiquez un montant valide (par ex. 250 ou 250.50).",
+      "pattern": "Le format n'est pas correct.",
+      "zip": "Le NPA suisse comporte 4 chiffres."
     }
   }
 }

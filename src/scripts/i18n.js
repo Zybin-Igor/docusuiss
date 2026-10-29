@@ -20,12 +20,45 @@ const translations = { fr, de, en, uk };
 const DEFAULT_LANG = 'fr';
 const STORAGE_KEY = 'docuswiss-lang';
 
+// Текущий язык — храним в переменной модуля, чтобы другие модули могли его узнать
+let currentLang = DEFAULT_LANG;
+
+// Для красивого вывода дат: «vendredi 6 novembre 2026», «п'ятниця, 6 листопада 2026 р.»
+const DATE_LOCALES = { fr: 'fr-CH', de: 'de-CH', en: 'en-GB', uk: 'uk-UA' };
+
 /**
  * Достаёт значение из вложенного объекта по строке вида "services.debt.title".
  * Пример: getByPath({ a: { b: 'Привет' } }, 'a.b') → 'Привет'
  */
 function getByPath(object, path) {
   return path.split('.').reduce((current, key) => current?.[key], object);
+}
+
+/** Какой язык сейчас выбран: 'fr', 'de', 'en' или 'uk'. */
+export function getLanguage() {
+  return currentLang;
+}
+
+/**
+ * Перевод для использования прямо в JavaScript.
+ * Пример: t('rv.deadline.daysLeft', { days: 5 }) → "Il vous reste 5 jours."
+ * Всё, что стоит в фигурных скобках {…} в переводе, заменяется значением из params.
+ */
+export function t(key, params = {}) {
+  const value = getByPath(translations[currentLang], key) ?? getByPath(translations[DEFAULT_LANG], key);
+  if (typeof value !== 'string') return key; // перевод не найден — покажем ключ, чтобы заметить ошибку
+
+  return value.replace(/\{(\w+)\}/g, (match, name) => params[name] ?? match);
+}
+
+/** Дата прописью на текущем языке. */
+export function formatDate(date) {
+  return new Intl.DateTimeFormat(DATE_LOCALES[currentLang], {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(date);
 }
 
 /**
@@ -55,7 +88,8 @@ function detectLanguage() {
  * Переводит всю страницу на выбранный язык.
  */
 export function setLanguage(lang) {
-  const dictionary = translations[lang] ?? translations[DEFAULT_LANG];
+  currentLang = translations[lang] ? lang : DEFAULT_LANG;
+  const dictionary = translations[currentLang];
 
   // 1. Обычный текст
   document.querySelectorAll('[data-i18n]').forEach((element) => {
@@ -88,10 +122,14 @@ export function setLanguage(lang) {
 
   // 6. Запоминаем выбор пользователя
   try {
-    localStorage.setItem(STORAGE_KEY, lang);
+    localStorage.setItem(STORAGE_KEY, currentLang);
   } catch {
     // не получилось сохранить — не критично
   }
+
+  // 7. Сообщаем остальным модулям, что язык сменился.
+  //    Например, форма заново выведет срок на новом языке.
+  document.dispatchEvent(new CustomEvent('i18n:change', { detail: { lang: currentLang } }));
 }
 
 /**

@@ -206,6 +206,28 @@
       "reasonText": "Das Gesetz verlangt keine Begründung (Art. 75 Abs. 1 SchKG). Ein klarer Satz genügt.",
       "nextTitle": "Und dann?",
       "nextText": "Der Rechtsvorschlag stoppt die Betreibung. Der Gläubiger muss sich dann an das Gericht wenden, um ihn beseitigen zu lassen. Eine geschuldete Forderung erlischt dadurch nicht."
+    },
+    "deadline": {
+      "lastDay": "Letzter Tag für den Rechtsvorschlag",
+      "daysLeft": "Ihnen bleiben noch {days} Tag(e).",
+      "today": "Heute ist der letzte Tag!",
+      "expired": "Die 10-tägige Frist ist wahrscheinlich abgelaufen.",
+      "expiredHelp": "Wenden Sie sich rasch an das Betreibungsamt oder an eine Anwältin bzw. einen Anwalt. Eine Wiederherstellung der Frist ist nur möglich, wenn Sie unverschuldet verhindert waren (Art. 33 Abs. 4 SchKG).",
+      "postHint": "Es genügt, den Brief spätestens an diesem Tag der Schweizerischen Post zu übergeben (Art. 32 Abs. 1 SchKG). Senden Sie ihn am besten eingeschrieben und bewahren Sie die Quittung auf.",
+      "ferien": "Dieses Datum fällt in die Betreibungsferien. Die Frist könnte dann verlängert werden (Art. 63 SchKG). Senden Sie den Rechtsvorschlag aber sicherheitshalber spätestens am angegebenen Datum.",
+      "holidayNote": "Berücksichtigt werden nur Feiertage, die in der ganzen Schweiz gelten. Das angezeigte Datum ist daher nie später als die tatsächliche Frist."
+    },
+    "errors": {
+      "dateFuture": "Das Zustellungsdatum darf nicht in der Zukunft liegen.",
+      "contestedTooBig": "Der bestrittene Betrag darf nicht höher sein als der geforderte Betrag."
+    }
+  },
+  "form": {
+    "errors": {
+      "required": "Dieses Feld ist erforderlich.",
+      "number": "Geben Sie einen gültigen Betrag ein (z. B. 250 oder 250.50).",
+      "pattern": "Das Format ist nicht korrekt.",
+      "zip": "Die Schweizer PLZ hat 4 Ziffern."
     }
   }
 }

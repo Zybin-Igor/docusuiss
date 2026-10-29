@@ -149,6 +149,10 @@
               </div>
             </div>
 
+            <!-- Сюда JS выводит рассчитанный срок (урок 2).
+                 aria-live="polite" — программа чтения с экрана сама озвучит изменения -->
+            <div class="deadline" data-js-deadline aria-live="polite" hidden></div>
+
             <div class="form__row">
               <div class="field">
                 <label class="field__label" for="creditor" data-i18n="rv.f.creditor">Créancier</label>
@@ -219,7 +223,7 @@
             <div class="form__row form__row--zip">
               <div class="field">
                 <label class="field__label" for="zip" data-i18n="rv.f.zip">NPA</label>
-                <input class="field__control" id="zip" name="zip" type="text" inputmode="numeric" maxlength="4" autocomplete="postal-code" required />
+                <input class="field__control" id="zip" name="zip" type="text" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" data-error-key="form.errors.zip" autocomplete="postal-code" required />
               </div>
               <div class="field">
                 <label class="field__label" for="city" data-i18n="rv.f.city">Localité</label>

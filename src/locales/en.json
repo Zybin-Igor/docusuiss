@@ -206,6 +206,28 @@
       "reasonText": "The law does not require you to give reasons (Art. 75 para. 1 DEBA). One clear sentence is enough.",
       "nextTitle": "What happens next?",
       "nextText": "The objection stops the debt collection. The creditor must then go to court to have it set aside. The objection does not cancel a debt that is actually owed."
+    },
+    "deadline": {
+      "lastDay": "Last day to file your objection",
+      "daysLeft": "You have {days} day(s) left.",
+      "today": "Today is the last day!",
+      "expired": "The 10-day deadline has probably passed.",
+      "expiredHelp": "Contact the debt collection office or a lawyer quickly. The deadline can only be restored if you were prevented from acting through no fault of your own (Art. 33 para. 4 DEBA).",
+      "postHint": "It is enough to hand the letter to Swiss Post on that day at the latest (Art. 32 para. 1 DEBA). Ideally send it by registered mail and keep the receipt.",
+      "ferien": "This date falls within the debt collection holidays. The deadline might then be extended (Art. 63 DEBA), but to be safe, send your objection by the date shown.",
+      "holidayNote": "Only public holidays that apply throughout Switzerland are taken into account, so the date shown is never later than the real deadline."
+    },
+    "errors": {
+      "dateFuture": "The date received cannot be in the future.",
+      "contestedTooBig": "The disputed amount cannot be higher than the amount claimed."
+    }
+  },
+  "form": {
+    "errors": {
+      "required": "This field is required.",
+      "number": "Enter a valid amount (e.g. 250 or 250.50).",
+      "pattern": "The format is not correct.",
+      "zip": "Swiss postcodes have 4 digits."
     }
   }
 }
