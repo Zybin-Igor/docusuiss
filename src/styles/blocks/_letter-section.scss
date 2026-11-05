@@ -1,0 +1,62 @@
+@use '../helpers' as *;
+
+// ── СЕКЦИЯ С ГОТОВЫМ ПИСЬМОМ ────────────────────────────
+
+.letter-section {
+  &[hidden] {
+    display: none;
+  }
+
+  &__note {
+    max-width: rem(620);
+    margin: rem(12) 0 0;
+    color: var(--ink-2);
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) rem(320);
+    align-items: start;
+    gap: rem(40);
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__aside {
+    position: sticky;
+    top: calc(var(--header-height) + rem(24));
+    display: grid;
+    gap: rem(16);
+
+    @include tablet {
+      position: static;
+    }
+  }
+
+  &__actions {
+    display: grid;
+    gap: rem(10);
+
+    .btn {
+      justify-content: center;
+    }
+  }
+}
+
+// Нумерованный список шагов внутри заметки
+.steps-list {
+  display: grid;
+  gap: rem(10);
+  margin: rem(8) 0 0;
+  padding-left: rem(20);
+  font-size: rem(14);
+  line-height: 1.55;
+  color: var(--ink-2);
+
+  li::marker {
+    font-weight: 600;
+    color: var(--accent);
+  }
+}

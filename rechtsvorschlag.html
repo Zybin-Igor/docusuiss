@@ -131,6 +131,14 @@
               </select>
             </div>
 
+            <!-- Язык письма. Показываем только в двуязычных кантонах (урок 3).
+                 Варианты (option) JS создаёт сам — в зависимости от кантона. -->
+            <div class="field" data-js-letter-lang-field hidden>
+              <label class="field__label" for="letterLang" data-i18n="rv.f.letterLang">Langue de la lettre</label>
+              <select class="field__control" id="letterLang" name="letterLang"></select>
+              <p class="field__hint" data-i18n="rv.f.letterLangHint">Ce canton est bilingue. Choisissez la langue utilisée par votre office des poursuites (celle du commandement de payer).</p>
+            </div>
+
             <div class="field">
               <label class="field__label" for="office" data-i18n="rv.f.office">Office des poursuites (nom et adresse)</label>
               <textarea class="field__control" id="office" name="office" rows="3" required></textarea>
@@ -253,6 +261,37 @@
             <p class="note__text" data-i18n="rv.aside.nextText">L'opposition arrête la poursuite. Le créancier doit alors s'adresser au juge pour la faire lever. L'opposition n'efface pas la dette si elle est due.</p>
           </div>
         </aside>
+      </div>
+    </section>
+
+    <!-- ═══ ГОТОВОЕ ПИСЬМО (урок 3) ═══
+         Секция скрыта, пока форма не заполнена без ошибок -->
+    <section class="section section--muted letter-section" id="letter" data-js-letter-section hidden>
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-label" data-i18n="rv.letter.label">Votre lettre est prête</p>
+            <h2 class="section-title" data-i18n="rv.letter.title">Vérifiez votre lettre</h2>
+            <p class="letter-section__note" data-js-letter-note></p>
+          </div>
+        </div>
+
+        <div class="letter-section__layout">
+          <!-- Сюда JS вставит текст письма -->
+          <article class="letter" data-js-letter></article>
+
+          <aside class="letter-section__aside">
+            <div class="letter-section__actions">
+              <button class="btn btn--primary" type="button" data-js-copy-letter data-i18n="rv.letter.copy">Copier le texte</button>
+              <a class="btn btn--secondary" href="#rv-form" data-i18n="rv.letter.edit">Modifier mes données</a>
+            </div>
+
+            <div class="note">
+              <h3 class="note__title" data-i18n="rv.letter.nextTitle">Prochaines étapes</h3>
+              <ol class="steps-list" data-js-next-steps></ol>
+            </div>
+          </aside>
+        </div>
       </div>
     </section>
   </main>

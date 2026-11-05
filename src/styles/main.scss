@@ -13,6 +13,7 @@
 @use 'components/section';
 @use 'components/form';
 @use 'components/deadline';
+@use 'components/letter';
 
 // Блоки страницы (сверху вниз, как на сайте)
 @use 'blocks/disclaimer';
@@ -30,3 +31,4 @@
 // Блоки внутренних страниц
 @use 'blocks/page-intro';
 @use 'blocks/wizard';
+@use 'blocks/letter-section';

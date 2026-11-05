@@ -195,7 +195,9 @@
       "lastName": "Nom",
       "street": "Rue et numéro",
       "zip": "NPA",
-      "city": "Localité"
+      "city": "Localité",
+      "letterLang": "Langue de la lettre",
+      "letterLangHint": "Ce canton est bilingue. Choisissez la langue utilisée par votre office des poursuites (celle du commandement de payer)."
     },
     "submit": "Préparer ma lettre →",
     "privacy": "🔒 Vos données restent dans votre navigateur. Elles ne sont envoyées nulle part.",
@@ -220,6 +222,24 @@
     "errors": {
       "dateFuture": "La date de réception ne peut pas être dans le futur.",
       "contestedTooBig": "Le montant contesté ne peut pas dépasser le montant réclamé."
+    },
+    "langNames": {
+      "de": "allemand",
+      "fr": "français",
+      "it": "italien"
+    },
+    "letter": {
+      "label": "Votre lettre est prête",
+      "title": "Vérifiez votre lettre",
+      "langNote": "La lettre est rédigée en {lang}, la langue officielle de votre office des poursuites. Relisez-la attentivement avant de l'envoyer.",
+      "copy": "Copier le texte",
+      "copied": "Copié ✓",
+      "edit": "Modifier mes données",
+      "nextTitle": "Prochaines étapes",
+      "step1": "Imprimez la lettre (ou copiez le texte dans Word).",
+      "step2": "Signez-la à la main.",
+      "step3": "Remettez-la à La Poste en recommandé au plus tard le {date}.",
+      "step4": "Gardez une copie et le récépissé postal jusqu'à la fin de l'affaire."
     }
   },
   "form": {

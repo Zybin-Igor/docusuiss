@@ -2,12 +2,14 @@
 //
 // Урок 1: читаем данные формы и показываем/прячем поле «частично». ✅
 // Урок 2: расчёт 10-дневного срока и проверка полей. ✅
-// Урок 3: текст письма на языке кантона.
+// Урок 3: текст письма на языке кантона. ✅
 // Урок 4: печать / сохранение в PDF.
 
 import { t, formatDate } from './i18n.js';
 import { parseDate, calculateDeadline, daysUntil, isInDebtCollectionHolidays } from './deadline.js';
 import { validateForm, validateControl, enableLiveValidation } from './form-validation.js';
+import { getLetterLanguages } from './cantons.js';
+import { initLetterPreview } from './letter-preview.js';
 
 export function initRechtsvorschlagForm() {
   // Находим элементы на странице по data-js-атрибутам
@@ -17,6 +19,8 @@ export function initRechtsvorschlagForm() {
   const partialField = form.querySelector('[data-js-partial-field]');
   const scopeRadios = form.querySelectorAll('input[name="scope"]');
   const deadlineBox = form.querySelector('[data-js-deadline]');
+  const letterLangField = form.querySelector('[data-js-letter-lang-field]');
+  const letterPreview = initLetterPreview(); // блок с готовым письмом (см. letter-preview.js)
 
   // ── Урок 1 (ваш код): поле «частично» ──────────────────
   scopeRadios.forEach((radio) => {
@@ -120,6 +124,29 @@ export function initRechtsvorschlagForm() {
   form.addEventListener('input', checkCustomRules);
   enableLiveValidation(form);
 
+  // ── Урок 3: язык письма ────────────────────────────────
+  /**
+   * Заполняем список языков письма для выбранного кантона.
+   * Если язык один — поле прячем (выбирать нечего).
+   */
+  function updateLetterLanguages() {
+    const languages = getLetterLanguages(form.canton.value);
+    const previous = form.letterLang.value; // чтобы не сбрасывать выбор пользователя
+
+    // Пересоздаём варианты <option>. Названия языков — на языке сайта.
+    form.letterLang.innerHTML = '';
+    languages.forEach((lang) => {
+      const option = new Option(t(`rv.langNames.${lang}`), lang);
+      form.letterLang.add(option);
+    });
+
+    if (languages.includes(previous)) form.letterLang.value = previous;
+    letterLangField.hidden = languages.length < 2;
+  }
+
+  form.canton.addEventListener('change', updateLetterLanguages);
+  document.addEventListener('i18n:change', updateLetterLanguages); // перевести названия языков
+
   // ── Отправка формы ─────────────────────────────────────
   form.addEventListener('submit', (event) => {
     event.preventDefault(); // не перезагружать страницу
@@ -129,7 +156,14 @@ export function initRechtsvorschlagForm() {
 
     // FormData собирает все поля формы по их атрибуту name
     const data = Object.fromEntries(new FormData(form));
-    console.log('Данные формы:', data);
-    // На уроке 3 здесь появится готовое письмо
+    const receivedDate = parseDate(data.receivedDate);
+
+    // Урок 3: показываем готовое письмо
+    letterPreview.show({
+      data,
+      lang: data.letterLang || getLetterLanguages(data.canton)[0],
+      receivedDate,
+      deadline: calculateDeadline(receivedDate),
+    });
   });
 }

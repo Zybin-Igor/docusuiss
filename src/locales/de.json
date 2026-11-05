@@ -195,7 +195,9 @@
       "lastName": "Nachname",
       "street": "Strasse und Nr.",
       "zip": "PLZ",
-      "city": "Ort"
+      "city": "Ort",
+      "letterLang": "Sprache des Briefes",
+      "letterLangHint": "Dieser Kanton ist zweisprachig. Wählen Sie die Sprache Ihres Betreibungsamts (die Sprache des Zahlungsbefehls)."
     },
     "submit": "Brief vorbereiten →",
     "privacy": "🔒 Ihre Daten bleiben in Ihrem Browser. Sie werden nirgendwohin gesendet.",
@@ -220,6 +222,24 @@
     "errors": {
       "dateFuture": "Das Zustellungsdatum darf nicht in der Zukunft liegen.",
       "contestedTooBig": "Der bestrittene Betrag darf nicht höher sein als der geforderte Betrag."
+    },
+    "langNames": {
+      "de": "Deutsch",
+      "fr": "Französisch",
+      "it": "Italienisch"
+    },
+    "letter": {
+      "label": "Ihr Brief ist bereit",
+      "title": "Prüfen Sie Ihren Brief",
+      "langNote": "Der Brief ist auf {lang} verfasst, in der Amtssprache Ihres Betreibungsamts. Lesen Sie ihn vor dem Versand sorgfältig durch.",
+      "copy": "Text kopieren",
+      "copied": "Kopiert ✓",
+      "edit": "Angaben ändern",
+      "nextTitle": "Nächste Schritte",
+      "step1": "Drucken Sie den Brief aus (oder kopieren Sie den Text in Word).",
+      "step2": "Unterschreiben Sie ihn von Hand.",
+      "step3": "Geben Sie ihn spätestens am {date} eingeschrieben bei der Post auf.",
+      "step4": "Bewahren Sie eine Kopie und die Postquittung bis zum Abschluss der Sache auf."
     }
   },
   "form": {

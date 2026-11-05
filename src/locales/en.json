@@ -195,7 +195,9 @@
       "lastName": "Last name",
       "street": "Street and number",
       "zip": "Postcode",
-      "city": "Town"
+      "city": "Town",
+      "letterLang": "Language of the letter",
+      "letterLangHint": "This canton is bilingual. Choose the language used by your debt collection office (the language of the payment order)."
     },
     "submit": "Prepare my letter →",
     "privacy": "🔒 Your data stays in your browser. It is not sent anywhere.",
@@ -220,6 +222,24 @@
     "errors": {
       "dateFuture": "The date received cannot be in the future.",
       "contestedTooBig": "The disputed amount cannot be higher than the amount claimed."
+    },
+    "langNames": {
+      "de": "German",
+      "fr": "French",
+      "it": "Italian"
+    },
+    "letter": {
+      "label": "Your letter is ready",
+      "title": "Check your letter",
+      "langNote": "The letter is written in {lang}, the official language of your debt collection office. Read it carefully before sending it.",
+      "copy": "Copy text",
+      "copied": "Copied ✓",
+      "edit": "Edit my details",
+      "nextTitle": "Next steps",
+      "step1": "Print the letter (or copy the text into Word).",
+      "step2": "Sign it by hand.",
+      "step3": "Send it by registered mail at Swiss Post no later than {date}.",
+      "step4": "Keep a copy and the postal receipt until the matter is closed."
     }
   },
   "form": {
