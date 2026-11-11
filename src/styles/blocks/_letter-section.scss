@@ -43,6 +43,13 @@
       justify-content: center;
     }
   }
+
+  &__hint {
+    margin: 0;
+    font-size: rem(12.5);
+    line-height: 1.5;
+    color: var(--ink-3);
+  }
 }
 
 // Нумерованный список шагов внутри заметки

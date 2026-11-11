@@ -98,6 +98,13 @@
             </legend>
             <p class="form__hint" data-i18n="rv.s1.hint">Toutes ces informations figurent sur le commandement de payer que vous avez reçu.</p>
 
+            <!-- ⚖️ Исключение: Wechselbetreibung (ст. 177–189 SchKG).
+                 Срок 5 дней, нужна мотивировка — наш сервис не подходит. -->
+            <div class="form__alert" role="note">
+              <p class="form__alert-title" data-i18n="rv.s1.wechselTitle">Vérifiez d’abord : s’agit-il d’une poursuite pour effets de change ?</p>
+              <p class="form__alert-text" data-i18n-html="rv.s1.wechselText">Si le commandement de payer indique <strong>« poursuite pour effets de change »</strong> (lettre de change ou chèque), ce service ne convient pas : le délai n’est que de <strong>5 jours</strong> et l’opposition doit être motivée (art. 179 LP). Adressez-vous immédiatement à un avocat ou une avocate.</p>
+            </div>
+
             <div class="field">
               <label class="field__label" for="canton" data-i18n="rv.f.canton">Canton de l'office des poursuites</label>
               <select class="field__control" id="canton" name="canton" required>
@@ -203,6 +210,17 @@
               <label class="field__label" for="contestedAmount" data-i18n="rv.f.contestedAmount">Montant contesté (CHF)</label>
               <input class="field__control" id="contestedAmount" name="contestedAmount" type="number" min="0" step="0.05" inputmode="decimal" />
             </div>
+
+            <!-- ⚖️ «Нет нового имущества» (ст. 75 абз. 2 SchKG).
+                 Это checkbox, а не radio: его можно отметить вместе с любым вариантом выше.
+                 Если флажок отмечен, FormData даст data.noNewAssets === 'yes', иначе этого поля не будет. -->
+            <label class="choice">
+              <input class="choice__input" type="checkbox" name="noNewAssets" value="yes" />
+              <span class="choice__body">
+                <span class="choice__title" data-i18n="rv.f.noNewAssets">J’ai déjà fait l’objet d’une faillite</span>
+                <span class="choice__text" data-i18n="rv.f.noNewAssetsText">Cochez cette case si cette dette est restée impayée après votre faillite (le créancier a reçu un acte de défaut de biens). La lettre contestera alors aussi votre retour à meilleure fortune. Si vous ne le déclarez pas maintenant, vous perdez ce droit (art. 75 al. 2 LP).</span>
+              </span>
+            </label>
           </fieldset>
 
           <!-- ── Шаг 3. Ваши данные ── -->
@@ -282,8 +300,11 @@
 
           <aside class="letter-section__aside">
             <div class="letter-section__actions">
-              <button class="btn btn--primary" type="button" data-js-copy-letter data-i18n="rv.letter.copy">Copier le texte</button>
+              <!-- Урок 4: печать / PDF -->
+              <button class="btn btn--primary" type="button" data-js-print-letter data-i18n="rv.letter.print">Imprimer / PDF</button>
+              <button class="btn btn--secondary" type="button" data-js-copy-letter data-i18n="rv.letter.copy">Copier le texte</button>
               <a class="btn btn--secondary" href="#rv-form" data-i18n="rv.letter.edit">Modifier mes données</a>
+              <p class="letter-section__hint" data-i18n="rv.letter.printHint">Pour obtenir un fichier PDF, choisissez « Enregistrer au format PDF » dans la fenêtre d'impression.</p>
             </div>
 
             <div class="note">

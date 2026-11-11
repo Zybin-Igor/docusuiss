@@ -13,6 +13,7 @@ export function initLetterPreview() {
   const note = section.querySelector('[data-js-letter-note]');
   const nextSteps = section.querySelector('[data-js-next-steps]');
   const copyButton = section.querySelector('[data-js-copy-letter]');
+  const printButton = section.querySelector('[data-js-print-letter]');
 
   let current = null; // последние данные — чтобы перерисовать при смене языка сайта
 
@@ -30,7 +31,7 @@ export function initLetterPreview() {
 
   /** Показать письмо. Вызывается из формы после успешной проверки. */
   function show({ data, lang, receivedDate, deadline }) {
-    current = { lang, deadline };
+    current = { lang, deadline, caseNumber: data.caseNumber.trim() };
 
     letter.innerHTML = buildRechtsvorschlagLetter(data, lang, receivedDate);
     letter.lang = lang; // язык письма — для правильных переносов и озвучки
@@ -61,22 +62,61 @@ export function initLetterPreview() {
   // Пишите код ниже этой строки 👇
 
   // ════════════════════════════════════════════════════════
-copyButton.addEventListener('click', async () => {
+  copyButton.addEventListener('click', async () => {
     try {
-      
+
       const textToCopy = letter.innerText;//Извлекаем чистый текст письма без HTML-тегов
 
-      
+
       await navigator.clipboard.writeText(textToCopy);//Копируем текст асинхронно в буфер обмена
-      
+
       copyButton.textContent = t('rv.letter.copied');//Меняем текст кнопки на «Скопировано»
-// Возврат исходного текста кнопки через 2 секунды
+      // Возврат исходного текста кнопки через 2 секунды
       setTimeout(() => {
         copyButton.textContent = t('rv.letter.copy');
       }, 2000);
     } catch (err) {
-      console.error('Ошибка при копировании текста: ', err);
+      console.error('Error while copying text: ', err);
     }
   });
+
+  // ════════════════════════════════════════════════════════
+  // 🏠 ДОМАШНЕЕ ЗАДАНИЕ (урок 4): кнопка «Печать / PDF»
+  //
+  // Все стили для печати уже готовы (файл src/styles/base/_print.scss).
+  // Осталось открыть окно печати по клику на printButton.
+  //
+  // Подсказки:
+  //  1. Повесьте обработчик клика на printButton (как вы делали с copyButton,
+  //     но async здесь НЕ нужен).
+  //  2. Окно печати открывает одна команда: window.print();
+  //
+  // Бонус ⭐: имя PDF-файла браузер берёт из заголовка страницы (document.title).
+  // Сделайте, чтобы файл назывался, например, «Rechtsvorschlag 26-123456»:
+  //   a) перед печатью запомните старый заголовок:  const oldTitle = document.title;
+  //   b) поставьте новый:  document.title = `Rechtsvorschlag ${current.caseNumber}`;
+  //   c) вызовите window.print();
+  //   d) верните старый заголовок:  document.title = oldTitle;
+  //
+  // Пишите код ниже этой строки 👇
+
+  // ════════════════════════════════════════════════════════
+  if (printButton) {
+    printButton.addEventListener('click', () => {
+      //  Запоминаем текущий заголовок страницы
+      const oldTitle = document.title;
+
+      // Устанавливаем новое имя для будущего PDF-файла (если есть номер дела)
+      if (current && current.caseNumber) {
+        document.title = `Rechtsvorschlag ${current.caseNumber}`;
+      }
+
+      //  Открываем системное окно печати браузера
+      window.print();
+
+      //  Возвращаем старый заголовок страницы обратно
+      document.title = oldTitle;
+    });
+  }
   return { show };
 }

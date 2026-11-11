@@ -168,7 +168,9 @@
     "intro": "Répondez à quelques questions. Nous calculons votre délai et préparons une lettre prête à envoyer à l'office des poursuites.",
     "s1": {
       "title": "Le commandement de payer",
-      "hint": "Toutes ces informations figurent sur le commandement de payer que vous avez reçu."
+      "hint": "Toutes ces informations figurent sur le commandement de payer que vous avez reçu.",
+      "wechselTitle": "Vérifiez d’abord : s’agit-il d’une poursuite pour effets de change ?",
+      "wechselText": "Si le commandement de payer indique <strong>« poursuite pour effets de change »</strong> (lettre de change ou chèque), ce service ne convient pas : le délai n’est que de <strong>5 jours</strong> et l’opposition doit être motivée (art. 179 LP). Adressez-vous immédiatement à un avocat ou une avocate."
     },
     "s2": {
       "title": "Votre opposition"
@@ -197,7 +199,9 @@
       "zip": "NPA",
       "city": "Localité",
       "letterLang": "Langue de la lettre",
-      "letterLangHint": "Ce canton est bilingue. Choisissez la langue utilisée par votre office des poursuites (celle du commandement de payer)."
+      "letterLangHint": "Ce canton est bilingue. Choisissez la langue utilisée par votre office des poursuites (celle du commandement de payer).",
+      "noNewAssets": "J’ai déjà fait l’objet d’une faillite",
+      "noNewAssetsText": "Cochez cette case si cette dette est restée impayée après votre faillite (le créancier a reçu un acte de défaut de biens). La lettre contestera alors aussi votre retour à meilleure fortune. Si vous ne le déclarez pas maintenant, vous perdez ce droit (art. 75 al. 2 LP)."
     },
     "submit": "Préparer ma lettre →",
     "privacy": "🔒 Vos données restent dans votre navigateur. Elles ne sont envoyées nulle part.",
@@ -236,10 +240,12 @@
       "copied": "Copié ✓",
       "edit": "Modifier mes données",
       "nextTitle": "Prochaines étapes",
-      "step1": "Imprimez la lettre (ou copiez le texte dans Word).",
+      "step1": "Imprimez la lettre ou enregistrez-la en PDF (bouton « Imprimer / PDF »).",
       "step2": "Signez-la à la main.",
       "step3": "Remettez-la à La Poste en recommandé au plus tard le {date}.",
-      "step4": "Gardez une copie et le récépissé postal jusqu'à la fin de l'affaire."
+      "step4": "Gardez une copie et le récépissé postal jusqu'à la fin de l'affaire.",
+      "print": "Imprimer / PDF",
+      "printHint": "Pour obtenir un fichier PDF, choisissez « Enregistrer au format PDF » dans la fenêtre d'impression."
     }
   },
   "form": {

@@ -168,7 +168,9 @@
     "intro": "Answer a few questions. We calculate your deadline and prepare a letter ready to send to the debt collection office.",
     "s1": {
       "title": "The payment order",
-      "hint": "You will find all this information on the payment order (Zahlungsbefehl / commandement de payer) you received."
+      "hint": "You will find all this information on the payment order (Zahlungsbefehl / commandement de payer) you received.",
+      "wechselTitle": "Check first: is it a bill-of-exchange collection?",
+      "wechselText": "If the payment order says <strong>“Wechselbetreibung”</strong>, “poursuite pour effets de change” or “esecuzione cambiaria” (collection based on a bill of exchange or cheque), this service is not suitable: the deadline is only <strong>5 days</strong> and the objection must state reasons (Art. 179 DEBA). Contact a lawyer immediately."
     },
     "s2": {
       "title": "Your objection"
@@ -197,7 +199,9 @@
       "zip": "Postcode",
       "city": "Town",
       "letterLang": "Language of the letter",
-      "letterLangHint": "This canton is bilingual. Choose the language used by your debt collection office (the language of the payment order)."
+      "letterLangHint": "This canton is bilingual. Choose the language used by your debt collection office (the language of the payment order).",
+      "noNewAssets": "I have already been through bankruptcy (Konkurs)",
+      "noNewAssetsText": "Tick this if this debt remained unpaid after your bankruptcy (the creditor received a certificate of loss, Verlustschein). The letter will then also dispute that you have acquired new assets. If you do not declare this now, you lose this defence (Art. 75 para. 2 DEBA)."
     },
     "submit": "Prepare my letter →",
     "privacy": "🔒 Your data stays in your browser. It is not sent anywhere.",
@@ -236,10 +240,12 @@
       "copied": "Copied ✓",
       "edit": "Edit my details",
       "nextTitle": "Next steps",
-      "step1": "Print the letter (or copy the text into Word).",
+      "step1": "Print the letter or save it as a PDF (“Print / PDF” button).",
       "step2": "Sign it by hand.",
       "step3": "Send it by registered mail at Swiss Post no later than {date}.",
-      "step4": "Keep a copy and the postal receipt until the matter is closed."
+      "step4": "Keep a copy and the postal receipt until the matter is closed.",
+      "print": "Print / PDF",
+      "printHint": "To get a PDF file, choose “Save as PDF” in the print window."
     }
   },
   "form": {

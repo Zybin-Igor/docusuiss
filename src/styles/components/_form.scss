@@ -73,6 +73,29 @@
     }
   }
 
+  // Важное предупреждение внутри шага (оранжевое, как «срочно» у срока)
+  &__alert {
+    display: grid;
+    gap: rem(4);
+    padding: rem(14) rem(18);
+    background-color: #fff4e5;
+    border-left: 4px solid #b45309;
+    border-radius: var(--radius);
+  }
+
+  &__alert-title {
+    margin: 0;
+    font-weight: 600;
+    color: #b45309;
+  }
+
+  &__alert-text {
+    margin: 0;
+    font-size: rem(13.5);
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+
   &__actions {
     display: grid;
     justify-items: start;

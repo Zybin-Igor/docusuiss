@@ -168,7 +168,9 @@
     "intro": "Beantworten Sie einige Fragen. Wir berechnen Ihre Frist und erstellen einen versandfertigen Brief an das Betreibungsamt.",
     "s1": {
       "title": "Der Zahlungsbefehl",
-      "hint": "Alle diese Angaben finden Sie auf dem Zahlungsbefehl, den Sie erhalten haben."
+      "hint": "Alle diese Angaben finden Sie auf dem Zahlungsbefehl, den Sie erhalten haben.",
+      "wechselTitle": "Zuerst prüfen: Ist es eine Wechselbetreibung?",
+      "wechselText": "Steht auf dem Zahlungsbefehl <strong>«Wechselbetreibung»</strong> (Betreibung aus Wechsel oder Check), ist dieser Dienst nicht geeignet: Die Frist beträgt nur <strong>5 Tage</strong>, und der Rechtsvorschlag muss begründet werden (Art. 179 SchKG). Wenden Sie sich sofort an eine Anwältin oder einen Anwalt."
     },
     "s2": {
       "title": "Ihr Rechtsvorschlag"
@@ -197,7 +199,9 @@
       "zip": "PLZ",
       "city": "Ort",
       "letterLang": "Sprache des Briefes",
-      "letterLangHint": "Dieser Kanton ist zweisprachig. Wählen Sie die Sprache Ihres Betreibungsamts (die Sprache des Zahlungsbefehls)."
+      "letterLangHint": "Dieser Kanton ist zweisprachig. Wählen Sie die Sprache Ihres Betreibungsamts (die Sprache des Zahlungsbefehls).",
+      "noNewAssets": "Gegen mich wurde bereits ein Konkurs durchgeführt",
+      "noNewAssetsText": "Kreuzen Sie dies an, wenn diese Schuld nach Ihrem Konkurs offen geblieben ist (der Gläubiger hat einen Verlustschein erhalten). Der Brief bestreitet dann zusätzlich, dass Sie zu neuem Vermögen gekommen sind. Wer dies nicht jetzt erklärt, verliert diese Einrede (Art. 75 Abs. 2 SchKG)."
     },
     "submit": "Brief vorbereiten →",
     "privacy": "🔒 Ihre Daten bleiben in Ihrem Browser. Sie werden nirgendwohin gesendet.",
@@ -236,10 +240,12 @@
       "copied": "Kopiert ✓",
       "edit": "Angaben ändern",
       "nextTitle": "Nächste Schritte",
-      "step1": "Drucken Sie den Brief aus (oder kopieren Sie den Text in Word).",
+      "step1": "Drucken Sie den Brief aus oder speichern Sie ihn als PDF (Schaltfläche «Drucken / PDF»).",
       "step2": "Unterschreiben Sie ihn von Hand.",
       "step3": "Geben Sie ihn spätestens am {date} eingeschrieben bei der Post auf.",
-      "step4": "Bewahren Sie eine Kopie und die Postquittung bis zum Abschluss der Sache auf."
+      "step4": "Bewahren Sie eine Kopie und die Postquittung bis zum Abschluss der Sache auf.",
+      "print": "Drucken / PDF",
+      "printHint": "Für eine PDF-Datei wählen Sie im Druckfenster «Als PDF speichern»."
     }
   },
   "form": {

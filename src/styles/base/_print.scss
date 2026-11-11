@@ -1,0 +1,83 @@
+// ── СТИЛИ ДЛЯ ПЕЧАТИ ────────────────────────────────────
+//
+// Всё, что внутри @media print, работает ТОЛЬКО при печати
+// (и при «Сохранить как PDF»). На экране эти правила не действуют.
+//
+// Задача: на бумагу должно попасть только письмо — без шапки,
+// формы, кнопок и подвала — ровно на один лист A4.
+//
+// Этот файл подключается ПОСЛЕДНИМ в main.scss, чтобы его правила
+// были сильнее всех остальных.
+
+// Размер листа и поля. Для швейцарского письма с конвертом C5
+// (окошко справа) удобно левое поле 25 мм.
+@page {
+  size: A4;
+  margin: 18mm 18mm 18mm 25mm;
+}
+
+@media print {
+  // 1. Прячем всё, что не письмо
+  .disclaimer,
+  .header,
+  .page-intro,
+  .wizard,
+  .footer,
+  .letter-section .section-header,
+  .letter-section__aside {
+    display: none !important;
+  }
+
+  // 2. Убираем фон и отступы страницы — на бумаге они не нужны
+  body,
+  .section,
+  .section--muted {
+    padding: 0 !important;
+    background: none !important;
+  }
+
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+
+  .letter-section__layout {
+    display: block;
+  }
+
+  // 3. Само письмо: без рамки и тени, обычный размер шрифта для бумаги
+  .letter {
+    max-width: none;
+    padding: 0;
+    font-size: 11pt;
+    line-height: 1.45;
+    color: #000;
+    border: 0;
+    box-shadow: none;
+  }
+
+  // 4. Адрес получателя — там, где окошко конверта C5 (справа, ~45 мм от верха листа)
+  .letter__sender {
+    height: 27mm;
+    margin-bottom: 0;
+    font-size: 9pt;
+  }
+
+  .letter__recipient {
+    width: 80mm;
+    min-height: 40mm;
+    margin: 0 0 12mm 92mm; // 25 мм поле + 92 мм = адрес начинается в 117 мм от левого края
+  }
+
+  // 5. Не разрывать подпись и абзацы между страницами
+  .letter p,
+  .letter__signature {
+    break-inside: avoid;
+  }
+
+  // Ссылки на бумаге не нужны подчёркнутыми синими
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
