@@ -117,6 +117,8 @@ export function buildRechtsvorschlagLetter(data, lang, receivedDate) {
   //
   // Пишите код ниже этой строки 👇
 
+  const noNewAssetsHtml = data.noNewAssets === 'yes' ? `<p>${text.noNewAssets}</p>` : '';
+
   // ════════════════════════════════════════════════════════
 
   return `
@@ -138,7 +140,7 @@ export function buildRechtsvorschlagLetter(data, lang, receivedDate) {
     <p>${text.greeting}</p>
     <p>${fill(text.intro, values)}</p>
     <p>${fill(opposition, values)}</p>
-    <!-- ДОМАШНЕЕ ЗАДАНИЕ: сюда абзац «нет нового имущества» -->
+    ${noNewAssetsHtml}
     <p>${text.confirmation}</p>
     <p>${text.closing}</p>
 
