@@ -3,13 +3,10 @@
 // Урок 1: читаем данные формы и показываем/прячем поле «частично». ✅
 // Урок 2: расчёт 10-дневного срока и проверка полей. ✅
 // Урок 3: текст письма на языке кантона. ✅
-// Урок 4: печать / сохранение в PDF.
-// Урок 5: 
-/*
-//Сейчас флажок отмечается, но в письме ничего не меняется. Ваша задача: если флажок отмечен, добавить в письмо абзац text.noNewAssets. Новое для вас здесь — тернарный оператор условие ? да : нет. Подсказки есть в файле.
+// Урок 4: печать / сохранение в PDF. ✅
+// Урок 5: «нет нового имущества» (ст. 75 абз. 2 SchKG). ✅
+// Урок 6: автообновление письма.
 
-Как проверить: отметьте флажок, нажмите «Подготовить письмо», и после абзаца с возражением должно появиться предложение про «neues Vermögen». Снимите флажок, и оно должно исчезнуть. 
- */
 import { t, formatDate } from './i18n.js';
 import { parseDate, calculateDeadline, daysUntil, isInDebtCollectionHolidays } from './deadline.js';
 import { validateForm, validateControl, enableLiveValidation } from './form-validation.js';
@@ -152,6 +149,29 @@ export function initRechtsvorschlagForm() {
   form.canton.addEventListener('change', updateLetterLanguages);
   document.addEventListener('i18n:change', updateLetterLanguages); // перевести названия языков
 
+  // ── Показ письма ───────────────────────────────────────
+  /**
+   * Собирает данные формы и показывает письмо.
+   * options передаём дальше в letterPreview.show — например { scroll: false }.
+   * (Раньше этот код жил прямо в обработчике submit. Вынесли в функцию,
+   *  чтобы вызывать его из двух мест: при отправке и при автообновлении.)
+   */
+  function showLetter(options) {
+    // FormData собирает все поля формы по их атрибуту name
+    const data = Object.fromEntries(new FormData(form));
+    const receivedDate = parseDate(data.receivedDate);
+
+    letterPreview.show(
+      {
+        data,
+        lang: data.letterLang || getLetterLanguages(data.canton)[0],
+        receivedDate,
+        deadline: calculateDeadline(receivedDate),
+      },
+      options,
+    );
+  }
+
   // ── Отправка формы ─────────────────────────────────────
   form.addEventListener('submit', (event) => {
     event.preventDefault(); // не перезагружать страницу
@@ -159,16 +179,36 @@ export function initRechtsvorschlagForm() {
     checkCustomRules();
     if (!validateForm(form)) return; // есть ошибки — дальше не идём
 
-    // FormData собирает все поля формы по их атрибуту name
-    const data = Object.fromEntries(new FormData(form));
-    const receivedDate = parseDate(data.receivedDate);
-
-    // Урок 3: показываем готовое письмо
-    letterPreview.show({
-      data,
-      lang: data.letterLang || getLetterLanguages(data.canton)[0],
-      receivedDate,
-      deadline: calculateDeadline(receivedDate),
-    });
+    showLetter(); // без настроек → scroll по умолчанию true, страница прокрутится к письму
   });
+
+  // ════════════════════════════════════════════════════════
+  // 🏠 ДОМАШНЕЕ ЗАДАНИЕ (урок 6), часть B: автообновление письма
+  //
+  // Если письмо уже показано, а человек что-то поменял в форме
+  // (флажок, сумму, кантон…), письмо должно пересобраться само.
+  //
+  // Подсказки:
+  //  1. Слушайте событие 'change' у ВСЕЙ формы:
+  //       form.addEventListener('change', () => { ... });
+  //     'change' срабатывает сразу для флажков, радиокнопок и списков,
+  //     а для текстовых полей — когда человек ушёл из поля.
+  //  2. Если письмо ещё НЕ показано — ничего не делаем (выходим через return).
+  //     Проверка: letterPreview.isVisible()
+  //     Оператор «не»: !  →  if (!letterPreview.isVisible()) return;
+  //  3. Пересчитайте свои правила: checkCustomRules();
+  //  4. Если в форме есть ошибки — тоже выходим. Проверка БЕЗ красных
+  //     сообщений под полями (человек ещё печатает, не будем его пугать):
+  //       form.checkValidity()  → true, если ошибок нет
+  //  5. Покажите письмо без прокрутки: showLetter({ scroll: false });
+  //
+  // Сначала сделайте часть A (в letter-preview.js) — без неё страница
+  // будет прыгать к письму при каждом изменении.
+  //
+  // Бонус ⭐: если в форме появилась ошибка, а письмо показано — старое
+  // письмо с неверными данными лучше спрятать: letterPreview.hide();
+  //
+  // Пишите код ниже этой строки 👇
+
+  // ════════════════════════════════════════════════════════
 }

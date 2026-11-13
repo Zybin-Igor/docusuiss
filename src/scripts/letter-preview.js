@@ -29,6 +29,26 @@ export function initLetterPreview() {
       .join('');
   }
 
+  // ════════════════════════════════════════════════════════
+  // 🏠 ДОМАШНЕЕ ЗАДАНИЕ (урок 6), часть A: параметр scroll
+  //
+  // Сейчас show() ВСЕГДА прокручивает страницу к письму. При нажатии кнопки
+  // это правильно. Но при автообновлении (часть B, в rechtsvorschlag-form.js)
+  // человек сидит в форме — страница не должна прыгать вниз.
+  //
+  // Подсказки:
+  //  1. Добавьте функции второй параметр — объект с настройками
+  //     и значением по умолчанию:
+  //       function show({ data, lang, receivedDate, deadline }, { scroll = true } = {}) {
+  //     • { scroll = true } — если scroll не передали, он будет true;
+  //     • = {} в конце — если второй параметр не передали ВООБЩЕ,
+  //       вместо него возьмётся пустой объект (иначе будет ошибка).
+  //  2. Прокручивайте, только если scroll === true:
+  //       if (scroll) { ...строка со scrollIntoView... }
+  //
+  // Пример вызова: show(письмо, { scroll: false }) — показать без прокрутки.
+  // ════════════════════════════════════════════════════════
+
   /** Показать письмо. Вызывается из формы после успешной проверки. */
   function show({ data, lang, receivedDate, deadline }) {
     current = { lang, deadline, caseNumber: data.caseNumber.trim() };
@@ -39,6 +59,16 @@ export function initLetterPreview() {
 
     section.hidden = false;
     section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  /** Спрятать письмо (например, если в форме появилась ошибка). */
+  function hide() {
+    section.hidden = true;
+  }
+
+  /** Видно ли сейчас письмо на странице? */
+  function isVisible() {
+    return !section.hidden;
   }
 
   document.addEventListener('i18n:change', renderTexts);
@@ -118,5 +148,5 @@ export function initLetterPreview() {
       document.title = oldTitle;
     });
   }
-  return { show };
+  return { show, hide, isVisible };
 }

@@ -18,9 +18,9 @@
   --accent-light: #ff6b7a; // красный на тёмном фоне
 
   // Шрифты (все три поддерживают кириллицу — важно для украинской версии)
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-serif: 'Source Serif 4', Georgia, serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-sans: 'Inter Variable', system-ui, sans-serif;
+  --font-serif: 'Source Serif 4 Variable', Georgia, serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
 
   // Прочее
   --radius: #{rem(4)};

@@ -2,6 +2,7 @@
 // Vite начинает сборку с этого файла.
 // Здесь мы подключаем стили и запускаем все модули сайта.
 
+import './fonts.js';
 import './styles/main.scss';
 
 import { initI18n } from './scripts/i18n.js';
