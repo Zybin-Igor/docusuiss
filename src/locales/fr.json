@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "DocuSwiss — Aide aux démarches administratives en Suisse",
+    "title": "DocuVeto — Aide aux démarches administratives en Suisse",
     "description": "Comprenez vos droits et préparez vos documents administratifs en Suisse : poursuites, amendes, bail, caisse maladie, travail, impôts. En français, allemand, anglais et ukrainien."
   },
-  "disclaimer": "⚠️ DocuSwiss fournit des informations générales et une aide à la préparation de documents. Ce n'est pas une étude d'avocats. Pour une situation complexe, consultez un avocat autorisé.",
+  "disclaimer": "⚠️ DocuVeto fournit des informations générales et une aide à la préparation de documents. Ce n'est pas une étude d'avocats. Pour une situation complexe, consultez un avocat autorisé.",
   "nav": {
     "services": "Thèmes",
     "documents": "Documents",
@@ -88,6 +88,7 @@
     "label": "Documents en préparation",
     "title": "Nos premiers<br />documents",
     "status": "En préparation",
+    "statusReady": "Disponible",
     "d1": {
       "tag": "Poursuites · LP",
       "title": "Opposition au commandement de payer",
@@ -128,8 +129,8 @@
   "faq": {
     "label": "Questions fréquentes",
     "title": "Vous avez des<br />questions ?",
-    "q1": "DocuSwiss remplace-t-il un avocat ?",
-    "a1": "Non. DocuSwiss fournit des informations générales et vous aide à préparer des documents simples. Ce n'est pas une étude d'avocats et ce n'est pas un conseil juridique personnalisé. Si votre situation est complexe, si beaucoup d'argent est en jeu ou si une procédure judiciaire est en cours, consultez un avocat autorisé.",
+    "q1": "DocuVeto remplace-t-il un avocat ?",
+    "a1": "Non. DocuVeto fournit des informations générales et vous aide à préparer des documents simples. Ce n'est pas une étude d'avocats et ce n'est pas un conseil juridique personnalisé. Si votre situation est complexe, si beaucoup d'argent est en jeu ou si une procédure judiciaire est en cours, consultez un avocat autorisé.",
     "q2": "Le service est-il gratuit ?",
     "a2": "Les informations et les modèles de base sont gratuits. Plus tard, nous proposerons en option une vérification de votre document par un juriste, contre un prix fixe annoncé à l'avance.",
     "q3": "Dans quels cantons puis-je utiliser les documents ?",
@@ -158,7 +159,7 @@
   },
   "rv": {
     "meta": {
-      "title": "Opposition au commandement de payer — DocuSwiss",
+      "title": "Opposition au commandement de payer — DocuVeto",
       "description": "Préparez gratuitement votre opposition au commandement de payer (art. 74 LP) : calcul du délai de 10 jours et lettre prête à envoyer."
     },
     "breadcrumbHome": "Accueil",
@@ -254,6 +255,63 @@
       "number": "Indiquez un montant valide (par ex. 250 ou 250.50).",
       "pattern": "Le format n'est pas correct.",
       "zip": "Le NPA suisse comporte 4 chiffres."
+    }
+  },
+  "legal": {
+    "meta": {
+      "title": "Mentions légales et confidentialité — DocuVeto",
+      "description": "Mentions légales et déclaration de protection des données de DocuVeto."
+    },
+    "breadcrumb": "Mentions légales et confidentialité",
+    "title": "Mentions légales et confidentialité",
+    "imprint": {
+      "title": "Mentions légales",
+      "ownerLabel": "Exploitant du site",
+      "country": "Suisse",
+      "contactLabel": "Contact",
+      "statusTitle": "Remarque",
+      "statusText": "DocuVeto est un service d’information privé. Nous ne sommes pas une étude d’avocats et ne sommes liés à aucune autorité. Les contenus ne remplacent pas un conseil juridique adapté à votre situation.",
+      "liabilityTitle": "Responsabilité",
+      "liabilityText": "Nous rédigeons les contenus avec soin, mais ne garantissons pas leur exactitude, leur exhaustivité ni leur actualité. Vérifiez chaque document avant de l’envoyer et veillez vous-même au respect des délais. Dans la mesure permise par la loi, toute responsabilité est exclue. Les exploitants des sites liés sont seuls responsables de leurs contenus.",
+      "copyrightTitle": "Droit d’auteur",
+      "copyrightText": "Les textes, la mise en page et le code de ce site sont protégés par le droit d’auteur. Vous pouvez utiliser librement les lettres créées ici pour vos propres affaires."
+    },
+    "privacy": {
+      "title": "Déclaration de protection des données",
+      "updated": "Version du 17 novembre 2026",
+      "intro": "Conformément à la loi fédérale sur la protection des données (LPD), cette déclaration vous informe des données personnelles traitées lorsque vous visitez DocuVeto.",
+      "s1": {
+        "title": "Responsable",
+        "text": "Le responsable du traitement est l’exploitant indiqué dans les mentions légales. Pour toute question sur la protection des données, écrivez à l’adresse e-mail qui y figure."
+      },
+      "s2": {
+        "title": "Vos saisies restent dans votre navigateur",
+        "text": "Les informations que vous saisissez dans les formulaires (p. ex. nom, adresse, numéro de poursuite) sont traitées uniquement dans votre navigateur pour créer la lettre. Elles ne sont transmises ni à nous ni à des tiers, et ne sont pas enregistrées. Si vous fermez ou rechargez la page, elles disparaissent."
+      },
+      "s3": {
+        "title": "Hébergement",
+        "text": "Le site est hébergé par GitHub Pages (GitHub, Inc., États-Unis). Comme pour tout site web, votre navigateur transmet des données techniques nécessaires telles que l’adresse IP, la date et l’heure, la page consultée et le type de navigateur. GitHub traite ces données pour diffuser le site et le protéger contre les abus. Des données peuvent alors être transférées aux États-Unis. GitHub est certifié selon le Swiss-U.S. Data Privacy Framework. Plus d’informations dans la <a href=\"https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement\" target=\"_blank\" rel=\"noopener\">déclaration de confidentialité de GitHub</a>."
+      },
+      "s4": {
+        "title": "Choix de la langue",
+        "text": "Pour afficher le site dans votre langue lors de votre prochaine visite, nous enregistrons la langue choisie dans la mémoire locale de votre navigateur (localStorage, entrée « docuveto-lang »). Cette information ne quitte pas votre appareil. Vous pouvez la supprimer à tout moment dans les réglages du navigateur."
+      },
+      "s5": {
+        "title": "Pas de cookies, pas de suivi",
+        "text": "Nous n’utilisons ni cookies, ni services d’analyse ou de publicité. Tous les éléments du site, y compris les polices, sont fournis avec le site ; aucun contenu de tiers n’est chargé."
+      },
+      "s6": {
+        "title": "Contact par e-mail",
+        "text": "Si vous nous écrivez, nous traitons vos données uniquement pour répondre à votre demande. Nous les supprimons dès qu’elles ne sont plus nécessaires et qu’aucune obligation légale de conservation ne s’y oppose."
+      },
+      "s7": {
+        "title": "Vos droits",
+        "text": "Vous pouvez demander l’accès à vos données personnelles ainsi que leur rectification ou leur effacement (art. 25 ss LPD). Écrivez pour cela à l’adresse e-mail des mentions légales. Vous pouvez également vous adresser au Préposé fédéral à la protection des données et à la transparence (PFPDT)."
+      },
+      "s8": {
+        "title": "Modifications",
+        "text": "Nous adaptons cette déclaration lorsque le site change, par exemple avec de nouvelles fonctions ou un autre hébergement. La version publiée ici fait foi."
+      }
     }
   }
 }

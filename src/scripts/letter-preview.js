@@ -50,7 +50,7 @@ export function initLetterPreview() {
   // ════════════════════════════════════════════════════════
 
   /** Показать письмо. Вызывается из формы после успешной проверки. */
-  function show({ data, lang, receivedDate, deadline }) {
+  function show({ data, lang, receivedDate, deadline }, { scroll = true } = {}) {
     current = { lang, deadline, caseNumber: data.caseNumber.trim() };
 
     letter.innerHTML = buildRechtsvorschlagLetter(data, lang, receivedDate);
@@ -58,7 +58,9 @@ export function initLetterPreview() {
     renderTexts();
 
     section.hidden = false;
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (scroll) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   /** Спрятать письмо (например, если в форме появилась ошибка). */

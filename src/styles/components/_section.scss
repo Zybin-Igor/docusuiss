@@ -92,4 +92,10 @@
     color: var(--ink-3);
     background-color: var(--mono);
   }
+
+  // Документ готов (зелёный, как блок срока в состоянии «ok»)
+  &--ready {
+    color: #1f7a3d;
+    background-color: #ecf7ef;
+  }
 }

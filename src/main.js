@@ -8,10 +8,12 @@ import './styles/main.scss';
 import { initI18n } from './scripts/i18n.js';
 import { initHeader } from './scripts/header.js';
 import { initFaq } from './scripts/faq.js';
+import { initDocuments } from './scripts/documents.js';
 
 initI18n();
 initHeader();
 initFaq();
+initDocuments();
 
 // Текущий год в подвале — чтобы не менять его вручную каждый январь
 const yearElement = document.querySelector('[data-js-year]');

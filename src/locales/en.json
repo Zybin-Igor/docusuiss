@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "DocuSwiss — Help with paperwork in Switzerland",
+    "title": "DocuVeto — Help with paperwork in Switzerland",
     "description": "Understand your rights and prepare your administrative documents in Switzerland: debt collection, fines, rent, health insurance, work, taxes. In English, French, German and Ukrainian."
   },
-  "disclaimer": "⚠️ DocuSwiss provides general information and help preparing documents. We are not a law firm. For complex situations, please consult a licensed lawyer.",
+  "disclaimer": "⚠️ DocuVeto provides general information and help preparing documents. We are not a law firm. For complex situations, please consult a licensed lawyer.",
   "nav": {
     "services": "Topics",
     "documents": "Documents",
@@ -88,6 +88,7 @@
     "label": "Documents in preparation",
     "title": "Our first<br />documents",
     "status": "In preparation",
+    "statusReady": "Available",
     "d1": {
       "tag": "Debt · DEBA",
       "title": "Objection to a payment order",
@@ -128,8 +129,8 @@
   "faq": {
     "label": "Frequently asked questions",
     "title": "Do you have<br />questions?",
-    "q1": "Does DocuSwiss replace a lawyer?",
-    "a1": "No. DocuSwiss provides general information and helps you prepare simple documents. We are not a law firm and do not give personalised legal advice. If your situation is complex, a lot of money is at stake, or court proceedings are already under way, please consult a licensed lawyer.",
+    "q1": "Does DocuVeto replace a lawyer?",
+    "a1": "No. DocuVeto provides general information and helps you prepare simple documents. We are not a law firm and do not give personalised legal advice. If your situation is complex, a lot of money is at stake, or court proceedings are already under way, please consult a licensed lawyer.",
     "q2": "Is the service free?",
     "a2": "Information and basic templates are free. Later, we will offer an optional review of your document by a legal professional for a fixed price announced in advance.",
     "q3": "In which cantons can I use the documents?",
@@ -158,7 +159,7 @@
   },
   "rv": {
     "meta": {
-      "title": "Objection to a payment order — DocuSwiss",
+      "title": "Objection to a payment order — DocuVeto",
       "description": "Prepare your objection to a Swiss payment order for free (Art. 74 DEBA): 10-day deadline calculation and a letter ready to send."
     },
     "breadcrumbHome": "Home",
@@ -254,6 +255,63 @@
       "number": "Enter a valid amount (e.g. 250 or 250.50).",
       "pattern": "The format is not correct.",
       "zip": "Swiss postcodes have 4 digits."
+    }
+  },
+  "legal": {
+    "meta": {
+      "title": "Legal notice and privacy — DocuVeto",
+      "description": "Legal notice and privacy policy of DocuVeto."
+    },
+    "breadcrumb": "Legal notice and privacy",
+    "title": "Legal notice and privacy",
+    "imprint": {
+      "title": "Legal notice",
+      "ownerLabel": "Website operator",
+      "country": "Switzerland",
+      "contactLabel": "Contact",
+      "statusTitle": "Please note",
+      "statusText": "DocuVeto is a private information service. We are not a law firm and are not affiliated with any authority. The content does not replace legal advice on your individual case.",
+      "liabilityTitle": "Liability",
+      "liabilityText": "We prepare the content with care but cannot guarantee that it is accurate, complete or up to date. Check every document before sending it and keep track of the deadlines yourself. To the extent permitted by law, all liability is excluded. Operators of linked websites are solely responsible for their content.",
+      "copyrightTitle": "Copyright",
+      "copyrightText": "The texts, design and code of this website are protected by copyright. You may freely use the letters created here for your own matters."
+    },
+    "privacy": {
+      "title": "Privacy policy",
+      "updated": "Last updated: 17 November 2026",
+      "intro": "In accordance with the Swiss Federal Act on Data Protection (FADP), this policy explains which personal data are processed when you visit DocuVeto.",
+      "s1": {
+        "title": "Controller",
+        "text": "The controller is the operator named in the legal notice. Please send any privacy questions to the e-mail address given there."
+      },
+      "s2": {
+        "title": "Your entries stay in your browser",
+        "text": "The information you enter in the forms (e.g. name, address, debt collection number) is processed only in your browser to create the letter. It is not sent to us or to third parties and is not stored. When you close or reload the page, it is gone."
+      },
+      "s3": {
+        "title": "Hosting",
+        "text": "The website is hosted on GitHub Pages (GitHub, Inc., USA). As with any website, your browser transmits technically necessary data such as your IP address, date and time, the page requested and the browser type. GitHub processes this data to deliver the website and protect it against abuse. This may involve transferring data to the USA. GitHub is certified under the Swiss-U.S. Data Privacy Framework. More information in the <a href=\"https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement\" target=\"_blank\" rel=\"noopener\">GitHub privacy statement</a>."
+      },
+      "s4": {
+        "title": "Language setting",
+        "text": "So that the website appears in your language on your next visit, we save the language you chose in your browser’s local storage (localStorage, entry “docuveto-lang”). This information never leaves your device. You can delete it at any time in your browser settings."
+      },
+      "s5": {
+        "title": "No cookies, no tracking",
+        "text": "We use no cookies and no analytics or advertising services. All parts of the website, including the fonts, are delivered with the website itself; no third-party content is loaded."
+      },
+      "s6": {
+        "title": "Contact by e-mail",
+        "text": "If you write to us, we process your details only to answer your request. We delete them as soon as they are no longer needed for that purpose and no legal retention obligation applies."
+      },
+      "s7": {
+        "title": "Your rights",
+        "text": "You can request access to your personal data and ask for it to be corrected or deleted (Art. 25 ff. FADP). To do so, write to the e-mail address in the legal notice. You can also contact the Federal Data Protection and Information Commissioner (FDPIC)."
+      },
+      "s8": {
+        "title": "Changes",
+        "text": "We update this policy when the website changes, for example when new features are added or the hosting changes. The version published here applies."
+      }
     }
   }
 }

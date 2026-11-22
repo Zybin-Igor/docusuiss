@@ -15,6 +15,7 @@ export default defineConfig({
       input: {
         main: page('./index.html'),
         rechtsvorschlag: page('./rechtsvorschlag.html'),
+        legal: page('./legal.html'),
       },
     },
   },

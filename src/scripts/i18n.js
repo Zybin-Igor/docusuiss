@@ -18,7 +18,7 @@ import uk from '../locales/uk.json';
 
 const translations = { fr, de, en, uk };
 const DEFAULT_LANG = 'fr';
-const STORAGE_KEY = 'docuswiss-lang';
+const STORAGE_KEY = 'docuveto-lang';
 
 // Текущий язык — храним в переменной модуля, чтобы другие модули могли его узнать
 let currentLang = DEFAULT_LANG;

@@ -1,0 +1,61 @@
+@use '../helpers' as *;
+
+// ── СТРАНИЦА IMPRESSUM И DATENSCHUTZ ────────────────────
+// Длинный текст: узкая колонка (~70 знаков в строке) — так легче читать.
+
+.legal {
+  display: grid;
+  gap: rem(64);
+  max-width: rem(760);
+
+  &__section {
+    display: grid;
+    gap: rem(12);
+  }
+
+  &__title {
+    margin: 0 0 rem(8);
+    padding-bottom: rem(12);
+    font-family: var(--font-serif);
+    font-size: fluid(36, 28);
+    font-weight: 400;
+    line-height: 1.15;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  &__subtitle {
+    margin: rem(16) 0 0;
+    font-size: rem(17);
+    font-weight: 600;
+  }
+
+  &__text,
+  &__address {
+    margin: 0;
+    font-style: normal; // <address> по умолчанию курсивный
+    line-height: 1.7;
+    color: var(--ink-2);
+  }
+
+  &__text a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  &__updated {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: rem(12);
+    letter-spacing: 0.5px;
+    color: var(--ink-3);
+  }
+
+  // Временная пометка «заполнить» — чтобы её невозможно было не заметить
+  &__todo {
+    padding: 0 rem(4);
+    background-color: #fff4e5;
+    color: #b45309;
+    border-radius: 3px;
+  }
+}

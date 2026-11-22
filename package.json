@@ -1,9 +1,9 @@
 {
-  "name": "docuswiss",
+  "name": "docuveto",
   "version": "0.2.0",
   "private": true,
   "type": "module",
-  "description": "DocuSwiss — помощь с административными документами в Швейцарии",
+  "description": "DocuVeto — помощь с административными документами в Швейцарии",
   "author": "Ihor Zybin",
   "scripts": {
     "dev": "vite",

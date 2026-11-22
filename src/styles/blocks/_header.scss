@@ -107,16 +107,24 @@
   font-size: rem(21);
   letter-spacing: -0.3px;
 
+  // Знак: буква D с молнией внутри. Без фона — цвет берётся от текста.
   &__mark {
-    @include flex-center;
-    @include square(rem(28));
     flex-shrink: 0;
-    background-color: var(--accent);
-    border-radius: 3px;
 
     svg {
-      @include square(rem(16));
+      display: block;
+      width: auto;
+      height: rem(30);
     }
+  }
+
+  // currentColor = цвет текста логотипа: чёрный в шапке, белый в подвале
+  &__d {
+    fill: currentColor;
+  }
+
+  &__bolt {
+    fill: var(--accent);
   }
 
   &__accent {
@@ -126,6 +134,12 @@
   // Вариант для тёмного подвала
   &--light {
     color: #fff;
+
+    .logo__bolt,
+    .logo__accent {
+      fill: var(--accent-light);
+      color: var(--accent-light);
+    }
   }
 }
 

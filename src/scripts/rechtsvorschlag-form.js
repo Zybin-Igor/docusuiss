@@ -209,6 +209,21 @@ export function initRechtsvorschlagForm() {
   // письмо с неверными данными лучше спрятать: letterPreview.hide();
   //
   // Пишите код ниже этой строки 👇
+  form.addEventListener('change', () => {
+    // 1. Если письмо еще не показано — ничего не делаем
+    if (!letterPreview.isVisible()) return;
 
+    // 2. Пересчитываем кастомные правила
+    checkCustomRules();
+
+  // 3. Если в форме есть ошибки (включая Бонус ⭐ — прячем устаревшее письмо)
+  if (!form.checkValidity()) {
+    letterPreview.hide();
+    return;
+  }
+
+  // 4. Перерисовываем письмо на лету без прокрутки страницы
+  showLetter({ scroll: false });
+});
   // ════════════════════════════════════════════════════════
 }

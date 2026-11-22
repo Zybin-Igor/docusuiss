@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "DocuSwiss — Hilfe bei Behördengängen in der Schweiz",
+    "title": "DocuVeto — Hilfe bei Behördengängen in der Schweiz",
     "description": "Verstehen Sie Ihre Rechte und bereiten Sie Ihre Dokumente in der Schweiz vor: Betreibung, Bussen, Miete, Krankenkasse, Arbeit, Steuern. Auf Deutsch, Französisch, Englisch und Ukrainisch."
   },
-  "disclaimer": "⚠️ DocuSwiss bietet allgemeine Informationen und Hilfe beim Erstellen von Dokumenten. Wir sind keine Anwaltskanzlei. In komplexen Fällen wenden Sie sich bitte an eine zugelassene Anwältin oder einen zugelassenen Anwalt.",
+  "disclaimer": "⚠️ DocuVeto bietet allgemeine Informationen und Hilfe beim Erstellen von Dokumenten. Wir sind keine Anwaltskanzlei. In komplexen Fällen wenden Sie sich bitte an eine zugelassene Anwältin oder einen zugelassenen Anwalt.",
   "nav": {
     "services": "Themen",
     "documents": "Dokumente",
@@ -88,6 +88,7 @@
     "label": "Dokumente in Vorbereitung",
     "title": "Unsere ersten<br />Dokumente",
     "status": "In Vorbereitung",
+    "statusReady": "Verfügbar",
     "d1": {
       "tag": "Betreibung · SchKG",
       "title": "Rechtsvorschlag gegen einen Zahlungsbefehl",
@@ -128,8 +129,8 @@
   "faq": {
     "label": "Häufige Fragen",
     "title": "Haben Sie<br />Fragen?",
-    "q1": "Ersetzt DocuSwiss eine Anwältin oder einen Anwalt?",
-    "a1": "Nein. DocuSwiss bietet allgemeine Informationen und hilft Ihnen, einfache Dokumente vorzubereiten. Wir sind keine Anwaltskanzlei und bieten keine individuelle Rechtsberatung. Wenn Ihre Situation komplex ist, viel Geld auf dem Spiel steht oder bereits ein Gerichtsverfahren läuft, wenden Sie sich an eine zugelassene Anwältin oder einen zugelassenen Anwalt.",
+    "q1": "Ersetzt DocuVeto eine Anwältin oder einen Anwalt?",
+    "a1": "Nein. DocuVeto bietet allgemeine Informationen und hilft Ihnen, einfache Dokumente vorzubereiten. Wir sind keine Anwaltskanzlei und bieten keine individuelle Rechtsberatung. Wenn Ihre Situation komplex ist, viel Geld auf dem Spiel steht oder bereits ein Gerichtsverfahren läuft, wenden Sie sich an eine zugelassene Anwältin oder einen zugelassenen Anwalt.",
     "q2": "Ist der Service kostenlos?",
     "a2": "Informationen und Grundvorlagen sind kostenlos. Später bieten wir optional eine Prüfung Ihres Dokuments durch einen Juristen zu einem im Voraus bekannten Festpreis an.",
     "q3": "In welchen Kantonen kann ich die Dokumente verwenden?",
@@ -158,7 +159,7 @@
   },
   "rv": {
     "meta": {
-      "title": "Rechtsvorschlag gegen einen Zahlungsbefehl — DocuSwiss",
+      "title": "Rechtsvorschlag gegen einen Zahlungsbefehl — DocuVeto",
       "description": "Erstellen Sie kostenlos Ihren Rechtsvorschlag (Art. 74 SchKG): Berechnung der 10-tägigen Frist und versandfertiger Brief."
     },
     "breadcrumbHome": "Startseite",
@@ -254,6 +255,63 @@
       "number": "Geben Sie einen gültigen Betrag ein (z. B. 250 oder 250.50).",
       "pattern": "Das Format ist nicht korrekt.",
       "zip": "Die Schweizer PLZ hat 4 Ziffern."
+    }
+  },
+  "legal": {
+    "meta": {
+      "title": "Impressum und Datenschutz — DocuVeto",
+      "description": "Impressum und Datenschutzerklärung von DocuVeto."
+    },
+    "breadcrumb": "Impressum und Datenschutz",
+    "title": "Impressum und Datenschutz",
+    "imprint": {
+      "title": "Impressum",
+      "ownerLabel": "Betreiber der Website",
+      "country": "Schweiz",
+      "contactLabel": "Kontakt",
+      "statusTitle": "Hinweis",
+      "statusText": "DocuVeto ist ein privates Informationsangebot. Wir sind keine Anwaltskanzlei und mit keiner Behörde verbunden. Die Inhalte ersetzen keine Rechtsberatung im Einzelfall.",
+      "liabilityTitle": "Haftung",
+      "liabilityText": "Wir erstellen die Inhalte mit Sorgfalt, übernehmen aber keine Gewähr für ihre Richtigkeit, Vollständigkeit und Aktualität. Prüfen Sie jedes Dokument vor dem Versand und achten Sie selbst auf die Fristen. Soweit gesetzlich zulässig, ist jede Haftung ausgeschlossen. Für Inhalte verlinkter Websites sind ausschliesslich deren Betreiber verantwortlich.",
+      "copyrightTitle": "Urheberrecht",
+      "copyrightText": "Texte, Gestaltung und Programmcode dieser Website sind urheberrechtlich geschützt. Die hier erstellten Briefe dürfen Sie für Ihre eigenen Angelegenheiten frei verwenden."
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "updated": "Stand: 17. November 2026",
+      "intro": "Diese Erklärung informiert Sie gemäss dem Bundesgesetz über den Datenschutz (DSG) darüber, welche Personendaten beim Besuch von DocuVeto bearbeitet werden.",
+      "s1": {
+        "title": "Verantwortliche Person",
+        "text": "Verantwortlich für die Datenbearbeitung ist der im Impressum genannte Betreiber. Fragen zum Datenschutz richten Sie bitte an die dort angegebene E-Mail-Adresse."
+      },
+      "s2": {
+        "title": "Ihre Eingaben bleiben in Ihrem Browser",
+        "text": "Die Angaben, die Sie in die Formulare eintragen (z. B. Name, Adresse, Betreibungsnummer), werden ausschliesslich in Ihrem Browser verarbeitet, um den Brief zu erstellen. Sie werden weder an uns noch an Dritte übermittelt und nicht gespeichert. Wenn Sie die Seite schliessen oder neu laden, sind die Angaben weg."
+      },
+      "s3": {
+        "title": "Hosting",
+        "text": "Die Website wird bei GitHub Pages gehostet (GitHub, Inc., USA). Wie bei jeder Website übermittelt Ihr Browser dabei technisch notwendige Daten wie IP-Adresse, Datum und Uhrzeit, aufgerufene Seite und Browsertyp. GitHub bearbeitet diese Daten, um die Website auszuliefern und vor Missbrauch zu schützen. Dabei können Daten in die USA übermittelt werden. GitHub ist nach dem Swiss-U.S. Data Privacy Framework zertifiziert. Mehr dazu im <a href=\"https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement\" target=\"_blank\" rel=\"noopener\">Datenschutzhinweis von GitHub</a>."
+      },
+      "s4": {
+        "title": "Spracheinstellung",
+        "text": "Damit die Website beim nächsten Besuch wieder in Ihrer Sprache erscheint, speichern wir die gewählte Sprache im lokalen Speicher Ihres Browsers (localStorage, Eintrag «docuveto-lang»). Diese Angabe verlässt Ihr Gerät nicht. Sie können sie jederzeit in den Browsereinstellungen löschen."
+      },
+      "s5": {
+        "title": "Keine Cookies, kein Tracking",
+        "text": "Wir verwenden keine Cookies und keine Analyse- oder Werbedienste. Alle Bestandteile der Website, auch die Schriften, werden zusammen mit der Website ausgeliefert; es werden keine Inhalte von Drittanbietern geladen."
+      },
+      "s6": {
+        "title": "Kontakt per E-Mail",
+        "text": "Wenn Sie uns schreiben, bearbeiten wir Ihre Angaben nur, um Ihre Anfrage zu beantworten. Wir löschen sie, sobald sie dafür nicht mehr nötig sind und keine gesetzliche Aufbewahrungspflicht besteht."
+      },
+      "s7": {
+        "title": "Ihre Rechte",
+        "text": "Sie können Auskunft über Ihre Personendaten sowie deren Berichtigung oder Löschung verlangen (Art. 25 ff. DSG). Schreiben Sie dazu an die E-Mail-Adresse im Impressum. Sie können sich zudem an den Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB) wenden."
+      },
+      "s8": {
+        "title": "Änderungen",
+        "text": "Wir passen diese Erklärung an, wenn sich die Website ändert, zum Beispiel bei neuen Funktionen oder einem anderen Hosting. Es gilt die jeweils hier veröffentlichte Fassung."
+      }
     }
   }
 }

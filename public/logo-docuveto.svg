@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 120" width="180" height="120" fill="none" role="img" aria-label="DocuVeto">
+  <g transform="translate(46, 6)">
+    <path d="M12 4H46C65.8823 4 82 20.1177 82 40C82 59.8823 65.8823 76 46 76H12V4ZM26 18V62H45C57.1503 62 67 52.1503 67 40C67 27.8497 57.1503 18 45 18H26Z" fill="#0f0f0f" fill-rule="evenodd" />
+    <path d="M36 22L54 37L43 41L57 57L33 43L44 39L36 22Z" fill="#c8102e" />
+  </g>
+  <text x="90" y="108" text-anchor="middle" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" letter-spacing="0.14em" fill="#0f0f0f">VETO</text>
+</svg>

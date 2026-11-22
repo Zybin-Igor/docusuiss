@@ -32,6 +32,7 @@
 @use 'blocks/page-intro';
 @use 'blocks/wizard';
 @use 'blocks/letter-section';
+@use 'blocks/legal';
 
 // Печать — всегда последним
 @use 'base/print';
