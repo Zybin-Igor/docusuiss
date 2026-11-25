@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="es.meta.title">Opposition à une ordonnance pénale — DocuVeto</title>
+  <meta name="description" data-i18n-attr="content:es.meta.description"
+        content="Préparez gratuitement votre opposition à une ordonnance pénale (art. 354 CPP) : calcul du délai de 10 jours et lettre prête à envoyer." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <!-- Шрифты подключаются в src/fonts.js и загружаются с нашего сайта (не с Google) -->
+
+  <!-- Vite сам скомпилирует SCSS и подключит его к странице -->
+  <script type="module" src="/src/einsprache.js"></script>
+</head>
+<body>
+
+  <!-- ═══ ПРЕДУПРЕЖДЕНИЕ ═══ -->
+  <div class="disclaimer" role="note">
+    <div class="container">
+      <p class="disclaimer__text" data-i18n="disclaimer">
+        ⚠️ DocuVeto fournit des informations générales et une aide à la préparation de documents. Ce n'est pas une étude d'avocats. Pour une situation complexe, consultez un avocat autorisé.
+      </p>
+    </div>
+  </div>
+
+  <!-- ═══ ШАПКА ═══ -->
+  <header class="header" data-js-header>
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="DocuVeto">
+        <span class="logo__mark" aria-hidden="true">
+          <svg viewBox="8 0 78 80" fill="none">
+            <path class="logo__d" fill-rule="evenodd" d="M12 4H46C65.8823 4 82 20.1177 82 40C82 59.8823 65.8823 76 46 76H12V4ZM26 18V62H45C57.1503 62 67 52.1503 67 40C67 27.8497 57.1503 18 45 18H26Z" />
+            <path class="logo__bolt" d="M36 22L54 37L43 41L57 57L33 43L44 39L36 22Z" />
+          </svg>
+        </span>
+        <span>Docu<span class="logo__accent">Veto</span></span>
+      </a>
+
+      <div class="header__menu" id="main-menu" data-js-menu>
+        <nav aria-label="Menu">
+          <ul class="header__nav-list">
+            <li><a class="header__nav-link" href="index.html#services" data-i18n="nav.services">Thèmes</a></li>
+            <li><a class="header__nav-link" href="index.html#documents" data-i18n="nav.documents">Documents</a></li>
+            <li><a class="header__nav-link" href="index.html#how" data-i18n="nav.how">Comment ça marche</a></li>
+            <li><a class="header__nav-link" href="index.html#faq" data-i18n="nav.faq">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <!-- Кнопки языков. Код языка — в data-lang, JS читает его при клике -->
+        <div class="lang-switch" role="group" aria-label="Langue / Sprache / Language / Мова">
+          <button class="lang-switch__btn is-active" type="button" data-lang="fr">FR</button>
+          <button class="lang-switch__btn" type="button" data-lang="de">DE</button>
+          <button class="lang-switch__btn" type="button" data-lang="en">EN</button>
+          <button class="lang-switch__btn" type="button" data-lang="uk">UA</button>
+        </div>
+      </div>
+
+      <button class="burger" type="button" aria-controls="main-menu" aria-expanded="false"
+              data-js-burger data-i18n-attr="aria-label:nav.menuButton" aria-label="Ouvrir le menu">
+        <span class="burger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ═══ ЗАГОЛОВОК СТРАНИЦЫ ═══ -->
+    <section class="page-intro">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html" data-i18n="rv.breadcrumbHome">Accueil</a>
+          <span aria-hidden="true">/</span>
+          <span data-i18n="es.breadcrumbCurrent">Opposition à une ordonnance pénale</span>
+        </nav>
+        <p class="hero__eyebrow" data-i18n="es.eyebrow">Amendes · art. 354 CPP</p>
+        <h1 class="page-intro__title" data-i18n="es.title">Opposition à une ordonnance pénale</h1>
+        <p class="page-intro__text" data-i18n="es.intro">Vous avez reçu une ordonnance pénale (amende, peine pécuniaire) et vous n'êtes pas d'accord ? Nous calculons votre délai et préparons une lettre d'opposition prête à envoyer.</p>
+      </div>
+    </section>
+
+    <!-- ═══ ФОРМА + ПОДСКАЗКИ СБОКУ ═══ -->
+    <section class="section wizard">
+      <div class="container wizard__layout">
+
+        <form class="form" id="es-form" data-js-es-form novalidate>
+
+          <!-- ── Шаг 1. Штрафной приказ ── -->
+          <fieldset class="form__group">
+            <legend class="form__legend">
+              <span class="form__step">1</span>
+              <span data-i18n="es.s1.title">L'ordonnance pénale</span>
+            </legend>
+            <p class="form__hint" data-i18n="es.s1.hint">Toutes ces informations figurent sur l'ordonnance pénale que vous avez reçue.</p>
+
+            <!-- ⚖️ Ordnungsbusse (штраф по упрощённой процедуре, OBG) — это НЕ Strafbefehl.
+                 Против неё возражение не подают: её просто не оплачивают в срок 30 дней. -->
+            <div class="form__alert" role="note">
+              <p class="form__alert-title" data-i18n="es.s1.obTitle">Vérifiez d’abord : est-ce bien une ordonnance pénale ?</p>
+              <p class="form__alert-text" data-i18n-html="es.s1.obText">Le document doit porter le titre <strong>« Ordonnance pénale » / « Strafbefehl » / « Decreto d’accusa »</strong>. Une simple <strong>amende d’ordre</strong> (par ex. bulletin de versement pour un excès de vitesse léger) n’est pas une ordonnance pénale : si vous la contestez, ne la payez pas dans les 30 jours, une procédure ordinaire sera alors ouverte.</p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="canton" data-i18n="es.f.canton">Canton de l'autorité</label>
+              <select class="field__control" id="canton" name="canton" required>
+                <option value="" data-i18n="rv.f.cantonPlaceholder">— Choisir —</option>
+                <option value="AG">Aargau (AG)</option>
+                <option value="AI">Appenzell Innerrhoden (AI)</option>
+                <option value="AR">Appenzell Ausserrhoden (AR)</option>
+                <option value="BE">Bern / Berne (BE)</option>
+                <option value="BL">Basel-Landschaft (BL)</option>
+                <option value="BS">Basel-Stadt (BS)</option>
+                <option value="FR">Fribourg / Freiburg (FR)</option>
+                <option value="GE">Genève (GE)</option>
+                <option value="GL">Glarus (GL)</option>
+                <option value="GR">Graubünden (GR)</option>
+                <option value="JU">Jura (JU)</option>
+                <option value="LU">Luzern (LU)</option>
+                <option value="NE">Neuchâtel (NE)</option>
+                <option value="NW">Nidwalden (NW)</option>
+                <option value="OW">Obwalden (OW)</option>
+                <option value="SG">St. Gallen (SG)</option>
+                <option value="SH">Schaffhausen (SH)</option>
+                <option value="SO">Solothurn (SO)</option>
+                <option value="SZ">Schwyz (SZ)</option>
+                <option value="TG">Thurgau (TG)</option>
+                <option value="TI">Ticino (TI)</option>
+                <option value="UR">Uri (UR)</option>
+                <option value="VD">Vaud (VD)</option>
+                <option value="VS">Valais / Wallis (VS)</option>
+                <option value="ZG">Zug (ZG)</option>
+                <option value="ZH">Zürich (ZH)</option>
+              </select>
+            </div>
+
+            <div class="field" data-js-letter-lang-field hidden>
+              <label class="field__label" for="letterLang" data-i18n="rv.f.letterLang">Langue de la lettre</label>
+              <select class="field__control" id="letterLang" name="letterLang"></select>
+              <p class="field__hint" data-i18n="es.f.letterLangHint">Ce canton est bilingue. Choisissez la langue de l'ordonnance pénale.</p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="office" data-i18n="es.f.office">Autorité qui a rendu l'ordonnance (nom et adresse)</label>
+              <textarea class="field__control" id="office" name="office" rows="3" required></textarea>
+              <p class="field__hint" data-i18n="es.f.officeHint">Le plus souvent le Ministère public ou la préfecture. L'adresse figure en haut de l'ordonnance pénale.</p>
+            </div>
+
+            <div class="form__row">
+              <div class="field">
+                <label class="field__label" for="caseNumber" data-i18n="es.f.caseNumber">N° de procédure</label>
+                <input class="field__control" id="caseNumber" name="caseNumber" type="text" required />
+              </div>
+              <div class="field">
+                <label class="field__label" for="orderDate" data-i18n="es.f.orderDate">Date de l'ordonnance pénale</label>
+                <input class="field__control" id="orderDate" name="orderDate" type="date" required />
+              </div>
+            </div>
+
+            <!-- ⚖️ Как получен приказ? От этого зависит начало срока
+                 (фикция вручения, ст. 85 абз. 4 лит. a StPO). -->
+            <div class="field">
+              <p class="field__label" id="delivery-label" data-i18n="es.f.delivery">Comment avez-vous reçu l'ordonnance pénale&nbsp;?</p>
+              <div class="choice-list" role="radiogroup" aria-labelledby="delivery-label">
+                <label class="choice">
+                  <input class="choice__input" type="radio" name="delivery" value="hand" checked />
+                  <span class="choice__body">
+                    <span class="choice__title" data-i18n="es.f.deliveryHand">En mains propres ou dans ma boîte aux lettres</span>
+                  </span>
+                </label>
+                <label class="choice">
+                  <input class="choice__input" type="radio" name="delivery" value="pickup" />
+                  <span class="choice__body">
+                    <span class="choice__title" data-i18n="es.f.deliveryPickup">Retiré à la poste après un avis de retrait</span>
+                    <span class="choice__text" data-i18n="es.f.deliveryPickupText">Un envoi recommandé non retiré est réputé notifié le 7e jour après la tentative de remise (art. 85 al. 4 let. a CPP). Le délai peut donc commencer plus tôt.</span>
+                  </span>
+                </label>
+                <label class="choice">
+                  <input class="choice__input" type="radio" name="delivery" value="notYet" />
+                  <span class="choice__body">
+                    <span class="choice__title" data-i18n="es.f.deliveryNotYet">J'ai un avis de retrait, mais je n'ai pas encore retiré le pli</span>
+                    <span class="choice__text" data-i18n="es.f.deliveryNotYetText">Nous calculons quand même votre délai — il court peut-être déjà.</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field" data-js-notice-field hidden>
+              <label class="field__label" for="noticeDate" data-i18n="es.f.noticeDate">Date figurant sur l'avis de retrait</label>
+              <input class="field__control" id="noticeDate" name="noticeDate" type="date" />
+              <p class="field__hint" data-i18n="es.f.noticeDateHint">La date de la tentative de remise, imprimée sur le papier jaune de La Poste.</p>
+            </div>
+
+            <div class="field" data-js-received-field>
+              <label class="field__label" for="receivedDate" data-i18n="es.f.receivedDate">Date de réception</label>
+              <input class="field__control" id="receivedDate" name="receivedDate" type="date" required />
+              <p class="field__hint" data-i18n="es.f.receivedDateHint">Le jour où vous avez reçu l'ordonnance pénale en mains propres ou retiré le pli à la poste.</p>
+            </div>
+
+            <div class="deadline" data-js-deadline aria-live="polite" hidden></div>
+          </fieldset>
+
+          <!-- ── Шаг 2. Дополнительно ── -->
+          <fieldset class="form__group">
+            <legend class="form__legend">
+              <span class="form__step">2</span>
+              <span data-i18n="es.s2.title">Votre opposition</span>
+            </legend>
+            <p class="form__hint" data-i18n="es.s2.hint">L'opposition ne doit pas être motivée (art. 354 al. 2 CPP). Vous pourrez présenter vos arguments plus tard, lors de votre audition.</p>
+
+            <label class="choice">
+              <input class="choice__input" type="checkbox" name="fileAccess" value="yes" />
+              <span class="choice__body">
+                <span class="choice__title" data-i18n="es.f.fileAccess">Demander à consulter le dossier</span>
+                <span class="choice__text" data-i18n="es.f.fileAccessText">Utile pour savoir sur quels éléments repose l'accusation avant votre audition (art. 101 et 107 CPP).</span>
+              </span>
+            </label>
+          </fieldset>
+
+          <!-- ── Шаг 3. Ваши данные ── -->
+          <fieldset class="form__group">
+            <legend class="form__legend">
+              <span class="form__step">3</span>
+              <span data-i18n="rv.s3.title">Vos coordonnées</span>
+            </legend>
+
+            <div class="form__row">
+              <div class="field">
+                <label class="field__label" for="firstName" data-i18n="rv.f.firstName">Prénom</label>
+                <input class="field__control" id="firstName" name="firstName" type="text" autocomplete="given-name" required />
+              </div>
+              <div class="field">
+                <label class="field__label" for="lastName" data-i18n="rv.f.lastName">Nom</label>
+                <input class="field__control" id="lastName" name="lastName" type="text" autocomplete="family-name" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="street" data-i18n="rv.f.street">Rue et numéro</label>
+              <input class="field__control" id="street" name="street" type="text" autocomplete="address-line1" required />
+            </div>
+
+            <div class="form__row form__row--zip">
+              <div class="field">
+                <label class="field__label" for="zip" data-i18n="rv.f.zip">NPA</label>
+                <input class="field__control" id="zip" name="zip" type="text" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" data-error-key="form.errors.zip" autocomplete="postal-code" required />
+              </div>
+              <div class="field">
+                <label class="field__label" for="city" data-i18n="rv.f.city">Localité</label>
+                <input class="field__control" id="city" name="city" type="text" autocomplete="address-level2" required />
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form__actions">
+            <button class="btn btn--primary" type="submit" data-i18n="rv.submit">Préparer ma lettre →</button>
+            <p class="form__privacy" data-i18n="rv.privacy">🔒 Vos données restent dans votre navigateur. Elles ne sont envoyées nulle part.</p>
+          </div>
+        </form>
+
+        <!-- ── Боковая колонка ── -->
+        <aside class="wizard__aside">
+          <div class="note note--accent">
+            <h2 class="note__title" data-i18n="es.aside.deadlineTitle">Délai : 10 jours</h2>
+            <p class="note__text" data-i18n="es.aside.deadlineText">L'opposition doit être formée par écrit dans les 10 jours auprès de l'autorité qui a rendu l'ordonnance (art. 354 al. 1 CPP). Sans opposition, l'ordonnance devient un jugement définitif.</p>
+          </div>
+          <div class="note">
+            <h2 class="note__title" data-i18n="es.aside.hearingTitle">Important : l'audition</h2>
+            <p class="note__text" data-i18n="es.aside.hearingText">Après l'opposition, vous serez probablement convoqué(e) à une audition. Si vous ne vous présentez pas sans excuse, votre opposition est considérée comme retirée (art. 355 al. 2 CPP).</p>
+          </div>
+          <div class="note">
+            <h2 class="note__title" data-i18n="es.aside.costsTitle">Frais</h2>
+            <p class="note__text" data-i18n="es.aside.costsText">Si l'ordonnance est finalement confirmée, les frais de procédure peuvent augmenter. En cas de doute sur vos chances, demandez conseil à un avocat ou une avocate.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ═══ ГОТОВОЕ ПИСЬМО ═══ -->
+    <section class="section section--muted letter-section" id="letter" data-js-letter-section hidden>
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-label" data-i18n="rv.letter.label">Votre lettre est prête</p>
+            <h2 class="section-title" data-i18n="rv.letter.title">Vérifiez votre lettre</h2>
+            <p class="letter-section__note" data-js-letter-note></p>
+          </div>
+        </div>
+
+        <div class="letter-section__layout">
+          <article class="letter" data-js-letter></article>
+
+          <aside class="letter-section__aside">
+            <div class="letter-section__actions">
+              <button class="btn btn--primary" type="button" data-js-print-letter data-i18n="rv.letter.print">Imprimer / PDF</button>
+              <button class="btn btn--secondary" type="button" data-js-copy-letter data-i18n="rv.letter.copy">Copier le texte</button>
+              <a class="btn btn--secondary" href="#es-form" data-i18n="rv.letter.edit">Modifier mes données</a>
+              <p class="letter-section__hint" data-i18n="rv.letter.printHint">Pour obtenir un fichier PDF, choisissez « Enregistrer au format PDF » dans la fenêtre d'impression.</p>
+            </div>
+
+            <div class="note">
+              <h3 class="note__title" data-i18n="rv.letter.nextTitle">Prochaines étapes</h3>
+              <ol class="steps-list" data-js-next-steps></ol>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ═══ ПОДВАЛ ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a href="index.html" class="logo logo--light">
+            <span class="logo__mark" aria-hidden="true">
+              <svg viewBox="8 0 78 80" fill="none">
+                <path class="logo__d" fill-rule="evenodd" d="M12 4H46C65.8823 4 82 20.1177 82 40C82 59.8823 65.8823 76 46 76H12V4ZM26 18V62H45C57.1503 62 67 52.1503 67 40C67 27.8497 57.1503 18 45 18H26Z" />
+                <path class="logo__bolt" d="M36 22L54 37L43 41L57 57L33 43L44 39L36 22Z" />
+              </svg>
+            </span>
+            <span>Docu<span class="logo__accent">Veto</span></span>
+          </a>
+          <p class="footer__desc" data-i18n="footer.desc">Informations juridiques claires et aide à la préparation de documents administratifs en Suisse.</p>
+        </div>
+
+        <div>
+          <h3 class="footer__col-title" data-i18n="footer.topics">Thèmes</h3>
+          <ul class="footer__list">
+            <li><a class="footer__link" href="index.html#services" data-i18n="services.debt.title">Poursuites et dettes</a></li>
+            <li><a class="footer__link" href="index.html#services" data-i18n="services.fine.title">Amendes et ordonnances pénales</a></li>
+            <li><a class="footer__link" href="index.html#services" data-i18n="services.rent.title">Logement et bail</a></li>
+            <li><a class="footer__link" href="index.html#services" data-i18n="services.health.title">Caisse maladie</a></li>
+            <li><a class="footer__link" href="index.html#services" data-i18n="services.work.title">Travail</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer__col-title" data-i18n="footer.info">Informations</h3>
+          <!-- «О нас» создадим позже. Контакт, Impressum и Datenschutz — на legal.html -->
+          <ul class="footer__list">
+            <li><a class="footer__link" href="#" data-i18n="footer.about">À propos</a></li>
+            <li><a class="footer__link" href="legal.html#impressum" data-i18n="footer.contact">Contact</a></li>
+            <li><a class="footer__link" href="legal.html#impressum" data-i18n="footer.imprint">Mentions légales</a></li>
+            <li><a class="footer__link" href="legal.html#datenschutz" data-i18n="footer.privacy">Confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© <span data-js-year>2026</span> DocuVeto.</p>
+        <p data-i18n="footer.notice">Ce site n'est affilié à aucune autorité publique et n'est pas une étude d'avocats.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

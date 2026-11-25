@@ -313,5 +313,73 @@
         "text": "Wir passen diese Erklärung an, wenn sich die Website ändert, zum Beispiel bei neuen Funktionen oder einem anderen Hosting. Es gilt die jeweils hier veröffentlichte Fassung."
       }
     }
+  },
+  "es": {
+    "meta": {
+      "title": "Einsprache gegen einen Strafbefehl — DocuVeto",
+      "description": "Erstellen Sie kostenlos Ihre Einsprache gegen einen Strafbefehl (Art. 354 StPO): Berechnung der 10-tägigen Frist und versandfertiger Brief."
+    },
+    "breadcrumbCurrent": "Einsprache gegen einen Strafbefehl",
+    "eyebrow": "Bussen · Art. 354 StPO",
+    "title": "Einsprache gegen einen Strafbefehl",
+    "intro": "Sie haben einen Strafbefehl erhalten (Busse, Geldstrafe) und sind nicht einverstanden? Wir berechnen Ihre Frist und erstellen eine versandfertige Einsprache.",
+    "s1": {
+      "title": "Der Strafbefehl",
+      "hint": "Alle diese Angaben finden Sie auf dem Strafbefehl, den Sie erhalten haben.",
+      "obTitle": "Prüfen Sie zuerst: Ist es wirklich ein Strafbefehl?",
+      "obText": "Das Dokument muss mit <strong>«Strafbefehl» / «Ordonnance pénale» / «Decreto d’accusa»</strong> überschrieben sein. Eine einfache <strong>Ordnungsbusse</strong> (z. B. Einzahlungsschein für eine leichte Geschwindigkeitsüberschreitung) ist kein Strafbefehl: Wenn Sie sie bestreiten, bezahlen Sie sie nicht innert 30 Tagen; dann wird ein ordentliches Verfahren eröffnet."
+    },
+    "s2": {
+      "title": "Ihre Einsprache",
+      "hint": "Die Einsprache muss nicht begründet werden (Art. 354 Abs. 2 StPO). Ihre Argumente können Sie später bei der Einvernahme vorbringen."
+    },
+    "f": {
+      "canton": "Kanton der Behörde",
+      "letterLangHint": "Dieser Kanton ist zweisprachig. Wählen Sie die Sprache des Strafbefehls.",
+      "office": "Behörde, die den Strafbefehl erlassen hat (Name und Adresse)",
+      "officeHint": "Meist die Staatsanwaltschaft oder das Statthalteramt. Die Adresse steht oben auf dem Strafbefehl.",
+      "caseNumber": "Verfahrens-Nr.",
+      "orderDate": "Datum des Strafbefehls",
+      "receivedDate": "Datum der Zustellung",
+      "receivedDateHint": "Der Tag, an dem Sie den Strafbefehl persönlich erhalten oder auf der Post abgeholt haben.",
+      "noticeDate": "Datum auf der Abholungseinladung",
+      "fileAccess": "Akteneinsicht verlangen",
+      "fileAccessText": "Hilfreich, um vor der Einvernahme zu wissen, worauf sich der Vorwurf stützt (Art. 101 und 107 StPO).",
+      "delivery": "Wie haben Sie den Strafbefehl erhalten?",
+      "deliveryHand": "Persönlich oder im Briefkasten",
+      "deliveryPickup": "Nach einer Abholungseinladung auf der Post abgeholt",
+      "deliveryPickupText": "Eine nicht abgeholte eingeschriebene Sendung gilt am 7. Tag nach dem Zustellversuch als zugestellt (Art. 85 Abs. 4 lit. a StPO). Die Frist kann daher früher beginnen.",
+      "deliveryNotYet": "Ich habe eine Abholungseinladung, die Sendung aber noch nicht abgeholt",
+      "deliveryNotYetText": "Wir berechnen Ihre Frist trotzdem – sie läuft vielleicht schon.",
+      "noticeDateHint": "Das Datum des Zustellversuchs auf dem gelben Zettel der Post."
+    },
+    "aside": {
+      "deadlineTitle": "Frist: 10 Tage",
+      "deadlineText": "Die Einsprache ist innert 10 Tagen schriftlich bei der Behörde zu erheben, die den Strafbefehl erlassen hat (Art. 354 Abs. 1 StPO). Ohne Einsprache wird der Strafbefehl zum rechtskräftigen Urteil.",
+      "hearingTitle": "Wichtig: die Einvernahme",
+      "hearingText": "Nach der Einsprache werden Sie wahrscheinlich zu einer Einvernahme vorgeladen. Bleiben Sie ihr unentschuldigt fern, gilt Ihre Einsprache als zurückgezogen (Art. 355 Abs. 2 StPO).",
+      "costsTitle": "Kosten",
+      "costsText": "Wird der Strafbefehl schliesslich bestätigt, können die Verfahrenskosten steigen. Wenn Sie unsicher sind, lassen Sie sich von einer Anwältin oder einem Anwalt beraten."
+    },
+    "deadline": {
+      "lastDay": "Letzter Tag für die Einsprache",
+      "fiction": "Die Frist wird ab dem {date} berechnet: 7. Tag nach der Abholungseinladung (Art. 85 Abs. 4 lit. a StPO), weil dieses Datum früher liegt als der Tag der Abholung.",
+      "postHint": "Es genügt, den Brief spätestens an diesem Tag der Schweizerischen Post zu übergeben (Art. 91 Abs. 2 StPO). Senden Sie ihn am besten eingeschrieben und bewahren Sie die Quittung auf.",
+      "expiredHelp": "Wenden Sie sich rasch an eine Anwältin oder einen Anwalt. Eine Wiederherstellung der Frist ist nur möglich, wenn Sie unverschuldet verhindert waren; das Gesuch ist innert 30 Tagen zu stellen (Art. 94 StPO).",
+      "notYet": "Die Frist wird ab dem {date} berechnet (7. Tag nach der Abholungseinladung). Holen Sie die Sendung so rasch wie möglich ab: Ohne den Strafbefehl kennen Sie weder die Verfahrensnummer noch das Datum, die für den Brief nötig sind.",
+      "fictionCondition": "Diese Regel gilt, wenn Sie mit einer Zustellung der Behörde rechnen mussten (z. B. nach einer Einvernahme durch die Polizei). Sicherheitshalber rechnen wir immer mit dem früheren Datum."
+    },
+    "errors": {
+      "orderAfterReceipt": "Das Datum des Strafbefehls darf nicht nach dem Zustellungsdatum liegen.",
+      "noticeAfterReceipt": "Die Abholungseinladung darf nicht nach dem Zustellungsdatum liegen.",
+      "noticeFuture": "Das Datum der Abholungseinladung darf nicht in der Zukunft liegen."
+    },
+    "letter": {
+      "langNote": "Der Brief ist auf {lang} verfasst, in der Amtssprache der Behörde. Lesen Sie ihn vor dem Versand sorgfältig durch.",
+      "step1": "Drucken Sie den Brief aus oder speichern Sie ihn als PDF (Schaltfläche «Drucken / PDF»).",
+      "step2": "Unterschreiben Sie ihn von Hand.",
+      "step3": "Geben Sie ihn spätestens am {date} eingeschrieben bei der Post auf.",
+      "step4": "Wenn Sie zu einer Einvernahme vorgeladen werden, erscheinen Sie oder entschuldigen Sie sich rechtzeitig – sonst gilt die Einsprache als zurückgezogen."
+    }
   }
 }

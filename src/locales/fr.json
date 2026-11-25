@@ -313,5 +313,73 @@
         "text": "Nous adaptons cette déclaration lorsque le site change, par exemple avec de nouvelles fonctions ou un autre hébergement. La version publiée ici fait foi."
       }
     }
+  },
+  "es": {
+    "meta": {
+      "title": "Opposition à une ordonnance pénale — DocuVeto",
+      "description": "Préparez gratuitement votre opposition à une ordonnance pénale (art. 354 CPP) : calcul du délai de 10 jours et lettre prête à envoyer."
+    },
+    "breadcrumbCurrent": "Opposition à une ordonnance pénale",
+    "eyebrow": "Amendes · art. 354 CPP",
+    "title": "Opposition à une ordonnance pénale",
+    "intro": "Vous avez reçu une ordonnance pénale (amende, peine pécuniaire) et vous n'êtes pas d'accord ? Nous calculons votre délai et préparons une lettre d'opposition prête à envoyer.",
+    "s1": {
+      "title": "L'ordonnance pénale",
+      "hint": "Toutes ces informations figurent sur l'ordonnance pénale que vous avez reçue.",
+      "obTitle": "Vérifiez d’abord : est-ce bien une ordonnance pénale ?",
+      "obText": "Le document doit porter le titre <strong>« Ordonnance pénale » / « Strafbefehl » / « Decreto d’accusa »</strong>. Une simple <strong>amende d’ordre</strong> (par ex. un bulletin de versement pour un léger excès de vitesse) n’est pas une ordonnance pénale : si vous la contestez, ne la payez pas dans les 30 jours ; une procédure ordinaire sera alors ouverte."
+    },
+    "s2": {
+      "title": "Votre opposition",
+      "hint": "L'opposition ne doit pas être motivée (art. 354 al. 2 CPP). Vous pourrez présenter vos arguments plus tard, lors de votre audition."
+    },
+    "f": {
+      "canton": "Canton de l'autorité",
+      "letterLangHint": "Ce canton est bilingue. Choisissez la langue de l'ordonnance pénale.",
+      "office": "Autorité qui a rendu l'ordonnance (nom et adresse)",
+      "officeHint": "Le plus souvent le Ministère public ou la préfecture. L'adresse figure en haut de l'ordonnance pénale.",
+      "caseNumber": "N° de procédure",
+      "orderDate": "Date de l'ordonnance pénale",
+      "receivedDate": "Date de réception",
+      "receivedDateHint": "Le jour où vous avez reçu l'ordonnance pénale en mains propres ou retiré le pli à la poste.",
+      "noticeDate": "Date figurant sur l'avis de retrait",
+      "fileAccess": "Demander à consulter le dossier",
+      "fileAccessText": "Utile pour savoir sur quels éléments repose l'accusation avant votre audition (art. 101 et 107 CPP).",
+      "delivery": "Comment avez-vous reçu l'ordonnance pénale ?",
+      "deliveryHand": "En mains propres ou dans ma boîte aux lettres",
+      "deliveryPickup": "Retiré à la poste après un avis de retrait",
+      "deliveryPickupText": "Un envoi recommandé non retiré est réputé notifié le 7e jour après la tentative de remise (art. 85 al. 4 let. a CPP). Le délai peut donc commencer plus tôt.",
+      "deliveryNotYet": "J'ai un avis de retrait, mais je n'ai pas encore retiré le pli",
+      "deliveryNotYetText": "Nous calculons quand même votre délai — il court peut-être déjà.",
+      "noticeDateHint": "La date de la tentative de remise, imprimée sur le papier jaune de La Poste."
+    },
+    "aside": {
+      "deadlineTitle": "Délai : 10 jours",
+      "deadlineText": "L'opposition doit être formée par écrit dans les 10 jours auprès de l'autorité qui a rendu l'ordonnance (art. 354 al. 1 CPP). Sans opposition, l'ordonnance devient un jugement définitif.",
+      "hearingTitle": "Important : l'audition",
+      "hearingText": "Après l'opposition, vous serez probablement convoqué(e) à une audition. Si vous ne vous présentez pas sans excuse, votre opposition est considérée comme retirée (art. 355 al. 2 CPP).",
+      "costsTitle": "Frais",
+      "costsText": "Si l'ordonnance est finalement confirmée, les frais de procédure peuvent augmenter. En cas de doute sur vos chances, demandez conseil à un avocat ou une avocate."
+    },
+    "deadline": {
+      "lastDay": "Dernier jour pour faire opposition",
+      "fiction": "Le délai est calculé à partir du {date} : 7e jour après l'avis de retrait (art. 85 al. 4 let. a CPP), car c'est plus tôt que le jour où vous avez retiré le pli.",
+      "postHint": "Il suffit de remettre la lettre à La Poste suisse au plus tard ce jour-là (art. 91 al. 2 CPP). Envoyez-la de préférence en recommandé et gardez le récépissé.",
+      "expiredHelp": "Contactez rapidement un avocat. Une restitution du délai n'est possible que si vous avez été empêché d'agir sans faute de votre part et la demande doit être faite dans les 30 jours (art. 94 CPP).",
+      "notYet": "Le délai est calculé à partir du {date} (7e jour après l'avis de retrait). Retirez le pli le plus vite possible : sans l'ordonnance, vous ne connaissez ni le numéro de procédure ni la date nécessaires à la lettre.",
+      "fictionCondition": "Cette règle s'applique si vous deviez vous attendre à recevoir un courrier de l'autorité (par ex. après une audition par la police). Par prudence, nous partons toujours de la date la plus ancienne."
+    },
+    "errors": {
+      "orderAfterReceipt": "La date de l'ordonnance ne peut pas être postérieure à la date de réception.",
+      "noticeAfterReceipt": "L'avis de retrait ne peut pas être postérieur à la date de réception.",
+      "noticeFuture": "La date de l'avis de retrait ne peut pas être dans le futur."
+    },
+    "letter": {
+      "langNote": "La lettre est rédigée en {lang}, la langue officielle de l'autorité. Relisez-la attentivement avant de l'envoyer.",
+      "step1": "Imprimez la lettre ou enregistrez-la en PDF (bouton « Imprimer / PDF »).",
+      "step2": "Signez-la à la main.",
+      "step3": "Remettez-la à La Poste en recommandé au plus tard le {date}.",
+      "step4": "Si vous êtes convoqué(e) à une audition, présentez-vous ou excusez-vous à temps — sinon l'opposition est réputée retirée."
+    }
   }
 }

@@ -313,5 +313,73 @@
         "text": "We update this policy when the website changes, for example when new features are added or the hosting changes. The version published here applies."
       }
     }
+  },
+  "es": {
+    "meta": {
+      "title": "Objection to a penalty order — DocuVeto",
+      "description": "Prepare your objection to a Swiss penalty order (Strafbefehl) for free (Art. 354 CrimPC): 10-day deadline calculation and a letter ready to send."
+    },
+    "breadcrumbCurrent": "Objection to a penalty order",
+    "eyebrow": "Fines · Art. 354 CrimPC",
+    "title": "Objection to a penalty order",
+    "intro": "Received a penalty order (fine, monetary penalty) and you disagree? We calculate your deadline and prepare an objection letter ready to send.",
+    "s1": {
+      "title": "The penalty order",
+      "hint": "You will find all this information on the penalty order you received.",
+      "obTitle": "Check first: is it really a penalty order?",
+      "obText": "The document must be titled <strong>“Strafbefehl” / “Ordonnance pénale” / “Decreto d’accusa”</strong>. A simple <strong>fixed-penalty fine</strong> (Ordnungsbusse, e.g. a payment slip for minor speeding) is not a penalty order: if you dispute it, do not pay it within 30 days; ordinary proceedings will then be opened."
+    },
+    "s2": {
+      "title": "Your objection",
+      "hint": "You do not need to give reasons (Art. 354 para. 2 CrimPC). You can present your arguments later, at your hearing."
+    },
+    "f": {
+      "canton": "Canton of the authority",
+      "letterLangHint": "This canton is bilingual. Choose the language of the penalty order.",
+      "office": "Authority that issued the order (name and address)",
+      "officeHint": "Usually the public prosecutor's office or the prefecture. The address is at the top of the penalty order.",
+      "caseNumber": "Case number",
+      "orderDate": "Date of the penalty order",
+      "receivedDate": "Date received",
+      "receivedDateHint": "The day you received the penalty order in person or collected it at the post office.",
+      "noticeDate": "Date on the collection notice",
+      "fileAccess": "Request access to the case file",
+      "fileAccessText": "Useful to know what the accusation is based on before your hearing (Art. 101 and 107 CrimPC).",
+      "delivery": "How did you receive the penalty order?",
+      "deliveryHand": "In person or in my letterbox",
+      "deliveryPickup": "Collected at the post office after a collection notice",
+      "deliveryPickupText": "A registered letter that is not collected is deemed served on the 7th day after the delivery attempt (Art. 85 para. 4 let. a CrimPC). The deadline may therefore start earlier.",
+      "deliveryNotYet": "I have a collection notice but have not collected the letter yet",
+      "deliveryNotYetText": "We still calculate your deadline — it may already be running.",
+      "noticeDateHint": "The date of the delivery attempt, printed on the yellow Swiss Post slip."
+    },
+    "aside": {
+      "deadlineTitle": "Deadline: 10 days",
+      "deadlineText": "The objection must be filed in writing within 10 days with the authority that issued the order (Art. 354 para. 1 CrimPC). Without an objection, the order becomes a final judgment.",
+      "hearingTitle": "Important: the hearing",
+      "hearingText": "After your objection you will probably be summoned to a hearing. If you fail to attend without an excuse, your objection is deemed withdrawn (Art. 355 para. 2 CrimPC).",
+      "costsTitle": "Costs",
+      "costsText": "If the order is ultimately upheld, the procedural costs may increase. If you are unsure about your chances, get advice from a lawyer."
+    },
+    "deadline": {
+      "lastDay": "Last day to file your objection",
+      "fiction": "The deadline is counted from {date}: the 7th day after the collection notice (Art. 85 para. 4 let. a CrimPC), because that is earlier than the day you collected the letter.",
+      "postHint": "It is enough to hand the letter to Swiss Post on that day at the latest (Art. 91 para. 2 CrimPC). Ideally send it by registered mail and keep the receipt.",
+      "expiredHelp": "Contact a lawyer quickly. The deadline can only be restored if you were prevented from acting through no fault of your own, and the request must be made within 30 days (Art. 94 CrimPC).",
+      "notYet": "The deadline is counted from {date} (the 7th day after the collection notice). Collect the letter as soon as possible: without the order you know neither the case number nor the date needed for the letter.",
+      "fictionCondition": "This rule applies if you had to expect a delivery from the authority (e.g. after being questioned by the police). To be safe, we always use the earlier date."
+    },
+    "errors": {
+      "orderAfterReceipt": "The date of the order cannot be after the date received.",
+      "noticeAfterReceipt": "The collection notice cannot be dated after the date received.",
+      "noticeFuture": "The date of the collection notice cannot be in the future."
+    },
+    "letter": {
+      "langNote": "The letter is written in {lang}, the official language of the authority. Read it carefully before sending it.",
+      "step1": "Print the letter or save it as a PDF (“Print / PDF” button).",
+      "step2": "Sign it by hand.",
+      "step3": "Send it by registered mail at Swiss Post no later than {date}.",
+      "step4": "If you are summoned to a hearing, attend or excuse yourself in time — otherwise the objection is deemed withdrawn."
+    }
   }
 }

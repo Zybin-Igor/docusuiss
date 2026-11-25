@@ -15,6 +15,7 @@ export default defineConfig({
       input: {
         main: page('./index.html'),
         rechtsvorschlag: page('./rechtsvorschlag.html'),
+        einsprache: page('./einsprache.html'),
         legal: page('./legal.html'),
       },
     },

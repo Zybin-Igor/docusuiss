@@ -7,6 +7,7 @@
 // В фигурных скобках — данные из формы: {creditor}, {caseNumber} и т. д.
 
 import { escapeHtml, formatAmount } from '../utils.js';
+import { formatLetterDate, fill, lines } from './letter-utils.js'; // общие функции всех писем
 
 const TEXTS = {
   de: {
@@ -56,26 +57,6 @@ const TEXTS = {
     closing: 'Distinti saluti',
   },
 };
-
-/** Дата прописью на языке письма: «29. Oktober 2026», «29 octobre 2026» */
-function formatLetterDate(date, locale) {
-  return new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'long', year: 'numeric' }).format(date);
-}
-
-/** Подставляет значения в шаблон: fill('Nr. {caseNumber}', { caseNumber: '123' }) → 'Nr. 123' */
-function fill(template, values) {
-  return template.replace(/\{(\w+)\}/g, (match, name) => values[name] ?? match);
-}
-
-/** Многострочный текст (адрес) → строки, разделённые <br> */
-function lines(text) {
-  return text
-    .split('\n')
-    .map((line) => line.trim())
-    .filter(Boolean)
-    .map(escapeHtml)
-    .join('<br />');
-}
 
 /**
  * Собирает HTML письма.

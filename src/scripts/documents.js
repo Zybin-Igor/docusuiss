@@ -18,7 +18,7 @@ import { t } from "./i18n.js";
  */
 const DOCUMENTS = [
   { id: "d1", url: "rechtsvorschlag.html" },
-  { id: "d2" },
+  { id: "d2", url: "einsprache.html" },
   { id: "d3" },
   { id: "d4" },
   { id: "d5" },

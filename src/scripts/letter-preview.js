@@ -1,13 +1,25 @@
 // ── ПРЕДПРОСМОТР ГОТОВОГО ПИСЬМА ────────────────────────
 //
 // Показывает письмо, подсказку о языке и следующие шаги.
-// Сам текст письма собирает letters/rechtsvorschlag-letter.js —
+// Сам текст письма собирает функция buildLetter (для каждого документа своя) —
 // здесь только работа со страницей.
 
 import { t, formatDate } from './i18n.js';
 import { buildRechtsvorschlagLetter } from './letters/rechtsvorschlag-letter.js';
 
-export function initLetterPreview() {
+/**
+ * Настройки — чтобы один и тот же предпросмотр работал для РАЗНЫХ документов:
+ *  • buildLetter — функция, которая собирает HTML письма;
+ *  • pdfName     — начало имени PDF-файла («Rechtsvorschlag 26-123456»);
+ *  • i18nPrefix  — где в переводах лежат тексты этого документа: 'rv' (Rechtsvorschlag)
+ *                  или 'es' (Einsprache). Нужны ключи <prefix>.letter.langNote и step1…step4.
+ * По умолчанию — Rechtsvorschlag, поэтому старый вызов initLetterPreview() работает как раньше.
+ */
+export function initLetterPreview({
+  buildLetter = buildRechtsvorschlagLetter,
+  pdfName = 'Rechtsvorschlag',
+  i18nPrefix = 'rv',
+} = {}) {
   const section = document.querySelector('[data-js-letter-section]');
   const letter = section.querySelector('[data-js-letter]');
   const note = section.querySelector('[data-js-letter-note]');
@@ -21,11 +33,11 @@ export function initLetterPreview() {
   function renderTexts() {
     if (!current) return;
 
-    note.textContent = t('rv.letter.langNote', { lang: t(`rv.langNames.${current.lang}`) });
+    note.textContent = t(`${i18nPrefix}.letter.langNote`, { lang: t(`rv.langNames.${current.lang}`) });
 
     const deadline = formatDate(current.deadline);
     nextSteps.innerHTML = ['step1', 'step2', 'step3', 'step4']
-      .map((step) => `<li>${t(`rv.letter.${step}`, { date: deadline })}</li>`)
+      .map((step) => `<li>${t(`${i18nPrefix}.letter.${step}`, { date: deadline })}</li>`)
       .join('');
   }
 
@@ -53,7 +65,7 @@ export function initLetterPreview() {
   function show({ data, lang, receivedDate, deadline }, { scroll = true } = {}) {
     current = { lang, deadline, caseNumber: data.caseNumber.trim() };
 
-    letter.innerHTML = buildRechtsvorschlagLetter(data, lang, receivedDate);
+    letter.innerHTML = buildLetter(data, lang, receivedDate);
     letter.lang = lang; // язык письма — для правильных переносов и озвучки
     renderTexts();
 
@@ -140,7 +152,7 @@ export function initLetterPreview() {
 
       // Устанавливаем новое имя для будущего PDF-файла (если есть номер дела)
       if (current && current.caseNumber) {
-        document.title = `Rechtsvorschlag ${current.caseNumber}`;
+        document.title = `${pdfName} ${current.caseNumber}`;
       }
 
       //  Открываем системное окно печати браузера

@@ -21,7 +21,7 @@ const DEADLINE_DAYS = 10;
  */
 export function parseDate(value) {
   if (!value) return null;
-  const [year, month, day] = value.split('-').map(Number);
+  const [year, month, day] = value.split("-").map(Number);
   return new Date(year, month - 1, day); // месяцы в JS считаются с 0!
 }
 
@@ -101,7 +101,9 @@ function getNationwideHolidays(year) {
 }
 
 export function isHoliday(date) {
-  return getNationwideHolidays(date.getFullYear()).some((holiday) => isSameDay(holiday, date));
+  return getNationwideHolidays(date.getFullYear()).some((holiday) =>
+    isSameDay(holiday, date),
+  );
 }
 
 /** Нерабочий день = выходной ИЛИ праздник. */
@@ -141,12 +143,53 @@ export function isInDebtCollectionHolidays(date) {
     [new Date(year, 0, 1), new Date(year, 0, 1)], // …и 1 января (после Рождества прошлого года)
   ];
 
-  return ranges.some(([start, end]) => time >= start.getTime() && time <= end.getTime());
+  return ranges.some(
+    ([start, end]) => time >= start.getTime() && time <= end.getTime(),
+  );
 }
 
 /** Сколько полных дней осталось от сегодня до даты (может быть отрицательным). */
 export function daysUntil(date, today = new Date()) {
-  const startOfToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  const startOfToday = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate(),
+  );
   const MS_IN_DAY = 24 * 60 * 60 * 1000;
   return Math.round((date - startOfToday) / MS_IN_DAY);
 }
+
+// ════════════════════════════════════════════════════════
+// 🏠 ДОМАШНЕЕ ЗАДАНИЕ (документ 2, Einsprache): фикция вручения
+//
+// ⚖️ Ст. 85 абз. 4 лит. a StPO: заказное письмо, которое человек не забрал,
+// считается врученным на 7-й день после неудачной попытки вручения
+// (дата на жёлтом извещении почты — «Abholungseinladung» / «avis de retrait»).
+//
+// Пример: извещение 2 ноября, человек забрал письмо на почте 12 ноября.
+// Срок считается НЕ с 12-го, а с 9 ноября (2 + 7) — потому что 9-е раньше.
+//
+// Функция получает две даты:
+//   receivedDate — когда человек реально получил письмо;
+//   noticeDate   — дата на извещении (или null, если извещения не было).
+// И должна вернуть дату, с которой считается срок: БОЛЕЕ РАННЮЮ из двух —
+// реального получения и «извещение + 7 дней».
+//
+// Подсказки:
+//  1. Если извещения нет (noticeDate === null) — просто верните receivedDate.
+//       if (!noticeDate) return receivedDate;
+//  2. Посчитайте дату фикции: const fictionDate = addDays(noticeDate, 7);
+//     (функция addDays уже есть в этом файле, выше)
+//  3. Даты можно сравнивать знаками < и >, как числа.
+//     Верните более раннюю дату тернарным оператором:
+//       return fictionDate < receivedDate ? … : …;
+//
+// Сейчас функция всегда возвращает receivedDate — поэтому извещение пока
+// НЕ влияет на срок. Замените строку return своим кодом 👇
+export function getNotificationDate(receivedDate, noticeDate) {
+  if (!noticeDate) return receivedDate;
+
+  const fictionDate = addDays(noticeDate, 7);
+  return fictionDate < receivedDate ? fictionDate : receivedDate;
+}
+// ════════════════════════════════════════════════════════
